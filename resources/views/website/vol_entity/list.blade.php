@@ -18,9 +18,17 @@
                     <div class="service-item first-service">
                         <span class="Available_opportunities">Available opportunities [ 20 ]</span>
                         <img height="170px" src="{{asset('website/assets/images/vo_1.jpeg')}}">
-                        <h4>App Maintenance</h4>
+                        <h4><a href="{{route('vol_entity.show')}}">App Maintenance</a></h4>
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                           <a href="{{route('vol_entity.show')}}">(12 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -30,7 +38,15 @@
                         <img height="170px" src="{{asset('website/assets/images/vo_2.png')}}">
                         <h4>Rocket Speed of App</h4>
                         <div class="text-button">
-                            <a class="btn btn-primary btn-disabled" href="javascript::void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                            <a class="btn btn-primary btn-disabled" href="javascript:void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(4 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -42,6 +58,14 @@
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(12 Review)</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -51,6 +75,14 @@
                         <h4>24/7 Help &amp; Support</h4>
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(6 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -62,6 +94,14 @@
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(9 Review)</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -70,7 +110,15 @@
                         <img height="170px" src="{{asset('website/assets/images/vo_2.png')}}">
                         <h4>Rocket Speed of App</h4>
                         <div class="text-button">
-                            <a class="btn btn-primary btn-disabled" href="javascript::void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                            <a class="btn btn-primary btn-disabled" href="javascript:void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(10 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -82,6 +130,14 @@
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(10 Review)</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -91,6 +147,14 @@
                         <h4>24/7 Help &amp; Support</h4>
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(9 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -102,6 +166,14 @@
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(5 Review)</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -110,7 +182,15 @@
                         <img height="170px" src="{{asset('website/assets/images/vo_2.png')}}">
                         <h4>Rocket Speed of App</h4>
                         <div class="text-button">
-                            <a class="btn btn-primary btn-disabled" href="javascript::void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                            <a class="btn btn-primary btn-disabled" href="javascript:void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(7 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -122,6 +202,14 @@
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(8 Review)</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -131,6 +219,14 @@
                         <h4>24/7 Help &amp; Support</h4>
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(4 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -142,6 +238,14 @@
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(3 Review)</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -150,7 +254,15 @@
                         <img height="170px" src="{{asset('website/assets/images/vo_2.png')}}">
                         <h4>Rocket Speed of App</h4>
                         <div class="text-button">
-                            <a class="btn btn-primary btn-disabled" href="javascript::void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                            <a class="btn btn-primary btn-disabled" href="javascript:void(0);">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(12 Review)</a>
                         </div>
                     </div>
                 </div>
@@ -162,6 +274,14 @@
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(12 Review)</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
@@ -171,6 +291,14 @@
                         <h4>24/7 Help &amp; Support</h4>
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <i class="fa fa-star text-dark"></i>
+                            <a href="{{route('vol_entity.show')}}">(12 Review)</a>
                         </div>
                     </div>
                 </div>

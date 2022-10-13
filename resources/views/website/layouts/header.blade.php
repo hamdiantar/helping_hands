@@ -12,9 +12,9 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{url('/')}}" class="active">Home</a></li>
                         <li class="scroll-to-section"><a href="{{route('vol_entity.list')}}">Volunteering</a></li>
-                        <li class="scroll-to-section"><a href="#about">About</a></li>
-                        <li class="scroll-to-section"><a href="#pricing">Pricing</a></li>
-                        <li class="scroll-to-section"><a href="#newsletter">Newsletter</a></li>
+                        <li class="scroll-to-section"><a href="{{route('vol_entity.pricing')}}">Pricing</a></li>
+                        <li class="scroll-to-section"><a href="{{route('compliant')}}">Compliant</a></li>
+                        <li class="scroll-to-section"><a href="#newsletter">profile</a></li>
                         <li><div class="gradient-button"><a id="modal_trigger2" href="#modal2"><i class="fa fa-sign-in-alt"></i>Join Us</a></div></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i>Login</a></div></li>
                     </ul>

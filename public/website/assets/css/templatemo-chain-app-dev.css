@@ -1357,7 +1357,7 @@ The Clients
 
 .pricing-item-regular {
   margin-top: 30px;
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.07);
+  box-shadow: 0px 0px 15px rgb(71 71 71);
   border-radius: 50px;
   padding: 90px 30px;
   text-align: center;
@@ -1389,8 +1389,8 @@ The Clients
 }
 
 .pricing-item-regular span.price {
-  font-size: 40px;
-  color: #fff;
+  font-size: 24px;
+  color: #000;
   position: absolute;
   font-weight: 700;
   z-index: 1;
@@ -1466,8 +1466,8 @@ The Clients
 }
 
 .pricing-item-pro span.price {
-  font-size: 40px;
-  color: #fff;
+  font-size: 28px;
+  color: #1c1c1c;
   position: absolute;
   font-weight: 700;
   z-index: 1;
@@ -2250,7 +2250,8 @@ responsive
     background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%) !important;
 }
 .card-box-shadow {
-    box-shadow: 0px 13px 20px 0px #2f2f2f;
+  width: 70%;
+  margin: auto;
 }
 
 
@@ -2269,14 +2270,9 @@ responsive
 }
 
 .post {
-    width: 100%;
-    float: left;
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-    background: #fff;
-    margin-bottom: 40px;
-    border-radius: 3px;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 1px 11px 11px rgb(42 42 42 / 22%);
+  border-radius: 25px;
 }
 
 .feature-post .thumbnail .author-info {
@@ -2389,21 +2385,15 @@ responsive
     float: left;
     width: 100%;
     text-align: left;
-    padding: 25px 25px;
+    padding: 8px 8px;
 }
 
-.post .caption h3 {
-    margin: 0px 0px 20px 0px;
-    color: #36a0e7;
-    font-weight: 300;
-    font-size: 34px;
-    line-height: 42px;
-}
 
 .post .caption p {
-    line-height: 28px;
-    margin-bottom: 20px;
-    font-size: 16px;
+  font-size: 14px;
+  color: black;
+  line-height: 40px;
+  font-weight: 400;
 }
 
 .post .author-info {
@@ -2844,17 +2834,8 @@ blockquote {
     border-radius: 3px 0px 0px 0px;
 }
 
-.vt-post.post .caption {
-    padding: 25px 0px;
-}
 
-.post .caption h3 {
-    margin: 0px 0px 20px 0px;
-    color: #36a0e7;
-    font-weight: 300;
-    font-size: 34px;
-    line-height: 42px;
-}
+
 .md-heading {
     font-size: 24px !important;
     line-height: 36px !important;
@@ -2903,5 +2884,24 @@ blockquote {
 }
 .btn-book {
     float: right;
-    margin: 30px;
+    margin: 4px;
+}
+
+.rating {
+  padding-top: 16px;
+  text-align: center;
+}
+
+.rating i {
+  font-size: 18px;
+  margin: 2px;
+}
+.rating a {
+  font-size: 11px;
+  color: #ff000a !important;
+  font-weight: 500;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
 }

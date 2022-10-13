@@ -14,212 +14,106 @@
             </div>
         </div>
         <div class="container">
-            <div class="col-md-10 offset-1">
-                <article class="post vt-post">
+            <div class="row">
+                <article class="col-md-9 mb-5 offset-2 post vt-post">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
+                        <div class="col-md-12">
                             <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
+                                <h3 class="md-heading text-center"><a href="#">the title of opportunity</a></h3>
                                 <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
+                                <div class="author-info author-info-2">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                        <tr>
+                                            <td>Capacity</td>
+                                            <td>Booked</td>
+                                            <td>Available</td>
+                                            <td>Total Hours</td>
+                                            <td>Start Date</td>
+                                            <td>End Date</td>
+                                            <td>Location</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-info">30</span> student</td>
+                                            <td><span class="badge bg-danger">20</span> student</td>
+                                            <td><span class="badge bg-success">10</span> student</td>
+                                            <td>15 Hours</td>
+                                            <td>20-10-2022</td>
+                                            <td>20-11-2022</td>
+                                            <td>Makii</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
                         </div>
                     </div>
                 </article>
-                <article class="post vt-post">
+                <article class="col-md-9 mb-5 offset-2 post vt-post">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
+                        <div class="col-md-12">
                             <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
+                                <h3 class="md-heading text-center"><a href="#">the title of opportunity</a></h3>
                                 <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" href="#" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
+                                <div class="author-info author-info-2">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                        <tr>
+                                            <td>Capacity</td>
+                                            <td>Booked</td>
+                                            <td>Available</td>
+                                            <td>Total Hours</td>
+                                            <td>Start Date</td>
+                                            <td>End Date</td>
+                                            <td>Location</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-info">30</span> student</td>
+                                            <td><span class="badge bg-danger">20</span> student</td>
+                                            <td><span class="badge bg-success">10</span> student</td>
+                                            <td>15 Hours</td>
+                                            <td>20-10-2022</td>
+                                            <td>20-11-2022</td>
+                                            <td>Makii</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
                         </div>
                     </div>
                 </article>
-                <article class="post vt-post">
+                <article class="col-md-9 mb-5 offset-2 post vt-post">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
+                        <div class="col-md-12">
                             <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
+                                <h3 class="md-heading text-center"><a href="#">the title of opportunity</a></h3>
                                 <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" href="#" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post vt-post">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
-                                <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" href="#" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post vt-post">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
-                                <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" href="#" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post vt-post">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
-                                <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" href="#" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post vt-post">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
-                                <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" href="#" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
-                        </div>
-                    </div>
-                </article>
-                <article class="post vt-post">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="post-type post-img">
-                                <a href="#"><img src="{{asset('website/assets/images/vo_1.jpeg')}}" class="img-responsive" alt="image post"></a>
-                            </div>
-                            <div class="author-info author-info-2">
-                                <ul class="list-inline">
-                                    <li>
-                                        <div class="info">
-                                            <p>Posted on: <strong>Mar 21, 2015</strong></p>
-                                            <p>Start on: <strong>Mar 21, 2015</strong></p>
-                                            <p>End on: <strong>Mar 21, 2015</strong></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="caption">
-                                <h3 class="md-heading"><a href="#">the title of opportunity</a></h3>
-                                <p>description for opportunity here description for opportunity here description for opportunity here description for opportunity here description for opportunity here</p>
-                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" href="#" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
+                                <div class="author-info author-info-2">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                        <tr>
+                                            <td>Capacity</td>
+                                            <td>Booked</td>
+                                            <td>Available</td>
+                                            <td>Total Hours</td>
+                                            <td>Start Date</td>
+                                            <td>End Date</td>
+                                            <td>Location</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="badge bg-info">30</span> student</td>
+                                            <td><span class="badge bg-danger">20</span> student</td>
+                                            <td><span class="badge bg-success">10</span> student</td>
+                                            <td>15 Hours</td>
+                                            <td>20-10-2022</td>
+                                            <td>20-11-2022</td>
+                                            <td>Makii</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-book" role="button">Volunteer Now <i class="fa fa-bookmark"></i></a> </div>
                         </div>
                     </div>
                 </article>

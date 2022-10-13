@@ -9,6 +9,9 @@ Route::view('/', 'website.home');
 Route::view('/vol_entity/register', 'website.vol_entity.register')->name('vol_entity.register');
 Route::view('/vol_entity/list', 'website.vol_entity.list')->name('vol_entity.list');
 Route::view('/vol_entity/opportunity', 'website.vol_entity.opportunity')->name('vol_entity.opportunity');
+Route::view('/vol_entity/pricing', 'website.vol_entity.pricing')->name('vol_entity.pricing');
+Route::view('/vol_entity/show', 'website.vol_entity.show')->name('vol_entity.show');
+Route::view('/compliant', 'website.compliant')->name('compliant');
 //routes for vol
 Route::view('/vol/register', 'website.vol.register')->name('vol.register');
 
