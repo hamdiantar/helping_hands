@@ -1,4 +1,4 @@
-@extends('vol_entity.layouts.app')
+@extends('volunteering-entity.layouts.app')
 
 @section('title', 'Dashboard')
 
@@ -150,13 +150,16 @@
                         </div>
                         <div class="col-lg-6 col-5 my-auto text-end">
                             <div class="dropdown float-lg-end pe-4">
-                                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
                                     <i class="fa fa-ellipsis-v text-secondary"></i>
                                 </a>
                                 <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
                                     <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a>
+                                    </li>
+                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else
+                                            here</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -167,10 +170,18 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                             <tr>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
-                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
-                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Companies
+                                </th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    Members
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Budget
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Completion
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
@@ -178,7 +189,8 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div>
-                                            <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
+                                            <img src="../assets/img/small-logos/logo-xd.svg"
+                                                 class="avatar avatar-sm me-3" alt="xd">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">Material XD Version</h6>
@@ -187,16 +199,20 @@
                                 </td>
                                 <td>
                                     <div class="avatar-group mt-2">
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
                                             <img src="../assets/img/team-1.jpg" alt="team1">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
                                             <img src="../assets/img/team-2.jpg" alt="team2">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
                                             <img src="../assets/img/team-3.jpg" alt="team3">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
                                             <img src="../assets/img/team-4.jpg" alt="team4">
                                         </a>
                                     </div>
@@ -212,7 +228,8 @@
                                             </div>
                                         </div>
                                         <div class="progress">
-                                            <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-gradient-info w-60" role="progressbar"
+                                                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </td>
@@ -221,7 +238,8 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div>
-                                            <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
+                                            <img src="../assets/img/small-logos/logo-atlassian.svg"
+                                                 class="avatar avatar-sm me-3" alt="atlassian">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">Add Progress Track</h6>
@@ -230,10 +248,12 @@
                                 </td>
                                 <td>
                                     <div class="avatar-group mt-2">
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
                                             <img src="../assets/img/team-2.jpg" alt="team5">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
                                             <img src="../assets/img/team-4.jpg" alt="team6">
                                         </a>
                                     </div>
@@ -249,7 +269,8 @@
                                             </div>
                                         </div>
                                         <div class="progress">
-                                            <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-gradient-info w-10" role="progressbar"
+                                                 aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </td>
@@ -258,7 +279,8 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div>
-                                            <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
+                                            <img src="../assets/img/small-logos/logo-slack.svg"
+                                                 class="avatar avatar-sm me-3" alt="team7">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
@@ -267,10 +289,12 @@
                                 </td>
                                 <td>
                                     <div class="avatar-group mt-2">
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
                                             <img src="../assets/img/team-3.jpg" alt="team8">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
                                             <img src="../assets/img/team-1.jpg" alt="team9">
                                         </a>
                                     </div>
@@ -286,7 +310,8 @@
                                             </div>
                                         </div>
                                         <div class="progress">
-                                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-gradient-success w-100" role="progressbar"
+                                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </td>
@@ -295,7 +320,8 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div>
-                                            <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
+                                            <img src="../assets/img/small-logos/logo-spotify.svg"
+                                                 class="avatar avatar-sm me-3" alt="spotify">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
@@ -304,16 +330,20 @@
                                 </td>
                                 <td>
                                     <div class="avatar-group mt-2">
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
                                             <img src="../assets/img/team-4.jpg" alt="user1">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
                                             <img src="../assets/img/team-3.jpg" alt="user2">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
                                             <img src="../assets/img/team-4.jpg" alt="user3">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
                                             <img src="../assets/img/team-1.jpg" alt="user4">
                                         </a>
                                     </div>
@@ -329,7 +359,8 @@
                                             </div>
                                         </div>
                                         <div class="progress">
-                                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-gradient-success w-100" role="progressbar"
+                                                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </td>
@@ -338,7 +369,8 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div>
-                                            <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
+                                            <img src="../assets/img/small-logos/logo-jira.svg"
+                                                 class="avatar avatar-sm me-3" alt="jira">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
@@ -347,7 +379,8 @@
                                 </td>
                                 <td>
                                     <div class="avatar-group mt-2">
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
                                             <img src="../assets/img/team-4.jpg" alt="user5">
                                         </a>
                                     </div>
@@ -363,7 +396,8 @@
                                             </div>
                                         </div>
                                         <div class="progress">
-                                            <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
+                                            <div class="progress-bar bg-gradient-info w-25" role="progressbar"
+                                                 aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
                                         </div>
                                     </div>
                                 </td>
@@ -372,7 +406,8 @@
                                 <td>
                                     <div class="d-flex px-2 py-1">
                                         <div>
-                                            <img src="../assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
+                                            <img src="../assets/img/small-logos/logo-invision.svg"
+                                                 class="avatar avatar-sm me-3" alt="invision">
                                         </div>
                                         <div class="d-flex flex-column justify-content-center">
                                             <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
@@ -381,10 +416,12 @@
                                 </td>
                                 <td>
                                     <div class="avatar-group mt-2">
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
                                             <img src="../assets/img/team-1.jpg" alt="user6">
                                         </a>
-                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle"
+                                           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
                                             <img src="../assets/img/team-4.jpg" alt="user7">
                                         </a>
                                     </div>
@@ -400,7 +437,8 @@
                                             </div>
                                         </div>
                                         <div class="progress">
-                                            <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
+                                            <div class="progress-bar bg-gradient-info w-40" role="progressbar"
+                                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
                                         </div>
                                     </div>
                                 </td>
@@ -454,7 +492,8 @@
                     <i class="material-icons text-warning text-gradient">credit_card</i>
                   </span>
                             <div class="timeline-content">
-                                <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
+                                <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order
+                                    #4395133</h6>
                                 <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
                             </div>
                         </div>
@@ -500,7 +539,7 @@
                     backgroundColor: "rgba(255, 255, 255, .8)",
                     data: [50, 20, 10, 22, 50, 10, 40],
                     maxBarThickness: 6
-                }, ],
+                },],
             },
             options: {
                 responsive: true,

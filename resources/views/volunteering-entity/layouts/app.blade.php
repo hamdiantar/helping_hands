@@ -1,15 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('vol_entity.layouts.head')
+    @include('volunteering-entity.layouts.head')
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
-@include('vol_entity.layouts.sidebar')
+@include('volunteering-entity.layouts.sidebar')
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
-    <nav style="box-shadow: 0px -2px 9px 2px #b7b2b27a !important;" class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+    <nav style="box-shadow: 0px -2px 9px 2px #b7b2b27a !important;"
+         class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+         data-scroll="true">
         <div class="container-fluid py-1 px-3">
             <nav aria-label="breadcrumb">
                 <ul>
@@ -25,7 +26,8 @@
                 </div>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
-                        <a style="cursor: pointer" onclick="confirmAction('#logoutForm', 'logout ?')" class="nav-link text-body font-weight-bold px-0">
+                        <a style="cursor: pointer" onclick="confirmAction('#logoutForm', 'logout ?')"
+                           class="nav-link text-body font-weight-bold px-0">
                             <i class="fa fa-sign-out me-sm-1"></i>
                             <span class="d-sm-inline d-none">Logout</span>
                         </a>
@@ -50,7 +52,9 @@
             <div class="container-fluid">
                 <div class="row align-items-center justify-content-lg-between">
                     <div class="col-lg-6 mb-lg-0 mb-4">
-                        <div class="copyright text-center text-sm text-muted text-lg-start">© <script>document.write(new Date().getFullYear())</script>,
+                        <div class="copyright text-center text-sm text-muted text-lg-start">©
+                            <script>document.write(new Date().getFullYear())</script>
+                            ,
                             made with <i class="fa fa-heart"></i> by
                             <a href="#" class="font-weight-bold" target="_blank">Helping Hands Team</a>
                             for a better web.
@@ -82,20 +86,22 @@
             <div class="mt-3 d-flex">
                 <h6 class="mb-0">Navbar Fixed</h6>
                 <div class="form-check form-switch ps-0 ms-auto my-auto">
-                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed"
+                           onclick="navbarFixed(this)">
                 </div>
             </div>
             <hr class="horizontal dark my-3">
             <div class="mt-2 d-flex">
                 <h6 class="mb-0">Light / Dark</h6>
                 <div class="form-check form-switch ps-0 ms-auto my-auto">
-                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+                    <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version"
+                           onclick="darkMode(this)">
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-@include('vol_entity.layouts.foot')
+@include('volunteering-entity.layouts.foot')
 </body>
 </html>

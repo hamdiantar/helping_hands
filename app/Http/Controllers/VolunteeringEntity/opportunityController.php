@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\VolunteeringEntity;
 
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class opportunityController extends Controller
 {
-    private $view = 'admin.opportunities.';
+    private $view = 'volunteering-entity.opportunities.';
 
     public function index()
     {
@@ -18,7 +18,9 @@ class UserController extends Controller
     {
         return view($this->view.'create');
     }
-
+    public function show()
+    {
+    }
     public function store()
     {
     }

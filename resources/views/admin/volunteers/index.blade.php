@@ -1,9 +1,9 @@
-@extends('vol_entity.layouts.app')
+@extends('admin.layouts.app')
 
-@section('title', 'opportunities')
+@section('title', 'Dashboard')
 
 @section('breadcrumb')
-    <li><a href="#">opportunities Management </a></li>
+    <li><a href="#">Volunteers Management </a></li>
 @endsection
 @section('content')
     <div class="container-fluid py-2">
@@ -13,9 +13,8 @@
 
                     <div class="card-header p-0 position-relative mt-n4 mx-3">
                         <div class="bg-gradient-warning shadow-warning border-radius-lg pt-3 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">opportunities Management</h6>
-                            {{--                            <a class="btn bg-gradient-dark mb-0" href="javascript:;"><i class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Card</a>--}}
-                            <a href="{{route('volunteering_entity.opportunities.create')}}" class="btn bg-gradient-dark btn-sm btn-add"><i
+                            <h6 class="text-white text-capitalize ps-3">Volunteers Management</h6>
+                            <a href="{{route('admin.volunteers.create')}}" class="btn bg-gradient-dark btn-sm btn-add"><i
                                     class="fa fa-plus fs-15"></i></a>
                         </div>
                     </div>
@@ -69,7 +68,7 @@
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye text-info"></i>
                                         </a>
-                                        <a href="{{route('volunteering_entity.opportunities.edit', 1)}}" class="text-secondary font-weight-bold text-xs  ml-2"
+                                        <a href="{{route('admin.volunteers.edit', 1)}}" class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-pen text-info"></i>
                                         </a>
@@ -107,7 +106,7 @@
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye text-info"></i>
                                         </a>
-                                        <a href="{{route('volunteering_entity.opportunities.edit', 1)}}" class="text-secondary font-weight-bold text-xs  ml-2"
+                                        <a href="{{route('admin.volunteers.edit', 1)}}" class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-pen text-info"></i>
                                         </a>
@@ -145,7 +144,7 @@
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye text-info"></i>
                                         </a>
-                                        <a href="{{route('volunteering_entity.opportunities.edit', 1)}}" class="text-secondary font-weight-bold text-xs  ml-2"
+                                        <a href="{{route('admin.volunteers.edit', 1)}}" class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-pen text-info"></i>
                                         </a>

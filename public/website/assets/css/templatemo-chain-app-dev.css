@@ -187,7 +187,7 @@ body {
 
 .section-heading h4 em {
   font-style: normal;
-  color: #4b8ef1;
+  color: #f5a466;
 }
 
 .section-heading img {
@@ -248,7 +248,7 @@ body {
   text-transform: capitalize;
   font-size: 15px;
   background: rgb(19,175,240);
-  background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+  background: linear-gradient(105deg, rgb(245 166 104) 0%, rgb(67 125 118) 100%);
   border-radius: 23px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
@@ -258,7 +258,7 @@ body {
 .gradient-button a:hover {
   color: #fff !important;
   background: rgb(19,175,240);
-  background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+  background: linear-gradient(105deg, rgb(69 136 125) 0%, rgb(241 137 91) 100%);
 }
 
 .border-button a {
@@ -414,7 +414,7 @@ header
   display: block;
   font-weight: 500;
   font-size: 15px;
-  color: #2a2a2a;
+  color: #f39560;
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -428,7 +428,8 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #4b8ef1!important;
+  color: #4a9783!important;
+  border-bottom: 3px solid #f39860
 }
 
 .header-area .main-nav .nav li:last-child a.active {
@@ -741,7 +742,7 @@ header
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: #4b8ef1!important;
+    color: #4a9783!important;
   }
   .header-area .main-nav .nav li.submenu ul {
     position: relative;
@@ -1099,7 +1100,7 @@ background-image: url(../images/service-icon-hover-04.png);
 }
 .service-item .Available_opportunities {
     font-size: 14px;
-    background: #44bfed;
+    background: #4a9787a1;
     padding: 6px;
     color: white;
     left: -16px;
@@ -1107,9 +1108,15 @@ background-image: url(../images/service-icon-hover-04.png);
     border-radius: 0px 0px 10px 10px;
     top: -28px;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
 
+}
 .service-item .not_available {
-    background-color: #dd6969 !important;
+    background-color: #f2a3a6 !important;
 }
 /*
 ---------------------------------------------
@@ -1590,13 +1597,15 @@ Free Quote
 Footer Style
 ---------------------------------------------
 */
-
+a {
+  color: #618474 !important;
+}
 footer {
     /* background-image: url(../images/footer-bg.png); */
     margin-top: 130px;
     padding-top: 39px;
     padding-bottom: 10px;
-    background: #6092f1;
+    background: #768972;
 }
 
 footer .section-heading {
@@ -1726,17 +1735,18 @@ PopUp
 
 .popupContainer {
   position: absolute;
-  width: 330px;
+  width: 49%;
   height: auto;
-  left: 45%;
+  left: 44% !important;
   top: 60px;
   background: #FFF;
 }
 
 .btn {
   padding: 10px 20px;
-  background: #4b8ef1;
+  background: #f5a667;
   color: #fff;
+  border: none;
   transition: all .3s;
 }
 
@@ -1746,8 +1756,8 @@ PopUp
 }
 
 .btn:hover {
-    background: #ffffff;
-    color: black;
+  border: 2px solid #46857c !important;
+  background-color: #f5a667 !important;
 }
 
 
@@ -1757,7 +1767,7 @@ PopUp
 }
 
 a.btn {
-  color: #fff;
+  color: #fff !important;
   text-align: center;
   text-decoration: none;
 }
@@ -1804,7 +1814,7 @@ a.btn_red {
   right: 0;
   top: 0;
   padding: 10px 15px;
-  background: #4b8ef1;
+  background: #daa06b;
   cursor: pointer;
   color: #fff;
   font-size: 16px;
@@ -2247,7 +2257,7 @@ responsive
 .card-header-custom {
     padding: 20px;
     color: white;
-    background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%) !important;
+    background: linear-gradient(105deg, rgb(213 159 107) 0%, rgb(73 150 134) 100%) !important;
 }
 .card-box-shadow {
   width: 70%;
@@ -2904,4 +2914,41 @@ blockquote {
 
 .mb-40 {
   margin-bottom: 40px !important;
+}
+.img-profile {
+  height: 150px;
+  width: 150px;
+  border-radius: 72px;
+  border-color: #f28f5e;
+}
+.nav-tabs {
+  background: linear-gradient(
+          105deg, rgb(213 159 107) 0%, rgb(73 150 134) 100%) !important;
+}
+.nav-tabs  button{
+  width: 33%;
+  color: white;
+  padding: 6px;
+}
+ .nav-tabs .nav-link.active {
+   color: #495057;
+   background-color: #f8f8f8;
+   border: 2px dashed #f4a165;
+ }
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  color: #495057;
+  background-color: #f8f8f8;
+  border: 2px dashed #f4a165;
+}
+.comp {
+  text-decoration: underline !important;
+  margin: auto;
+  text-align: center;
+  color: red !important;
+  position: absolute;
+  left: 35px;
+}
+.text-entity {
+  color: black !important;
+  font-size: 17px !important;
 }

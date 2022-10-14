@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\volunteering_entity;
+namespace App\Http\Controllers\VolunteeringEntity;
 
 use App\Http\Controllers\Controller;
 
-class opportunityController extends Controller
+class TaskController extends Controller
 {
-    private $view = 'vol_entity.opportunities.';
+    private $view = 'volunteering-entity.tasks.';
 
     public function index()
     {

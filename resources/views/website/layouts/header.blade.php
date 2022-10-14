@@ -1,11 +1,11 @@
-<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+<header id="myHeader" class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="{{url('/')}}" class="logo">
-                          <img src="{{asset('website/assets/images/logo.png')}}" alt="Chain App Dev">
+                          <img height="109px" src="{{asset('website/logo.png')}}" alt="Chain App Dev">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
@@ -14,7 +14,8 @@
                         <li class="scroll-to-section"><a href="{{route('vol_entity.list')}}">Volunteering</a></li>
                         <li class="scroll-to-section"><a href="{{route('vol_entity.pricing')}}">Pricing</a></li>
                         <li class="scroll-to-section"><a href="{{route('compliant')}}">Compliant</a></li>
-                        <li class="scroll-to-section"><a href="#newsletter">profile</a></li>
+                        <li class="scroll-to-section"><a href="{{route('verification')}}">verification</a></li>
+{{--                        <li class="scroll-to-section"><a href="#newsletter">profile</a></li>--}}
                         <li><div class="gradient-button"><a id="modal_trigger2" href="#modal2"><i class="fa fa-sign-in-alt"></i>Join Us</a></div></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i>Login</a></div></li>
                     </ul>

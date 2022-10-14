@@ -3,7 +3,7 @@
 @section('title', 'Join Us')
 @section('content')
     <div class="main-banner2">
-        <div class="container">
+        <div class="container" style="margin-top: 42px;">
             <div class="card card-box-shadow">
                 <div class="card-header card-header-custom bg-transparent text-center">
                     <h3>Compliant</h3>

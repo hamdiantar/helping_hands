@@ -15,15 +15,15 @@
     <div style="height: auto !important;" class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-white {{isCurrentPage('volunteering_entity/profile')}}" href="{{route('volunteering_entity.profile')}}">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/profile')}}" href="{{route('volunteering-entity.profile')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                      <span class="material-icons">home</span>
                     </div>
-                    <span class="nav-link-text ms-1">Welcome volunteering</span>
+                    <span class="nav-link-text ms-1">Welcome Ithra</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white {{isCurrentPage('volunteering_entity')}}" href="{{route('volunteering_entity.')}}">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity')}}" href="{{route('volunteering-entity.')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">dashboard</i>
                     </div>
@@ -32,11 +32,20 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white {{isCurrentPage('volunteering_entity/opportunities*')}}" href="{{route('volunteering_entity.opportunities.index')}}">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/opportunities*')}}" href="{{route('volunteering-entity.opportunities.index')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">notifications_active</i>
                     </div>
                     <span class="nav-link-text ms-1">opportunities</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/performance_report*')}}" href="{{route('volunteering-entity.performance_report')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">receipt_long</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Performance Report</span>
                 </a>
             </li>
 

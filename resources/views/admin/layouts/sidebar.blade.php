@@ -34,11 +34,47 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white {{isCurrentPage('admin/opportunities*')}}" href="{{route('admin.opportunities.index')}}">
+                <a class="nav-link text-white {{isCurrentPage('admin/volunteers*')}}" href="{{route('admin.volunteers.index')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">person</i>
                     </div>
                     <span class="nav-link-text ms-1">Volunteers</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('admin/volunteering-entity*')}}" href="{{route('admin.volunteering-entity.index')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">home</i>
+                    </div>
+                    <span class="nav-link-text ms-1">volunteering Entity</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('admin/compliant*')}}" href="{{route('admin.compliant.index')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">warning</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Compliant <span class="badge bg-danger">8</span></span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('admin/growth_report*')}}" href="{{route('admin.growth_report')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">receipt_long</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Growth Report</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('admin/trend_report*')}}" href="{{route('admin.trend_report')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">receipt_long</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Trend Report</span>
                 </a>
             </li>
 

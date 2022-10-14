@@ -27,6 +27,23 @@
            }
        })
    }
+    function replay(formId, type) {
+        event.preventDefault();
+        Swal.fire({
+            title: 'Reply To This Compliant',
+            input: 'textarea',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'replay',
+            showLoaderOnConfirm: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                alert('replied successfully')
+            }
+        })
+    }
 </script>
 <x:notify-messages />
 @notifyJs
