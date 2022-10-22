@@ -111,10 +111,10 @@
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye fa-2x "></i>
                                         </a>
-                                        <a href="javascript:;" class="text-success font-weight-bold text-xs ml-2"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-check-circle text-success fa-2x"></i>
-                                        </a>
+{{--                                        <a href="javascript:;" class="text-success font-weight-bold text-xs ml-2"--}}
+{{--                                           data-toggle="tooltip" data-original-title="Edit user">--}}
+{{--                                            <i class="fa fa-check-circle text-success fa-2x"></i>--}}
+{{--                                        </a>--}}
                                         <a href="javascript:;" class="text-danger font-weight-bold text-xs   ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-times-circle text-danger fa-2x"></i>

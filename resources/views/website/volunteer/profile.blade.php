@@ -9,9 +9,9 @@
                   <div style="border-right: 1px solid #dfdfdf;" class="col-md-4">
                       <div  class=" image d-flex flex-column justify-content-center align-items-center">
                           <a><img class="img-thumbnail img-profile" src="{{asset('website/logo.png')}}" height="100" width="100"/></a>
-                          <span class="name mt-3">Dalal Mohammed</span> <span class="idd">@dalal</span>
+                          <span class="name mt-3">{{$volunteer->full_name}}</span> <span class="idd">@ {{$volunteer->VOL_USERNAME}}</span>
                           <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                              <span class="idd1">45 Target Hours</span><span>
+                              <span class="idd1">{{$volunteer->VOL_TARGET_HOUR}} Target Hours</span><span>
                                   <i class="fa fa-clock"></i></span>
                           </div>
                           <div class=" d-flex mt-2">
@@ -32,73 +32,76 @@
                       </nav>
                       <div class="tab-content" id="nav-tabContent">
                           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                              <form class="row p-3">
+                              <form class="row p-3" method="post" action="{{route('volunteer.update')}}" id="form">
+                                  @csrf
+                                  @method('PUT')
+                                  <input type="hidden" name="id" value="{{\Illuminate\Support\Facades\Auth::id()}}">
                                   <div class="row">
                                       <div class="col-md-6 mb-3">
                                           <label for="UserName" class="form-label">UserName :</label>
-                                          <input type="text" class="form-control" id="UserName">
+                                          <input type="text" class="form-control" id="UserName" name="VOL_USERNAME" value="{{$volunteer->VOL_USERNAME}}">
                                       </div>
                                       <div class="col-md-6 mb-3">
                                           <label for="Password" class="form-label">Password</label>
-                                          <input type="password" class="form-control" id="Password">
+                                          <input type="password" autocomplete="new-password" name="password"  class="form-control" id="Password">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="First" class="form-label">First Name :</label>
-                                          <input type="text" class="form-control" id="First">
+                                          <input type="text" class="form-control" id="First" name="VOL_FNAME"  value="{{$volunteer->VOL_FNAME}}">
                                       </div>
                                       <div class="col-md-6 mb-3">
                                           <label for="Last" class="form-label">Last Name : </label>
-                                          <input type="text" class="form-control" id="Last">
+                                          <input type="text" class="form-control" id="Last" name="VOL_LNAME"  value="{{$volunteer->VOL_LNAME}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="Mail" class="form-label">E-Mail : </label>
-                                          <input type="email" class="form-control" id="Mail">
+                                          <input type="email" class="form-control" id="Mail" name="VOL_EMAIL"  value="{{$volunteer->VOL_EMAIL}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="Phone" class="form-label">Phone : </label>
-                                          <input type="tel" class="form-control" id="Phone">
+                                          <input type="tel" class="form-control" id="Phone" name="VOL_PHONE"  value="{{$volunteer->VOL_PHONE}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="National" class="form-label">National Id : </label>
-                                          <input type="number" class="form-control" id="National">
+                                          <input type="number" class="form-control" id="National" name="VOL_NATIONAL_ID"  value="{{$volunteer->VOL_NATIONAL_ID}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="inputState" class="form-label">Gender</label>
-                                          <select id="inputState" class="form-select">
+                                          <select id="inputState" class="form-select" name="VOL_GENDER">
                                               <option value="">Select</option>
-                                              <option value="">Male</option>
-                                              <option value="">Female</option>
+                                              <option value="male" {{$volunteer->VOL_GENDER == 'male' ? 'selected' : ''}}>Male</option>
+                                              <option value="female" {{$volunteer->VOL_GENDER == 'female' ? 'selected' : ''}}>Female</option>
                                           </select>
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="School" class="form-label">School Name : </label>
-                                          <input type="text" class="form-control" id="School">
+                                          <input type="text" class="form-control" id="School" name="VOL_SCHOOL_NAME"  value="{{$volunteer->VOL_SCHOOL_NAME}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="Target" class="form-label">Target Hours : </label>
-                                          <input type="number" class="form-control" id="Target">
+                                          <input type="number" class="form-control" id="Target" name="VOL_TARGET_HOUR"  value="{{$volunteer->VOL_TARGET_HOUR}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="Completed" class="form-label">Completed Hours : </label>
-                                          <input type="number" class="form-control" id="Completed">
+                                          <input type="number" class="form-control" id="Completed" name="VOL_COMPLETED_HOUR"  value="{{$volunteer->VOL_COMPLETED_HOUR}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="Grade" class="form-label">Grade Level : </label>
-                                          <input type="text" class="form-control" id="Grade">
+                                          <input type="text" class="form-control" id="Grade" name="VOL_GRADE_LEVEL"  value="{{$volunteer->VOL_GRADE_LEVEL}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3">
                                           <label for="City" class="form-label">City : </label>
-                                          <input type="text" class="form-control" id="City">
+                                          <input type="text" class="form-control" id="City" name="VOL_CITY"  value="{{$volunteer->VOL_CITY}}">
                                       </div>
 
                                       <div class="col-md-6 mb-3 mt-4">
@@ -110,8 +113,7 @@
                           </div>
                           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <h5 class="text-center mb-3 mt-3">My Attendance</h5>
-                              <button style="    float: right;
-    margin: 10px;" class="btn">print <i class="fa fa-print"></i></button>
+                              <button style="float: right;  margin: 10px;" class="btn">print <i class="fa fa-print"></i></button>
                               <table class="table table-bordered table-">
                                   <tbody>
                                   <tr>
@@ -150,3 +152,6 @@
         </div>
     </div>
 @endsection
+{{--@push('js')--}}
+{{--    {!! JsValidator::formRequest('App\Http\Requests\Website\VolunteerRegisterRequest', "#form") !!}--}}
+{{--@endpush--}}

@@ -6,6 +6,9 @@
 <script src="{{asset('website/assets/js/imagesloaded.js')}}"></script>
 <script src="{{asset('website/assets/js/popup.js')}}"></script>
 <script src="{{asset('website/assets/js/custom.js')}}"></script>
+<script src="{{asset('vendor/jsvalidation/js/jsvalidation.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     window.onscroll = function() {myFunction()};
 
@@ -19,5 +22,21 @@
             header.classList.remove("sticky");
         }
     }
+    function confirmAction(formId, type) {
+        event.preventDefault();
+        Swal.fire({
+            // text: "You won't be able to revert this!",
+
+            text: 'Are you sure want to '+ type,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'OK',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById(formId).submit();
+            }
+        })
+    }
+    $('.select2').select2();
 </script>
 @stack('js')

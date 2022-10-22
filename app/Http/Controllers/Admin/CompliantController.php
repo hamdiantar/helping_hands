@@ -10,7 +10,7 @@ class CompliantController extends Controller
 
     public function index()
     {
-//        notify()->smiley('success', 'Item has been created successfully');
+        notify()->smiley('success', 'Item has been created successfully');
         return view($this->view . 'index');
     }
 }

@@ -243,7 +243,7 @@ body {
 
 .gradient-button a {
   display: inline-block !important;
-  padding: 10px 20px !important;
+  padding: 0px 20px !important;
   color: #fff !important;
   text-transform: capitalize;
   font-size: 15px;
@@ -1735,9 +1735,9 @@ PopUp
 
 .popupContainer {
   position: absolute;
-  width: 49%;
+  width: 39%;
   height: auto;
-  left: 44% !important;
+  left: 50% !important;
   top: 60px;
   background: #FFF;
 }
@@ -1901,7 +1901,7 @@ a.btn_red {
 .user_login input[type="email"],
 .user_login input[type="password"] {
   display: block;
-  width: 90%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #DDD;
   color: #666;
@@ -2951,4 +2951,12 @@ blockquote {
 .text-entity {
   color: black !important;
   font-size: 17px !important;
+}
+.alert-success {
+  color: #ffffff !important;
+  background: linear-gradient(
+          105deg, rgb(85 209 173) 0%, rgb(241 137 91) 100%) !important;
+  border-color: #568174 !important;
+  text-align: center !important;
+  font-size: 18px !important;
 }

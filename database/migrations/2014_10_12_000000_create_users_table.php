@@ -13,14 +13,21 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('opportunities', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+        Schema::create('VOLUNTEER', function (Blueprint $table) {
+            $table->id('VOL_ID');
+            $table->string('VOL_USERNAME');
             $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->string('VOL_FNAME');
+            $table->string('VOL_LNAME');
+            $table->string('VOL_EMAIL')->unique();
+            $table->string('VOL_PHONE');
+            $table->string('VOL_NATIONAL_ID');
+            $table->string('VOL_SCHOOL_NAME');
+            $table->string('VOL_GRADE_LEVEL');
+            $table->string('VOL_CITY');
+            $table->integer('VOL_TARGET_HOUR')->default(0);
+            $table->integer('VOL_COMPLETED_HOUR')->default(0);
+            $table->enum('VOL_GENDER', ['male', 'female']);
         });
     }
 

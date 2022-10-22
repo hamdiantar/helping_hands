@@ -13,4 +13,5 @@
 <link rel="stylesheet" href="{{asset('website/assets/css/templatemo-chain-app-dev.css')}}">
 <link rel="stylesheet" href="{{asset('website/assets/css/animated.css')}}">
 <link rel="stylesheet" href="{{asset('website/assets/css/owl.css')}}">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @stack('css')

@@ -27,9 +27,12 @@
                                 <label>Date To :</label>
                                 <input type="date" class="form-control">
                             </div>
-                            <div class="col-md-6 offset-4">
-                                <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-50 mt-4 mb-0">
+                            <div class="col-md-12 text-center">
+                                <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0">
                                     Generate Report <i class="fa fa-file"></i>
+                                </button>
+                                <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0 mr-2">
+                                    print <i class="fa fa-print"></i>
                                 </button>
                             </div>
                         </div>

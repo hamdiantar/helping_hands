@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\CompliantController;
-use App\Http\Controllers\Admin\VolunteerController;
+use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\Admin\VolunteerController as VolunteerControllerAdmin;
 use App\Http\Controllers\Admin\VolunteeringEntityController;
 use App\Http\Controllers\VolunteeringEntity\CharacteristicController;
 use App\Http\Controllers\VolunteeringEntity\opportunityController;
@@ -17,23 +18,30 @@ Route::view('/vol_entity/pricing', 'website.vol_entity.pricing')->name('vol_enti
 Route::view('/vol_entity/show', 'website.vol_entity.show')->name('vol_entity.show');
 Route::view('/compliant', 'website.compliant')->name('compliant');
 Route::view('/verification', 'website.verification')->name('verification');
-Route::view('/profile', 'website.profile')->name('profile');
-Route::view('/generate', 'website.generate')->name('generate');
-//routes for vol
-Route::view('/vol/register', 'website.vol.register')->name('vol.register');
 
+Route::view('/generate', 'website.generate')->name('generate');
+//routes for volunteer
+Route::get('/volunteer/register', [VolunteerController::class, 'showRegisterForm'])->name('volunteer.showRegisterForm');
+Route::post('/volunteer/register', [VolunteerController::class, 'register'])->name('volunteer.register');
+Route::post('/volunteer/login', [VolunteerController::class, 'login'])->name('volunteer.login');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/volunteer/sign-out', [VolunteerController::class, 'signOut'])->name('volunteer.signOut');
+    Route::get('/volunteer/profile', [VolunteerController::class, 'profile'])->name('volunteer.profile');
+    Route::put('/volunteer/profile', [VolunteerController::class, 'update'])->name('volunteer.update');
+});
 //routes for admin
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::view('/', 'admin.home');
     Route::view('/profile', 'admin.profile')->name('profile');
     Route::view('login', 'admin.auth.login')->name('login');
-    Route::resource('volunteers', VolunteerController::class);
+    Route::resource('volunteers', VolunteerControllerAdmin::class);
     Route::resource('volunteering-entity', VolunteeringEntityController::class);
     Route::resource('compliant', CompliantController::class);
     Route::view('/growth_report', 'admin.test')->name('growth_report');
     Route::view('/trend_report', 'admin.test2')->name('trend_report');
 });
-//routes for admin
+//routes for volunteering entity
 Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(function () {
     Route::view('/', 'volunteering-entity.home');
     Route::view('/profile', 'volunteering-entity.profile')->name('profile');
@@ -44,4 +52,4 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
     Route::view('attendance_report', 'volunteering-entity.opportunities.attendance_report')->name('attendance_report');
     Route::view('performance_report', 'volunteering-entity.performance_report')->name('performance_report');
 });
-Auth::routes();
+//Auth::routes();

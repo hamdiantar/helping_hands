@@ -1,3 +1,4 @@
+@include('website.messages')
 <header id="myHeader" class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
         <div class="row">
@@ -10,14 +11,21 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="{{url('/')}}" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="{{route('vol_entity.list')}}">Volunteering</a></li>
-                        <li class="scroll-to-section"><a href="{{route('vol_entity.pricing')}}">Pricing</a></li>
-                        <li class="scroll-to-section"><a href="{{route('compliant')}}">Compliant</a></li>
-                        <li class="scroll-to-section"><a href="{{route('verification')}}">verification</a></li>
-{{--                        <li class="scroll-to-section"><a href="#newsletter">profile</a></li>--}}
-                        <li><div class="gradient-button"><a id="modal_trigger2" href="#modal2"><i class="fa fa-sign-in-alt"></i>Join Us</a></div></li>
-                        <li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i>Login</a></div></li>
+                        <li class="scroll-to-section"><a href="{{url('/')}}" class="{{isCurrentPage('/')}}">Home</a></li>
+                        <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/list*')}}" href="{{route('vol_entity.list')}}">Volunteering</a></li>
+                        <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/pricing*')}}" href="{{route('vol_entity.pricing')}}">Pricing</a></li>
+                        <li class="scroll-to-section"><a class="{{isCurrentPage('verification*')}}" href="{{route('verification')}}">verification</a></li>
+{{--                        <li class="scroll-to-section"><a href="{{route('compliant')}}">Compliant</a></li>--}}
+                        @auth
+                        <li><div class="gradient-button"><a href="{{route('volunteer.profile')}}">Welcome {{auth()->user()->VOL_FNAME}}   <i class="fa fa-user"></i></a>
+                            </div></li>
+                            <li><div class="gradient-button"><a onclick="confirmAction('logoutForm', 'logout')" href="#">logout  <i class="fa fa-sign-out-alt"></i></a></div></li>
+                            <form method="post" action="{{route('volunteer.signOut')}}" id="logoutForm">@csrf</form>
+                        @endauth
+                        @guest
+                        <li><div class="gradient-button"><a id="modal_trigger2" href="#modal2">Join Us  <i class="fa fa-sign-in-alt"></i></a></div></li>
+                        <li><div class="gradient-button"><a id="modal_trigger" href="#modal">Login  <i class="fa fa-sign-in-alt"></i></a></div></li>
+                        @endguest
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -38,19 +46,21 @@
     <section class="popupBody">
 
         <div class="user_login">
-            <form>
+            <form method="post" action="{{route('volunteer.login')}}" id="loginForm">
+                @csrf
                 <label>Email / Username</label>
-                <input type="text" class="form-control"/>
+                <input name="VOL_EMAIL" type="text" class="form-control"/>
                 <br />
                 <label>Password</label>
-                <input type="password" />
+                <input name="password" type="password" />
                 <br />
                 <div class="checkbox">
                     <input id="remember" type="checkbox" />
                     <label for="remember">Remember me on this computer</label>
                 </div>
                 <div class="action_btns">
-                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
+                    <div class="one_half last">
+                        <button type="submit" form="loginForm"  class="btn">Login</button></div>
                 </div>
             </form>
         </div>
@@ -67,7 +77,7 @@
         <!-- Social Login -->
         <div class="social_login">
             <div class="action_btns">
-                <div class="one_half"><a href="{{route('vol.register')}}"  class="btn">Volunteer <i class="fa fa-user-plus"></i></a></div>
+                <div class="one_half"><a href="{{route('volunteer.register')}}"  class="btn">Volunteer <i class="fa fa-user-plus"></i></a></div>
                 <div class="one_half last"><a href="{{route('vol_entity.register')}}" class="btn">Volunteering Entity <i class="fa fa-home"></i></a></div>
             </div>
         </div>
