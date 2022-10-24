@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class VolunteerController extends Controller
 {
@@ -10,30 +11,13 @@ class VolunteerController extends Controller
 
     public function index()
     {
-//        notify()->smiley('success', 'Item has been created successfully');
-        return view($this->view.'index');
+        $items = User::all();
+        return view($this->view.'index', compact('items'));
     }
 
-    public function create()
+    public function show(int $userId)
     {
-        return view($this->view.'create');
-    }
-
-    public function store()
-    {
-    }
-
-    public function edit()
-    {
-//        dd('ddddd');
-        return view($this->view.'edit');
-    }
-
-    public function update()
-    {
-    }
-
-    public function destroy()
-    {
+        $item = User::findOrFail($userId);
+        return view($this->view.'show', compact('item'));
     }
 }

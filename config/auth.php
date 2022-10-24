@@ -38,7 +38,19 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'opportunities',
+            'provider' => 'users',
+        ],
+        'volunteer' => [
+            'driver' => 'session',
+            'provider' => 'volunteers',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'volEntity' => [
+            'driver' => 'session',
+            'provider' => 'volEntities',
         ],
     ],
 
@@ -60,15 +72,22 @@ return [
     */
 
     'providers' => [
-        'opportunities' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
-        // 'opportunities' => [
-        //     'driver' => 'database',
-        //     'table' => 'opportunities',
-        // ],
+        'volunteers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+         'admins' => [
+             'driver' => 'eloquent',
+             'model' => App\Models\Admin::class,
+         ],
+        'volEntities' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\VolEntity::class,
+        ],
     ],
 
     /*
@@ -87,8 +106,14 @@ return [
     */
 
     'passwords' => [
-        'opportunities' => [
-            'provider' => 'opportunities',
+        'volunteer' => [
+            'provider' => 'volunteer',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'admin' => [
+            'provider' => 'admin',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

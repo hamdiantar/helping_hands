@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Session;
+use Illuminate\Support\Facades\Session;
 use Exception;
 use App\Models\User;
 use App\Traits\LoggerError;
@@ -19,7 +19,7 @@ class VolunteerController extends Controller
 
     public function profile()
     {
-        $volunteer = Auth::user();
+        $volunteer = getAuthVolunteer();
         return view($this->view . 'profile', compact('volunteer'));
     }
     public function showRegisterForm()
@@ -46,7 +46,7 @@ class VolunteerController extends Controller
             'password' => 'required',
         ]);
         $credentials = $request->only('VOL_EMAIL', 'password');
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('volunteer')->attempt($credentials)) {
             return redirect()->intended();
         }
         return back()->with( 'errorLogin','Login details are not valid');
@@ -55,7 +55,7 @@ class VolunteerController extends Controller
     public function update(VolunteerRegisterRequest $request): RedirectResponse
     {
         try {
-            $user = Auth::user();
+            $user = getAuthVolunteer();
             $user->update($request->all());
             return back()->with('success', 'you have update your profile successfully');
 
@@ -75,7 +75,7 @@ class VolunteerController extends Controller
 
     public function signOut() {
         Session::flush();
-        Auth::logout();
+        Auth::guard('volunteer')->logout();
         return Redirect('/');
     }
 }

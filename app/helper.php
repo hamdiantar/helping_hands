@@ -5,12 +5,14 @@
  * @author Abdullah Alnahhal <abdullahalnahhal@gmail.com>
  */
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * [user fetches the current authenticated user]
@@ -439,4 +441,19 @@ function hasPermission(string $permission): bool
 function isCurrentPage(string $url): string
 {
     return Request()->is($url) ? 'active bg-gradient-warning' : '';
+}
+
+function getAuthVolunteer(): ?Authenticatable
+{
+    return Auth::guard('volunteer')->user();
+}
+
+function getAuthAdmin(): ?Authenticatable
+{
+    return Auth::guard('admin')->user();
+}
+
+function getAuthVolEntity(): ?Authenticatable
+{
+    return Auth::guard('volEntity')->user();
 }
