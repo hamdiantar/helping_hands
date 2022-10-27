@@ -62,7 +62,7 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
     Route::middleware(['auth:volEntity'])->group(function () {
         Route::get('/', [VolEntityController::class, 'dashboard']);
         Route::view('/profile', 'volunteering-entity.profile')->name('profile');
-
+        Route::post('/sign-out', [VolEntityController::class, 'signOut'])->name('signOut');
         Route::resource('opportunities', opportunityController::class);
         Route::resource('tasks', TaskController::class);
         Route::resource('characteristic', CharacteristicController::class);

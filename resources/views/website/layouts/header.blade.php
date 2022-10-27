@@ -39,6 +39,23 @@
 
 <div id="modal" class="popupContainer" style="display:none;">
     <div class="popupHeader">
+        <span class="header_title">Login As : </span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <div class="action_btns">
+                <div class="one_half"><a id="modal_trigger3" href="#modal3"  class="btn">Volunteer <i class="fa fa-sign-in-alt"></i></a></div>
+                <div class="one_half last"><a href="{{route('volunteering-entity.showLoginForm')}}" class="btn">Volunteering Entity <i class="fa fa-sign-in-alt"></i></a></div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<div id="modal3" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
         <span class="header_title">Login</span>
         <span class="modal_close"><i class="fa fa-times"></i></span>
     </div>
