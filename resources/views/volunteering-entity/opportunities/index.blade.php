@@ -25,46 +25,31 @@
                             <table class="table  table-bordered mb-0 text-center" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Title
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Start date | Start time
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Finish date | End time
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Report
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        characteristic
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Tasks
-                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Title</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Start date | Start time</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Finish date | End time</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Report</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">characteristic</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tasks</th>
                                     <th class="text-center text-secondary opacity-7">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($items as $item)
                                 <tr>
-                                    <td>School Visits Operation</td>
-                                    <td>10/10/2022 | 4 PM</td>
-                                    <td>12/10/2011 | 7 PM</td>
+                                    <td>{{$item->OPP_ID}}</td>
+                                    <td>{{$item->OPP_NAME}}</td>
+                                    <td>{{$item->OPP_START_DATE}} | {{$item->OPP_START_TIME}}</td>
+                                    <td>{{$item->OPP_FINISH_DATE}} | {{$item->OPP_END_TIME}}</td>
                                     <td><a href="{{route('volunteering-entity.attendance_report')}}" class="text-secondary font-weight-bold text-xs"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-file text-info fa-2x"></i>
-                                        </a></td>
+                                           data-toggle="tooltip" data-original-title="Edit user"><i class="fa fa-file text-info fa-2x"></i></a></td>
                                     <td>
-                                        <a href="{{route('volunteering-entity.characteristic.index')}}" class="text-secondary font-weight-bold text-xs"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-tablet text-info fa-2x"></i>
+                                        <a href="{{route('volunteering-entity.opportunities.characteristic.index',$item->OPP_ID )}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user"><i class="fa fa-tablet text-info fa-2x"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="{{route('volunteering-entity.tasks.index')}}" class="text-secondary font-weight-bold text-xs"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-table text-info fa-2x"></i>
+                                        <a href="{{route('volunteering-entity.opportunities.tasks.index', $item->OPP_ID)}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user"><i class="fa fa-table text-info fa-2x"></i>
                                         </a>
                                     </td>
                                     <td class="align-middle">
@@ -73,18 +58,23 @@
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye text-info"></i>
                                         </a>
-                                        <a href="{{route('volunteering-entity.opportunities.edit', 1)}}"
+                                        <a href="{{route('volunteering-entity.opportunities.edit', $item->OPP_ID)}}"
                                            class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-pen text-info"></i>
                                         </a>
-                                        <a style="cursor: pointer" onclick="confirmAction('#formid', 'delete ?')"
+                                        <a style="cursor: pointer" onclick="confirmAction('formid{{$item->OPP_ID}}', 'delete ?')"
                                            class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-trash text-danger"></i>
                                         </a>
+                                        <form id="formid{{$item->OPP_ID}}" method="post" action="{{route('volunteering-entity.opportunities.destroy', $item->OPP_ID)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
                                     </td>
                                 </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

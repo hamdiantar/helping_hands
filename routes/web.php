@@ -47,6 +47,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::view('/profile', 'admin.profile')->name('profile');
         Route::resource('volunteers', VolunteerControllerAdmin::class);
         Route::resource('volunteering-entity', VolunteeringEntityController::class);
+        Route::get('volunteering-entity/{id}/update-status/{status}', [VolunteeringEntityController::class, 'UpdateStatus'])->name('ve.UpdateStatus');
         Route::resource('compliant', CompliantController::class);
         Route::view('/growth_report', 'admin.test')->name('growth_report');
         Route::view('/trend_report', 'admin.test2')->name('trend_report');
@@ -64,8 +65,8 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
         Route::view('/profile', 'volunteering-entity.profile')->name('profile');
         Route::post('/sign-out', [VolEntityController::class, 'signOut'])->name('signOut');
         Route::resource('opportunities', opportunityController::class);
-        Route::resource('tasks', TaskController::class);
-        Route::resource('characteristic', CharacteristicController::class);
+        Route::resource('opportunities.tasks', TaskController::class);
+        Route::resource('opportunities.characteristic', CharacteristicController::class);
         Route::view('attendance_report', 'volunteering-entity.opportunities.attendance_report')->name('attendance_report');
         Route::view('performance_report', 'volunteering-entity.performance_report')->name('performance_report');
     });

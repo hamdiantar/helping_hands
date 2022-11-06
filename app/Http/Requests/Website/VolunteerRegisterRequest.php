@@ -8,11 +8,11 @@ class VolunteerRegisterRequest extends FormRequest
 {
     public function rules(): array
     {
-        $mailValidation = 'required|max:200|unique:VOLUNTEER,VOL_EMAIL';
+        $mailValidation = 'required|max:200|email|unique:VOLUNTEER,VOL_EMAIL';
         $passwordValidation = 'required|min:6|confirmed';
         $passwordConfirmationValidation = 'required|min:6';
         if ($this->id) {
-           $mailValidation = 'required|max:200|unique:VOLUNTEER,VOL_EMAIL,'. $this->id.',VOL_ID';
+           $mailValidation = 'required|max:200|email|unique:VOLUNTEER,VOL_EMAIL,'. $this->id.',VOL_ID';
             $passwordValidation = 'nullable|min:6';
             $passwordConfirmationValidation = 'nullable';
         }

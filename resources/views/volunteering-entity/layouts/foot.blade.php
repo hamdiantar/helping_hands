@@ -8,6 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
 <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{{asset('vendor/jsvalidation/js/jsvalidation.min.js')}}"></script>
 <script>
     $(document).ready( function () {
         $('#dataTable').DataTable();

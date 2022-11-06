@@ -19,11 +19,11 @@
                         </div>
                     </div>
                     <div class="card-body ml-3 mr-3">
-                        <form method="post" action="{{route('volunteering-entity.opportunities.store')}}">
+                        <form method="post" action="{{route('volunteering-entity.opportunities.store')}}" id="form">
                             @csrf
                             @include('volunteering-entity.opportunities.form')
                             <div class="row col-md-2 offset-md-5 text-center">
-                                <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-100 mt-4 mb-0">
+                                <button type="submit" class="btn btn-md bg-gradient-warning btn-lg w-100 mt-4 mb-0">
                                     Save <i class="fa fa-file"></i>
                                 </button>
                             </div>
@@ -34,3 +34,6 @@
         </div>
     </div>
 @endsection
+@push('js')
+    {!! JsValidator::formRequest('App\Http\Requests\VolEntity\OppRequest', "#form") !!}
+@endpush
