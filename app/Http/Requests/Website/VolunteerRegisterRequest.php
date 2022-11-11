@@ -30,7 +30,7 @@ class VolunteerRegisterRequest extends FormRequest
             'VOL_GRADE_LEVEL' =>  'required',
             'VOL_CITY' =>  'required',
             'VOL_TARGET_HOUR' =>  'required|min:0',
-            'VOL_COMPLETED_HOUR' =>  'required|min:0',
+//            'VOL_COMPLETED_HOUR' =>  'required|min:0',
             'VOL_GENDER' =>  'required|in:male,female',
         ];
     }

@@ -71,13 +71,13 @@
                             </div>
 
                             <div class="col-md-6 mb-3">
-                                <label for="Completed" class="form-label">Completed Hours : </label>
-                                <input type="number" value="{{old('VOL_COMPLETED_HOUR') ?? 0}}" class="form-control" id="Completed" name="VOL_COMPLETED_HOUR">
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label for="Grade" class="form-label">Grade Level : </label>
-                                <input type="text" value="{{old('VOL_GRADE_LEVEL')}}" class="form-control" id="Grade" name="VOL_GRADE_LEVEL">
+                                <label for="VOL_GRADE_LEVEL" class="form-label">Grade Level : </label>
+                                <select id="VOL_GRADE_LEVEL"  class="form-select select2" name="VOL_GRADE_LEVEL">
+                                    <option value="">Select</option>
+                                    <option value="first" {{old('VOL_GRADE_LEVEL') == 'first' ? 'selected' : ''}}>first</option>
+                                    <option value="second" {{old('VOL_GRADE_LEVEL') == 'second' ? 'selected' : ''}}>second</option>
+                                    <option value="third" {{old('VOL_GRADE_LEVEL') == 'third' ? 'selected' : ''}}>third</option>
+                                </select>
                             </div>
 
                             <div class="col-md-6 mb-3">
@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="col-md-6 mb-3 mt-4">
-                                <button form="form" type="submit" class="btn btn-primary">Sign in</button>
+                                <button form="form" type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
 
                         </div>

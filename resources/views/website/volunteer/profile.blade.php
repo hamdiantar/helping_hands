@@ -11,11 +11,10 @@
                           <a><img class="img-thumbnail img-profile" src="{{asset('website/logo.png')}}" height="100" width="100"/></a>
                           <span class="name mt-3">{{$volunteer->full_name}}</span> <span class="idd">@ {{$volunteer->VOL_USERNAME}}</span>
                           <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                              <span class="idd1">{{$volunteer->VOL_TARGET_HOUR}} Target Hours</span><span>
-                                  <i class="fa fa-clock"></i></span>
+                              <span class="idd1">{{$volunteer->VOL_TARGET_HOUR}} Target Hours</span><span><i class="fa fa-clock"></i></span>
                           </div>
                           <div class=" d-flex mt-2">
-                              <button class="btn1 btn">Edit Profile <i class="fa fa-edit"></i></button>
+                              <span>Level : {{$volunteer->VOL_GRADE_LEVEL}}</span>
                           </div>
                           <div class=" px-2 rounded mt-4 date ">
                               <span class="join">Joined May,2021</span>
@@ -95,8 +94,13 @@
                                       </div>
 
                                       <div class="col-md-6 mb-3">
-                                          <label for="Grade" class="form-label">Grade Level : </label>
-                                          <input type="text" class="form-control" id="Grade" name="VOL_GRADE_LEVEL"  value="{{$volunteer->VOL_GRADE_LEVEL}}">
+                                          <label for="VOL_GRADE_LEVEL" class="form-label">Grade Level : </label>
+                                          <select id="VOL_GRADE_LEVEL"  class="form-select select2" name="VOL_GRADE_LEVEL">
+                                              <option value="">Select</option>
+                                              <option value="first" {{ $volunteer->VOL_GRADE_LEVEL == 'first' ? 'selected' : ''}}>first</option>
+                                              <option value="second" {{$volunteer->VOL_GRADE_LEVEL == 'second' ? 'selected' : ''}}>second</option>
+                                              <option value="third" {{$volunteer->VOL_GRADE_LEVEL == 'third' ? 'selected' : ''}}>third</option>
+                                          </select>
                                       </div>
 
                                       <div class="col-md-6 mb-3">
