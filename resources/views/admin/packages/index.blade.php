@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 
-@section('title', 'subscription')
+@section('title', 'packages')
 
 @section('breadcrumb')
-    <li><a href="#">subscription Management </a></li>
+    <li><a href="#">packages Management </a></li>
 @endsection
 @section('content')
     <div class="container-fluid py-2">
@@ -13,8 +13,8 @@
 
                     <div class="card-header p-0 position-relative mt-n4 mx-3">
                         <div class="bg-gradient-warning shadow-warning border-radius-lg pt-3 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">subscription Management</h6>
-                            <a href="{{route('admin.subscription.create')}}"
+                            <h6 class="text-white text-capitalize ps-3">packages Management</h6>
+                            <a href="{{route('admin.packages.create')}}"
                                class="btn bg-gradient-dark btn-sm btn-add"><i
                                         class="fa fa-plus fs-15"></i></a>
                         </div>
@@ -36,23 +36,23 @@
                                 <tbody>
                                 @foreach($items as $item)
                                 <tr>
-                                    <td>{{$item->SUB_ID}}</td>
-                                    <td>{{$item->SUB_PRICE}}</td>
-                                    <td>{{$item->SUB_DURATION}}</td>
-                                    <td>{{$item->SUB_START_DATE}}</td>
-                                    <td>{{$item->SUB_FINISH_DATE}}</td>
+                                    <td>{{$item->PACKAGE_ID}}</td>
+                                    <td>{{$item->PACKAGE_PRICE}}</td>
+                                    <td>{{$item->PACKAGE_DURATION}}</td>
+                                    <td>{{$item->PACKAGE_START_DATE}}</td>
+                                    <td>{{$item->PACKAGE_FINISH_DATE}}</td>
                                     <td class="align-middle">
-                                        <a href="{{route('admin.subscription.edit', $item->SUB_ID)}}"
+                                        <a href="{{route('admin.packages.edit', $item->PACKAGE_ID)}}"
                                            class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-pen text-info"></i>
                                         </a>
-                                        <a style="cursor: pointer" onclick="confirmAction('formid{{$item->SUB_ID}}', 'delete ?')"
+                                        <a style="cursor: pointer" onclick="confirmAction('formid{{$item->PACKAGE_ID}}', 'delete ?')"
                                            class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-trash text-danger"></i>
                                         </a>
-                                        <form id="formid{{$item->SUB_ID}}" method="post" action="{{route('admin.subscription.destroy', $item->SUB_ID)}}">
+                                        <form id="formid{{$item->PACKAGE_ID}}" method="post" action="{{route('admin.packages.destroy', $item->PACKAGE_ID)}}">
                                             @csrf
                                             @method('DELETE')
                                         </form>

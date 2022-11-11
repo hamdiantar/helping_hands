@@ -46,6 +46,11 @@ class VolEntity extends Authenticatable
     {
         return asset('uploads/'.$this->VOL_ENTITY_LOGO);
     }
+
+    public function opps()
+    {
+        return $this->hasMany(Opportunity::class, 'VOL_ENTITY_ID');
+    }
 }
 
 

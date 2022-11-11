@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\CompliantController;
+use App\Http\Controllers\Admin\CompliantController as AdminCompliantController;
+use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\CompliantController as VolCompliantController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\Admin\VolunteerController as VolunteerControllerAdmin;
 use App\Http\Controllers\Admin\VolunteeringEntityController;
@@ -15,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'website.home')->name('home');
 Route::view('/vol_entity/register', 'website.vol_entity.register')->name('vol_entity.register');
 Route::post('/vol_entity/register-submit', [VolEntityController::class, 'register'])->name('vol_entity.register.submit');
-Route::view('/vol_entity/list', 'website.vol_entity.list')->name('vol_entity.list');
+Route::get('/vol_entity/list', [HomeController::class, 'index'])->name('vol_entity.list');
 Route::view('/vol_entity/opportunity', 'website.vol_entity.opportunity')->name('vol_entity.opportunity');
 Route::view('/vol_entity/pricing', 'website.vol_entity.pricing')->name('vol_entity.pricing');
 Route::view('/vol_entity/show', 'website.vol_entity.show')->name('vol_entity.show');
 
-Route::view('/compliant', 'website.compliant')->name('compliant');
+
 Route::view('/verification', 'website.verification')->name('verification');
 Route::view('/generate', 'website.generate')->name('generate');
 
@@ -32,6 +35,9 @@ Route::middleware(['auth:volunteer'])->group(function () {
     Route::post('/volunteer/sign-out', [VolunteerController::class, 'signOut'])->name('volunteer.signOut');
     Route::get('/volunteer/profile', [VolunteerController::class, 'profile'])->name('volunteer.profile');
     Route::put('/volunteer/profile', [VolunteerController::class, 'update'])->name('volunteer.update');
+
+    Route::get('/compliant', [VolCompliantController::class, 'getCompliantForm'])->name('compliant');
+    Route::post('/compliant', [VolCompliantController::class, 'addCompliant'])->name('compliant.post');
 });
 
 //routes for admin
@@ -48,7 +54,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::resource('volunteers', VolunteerControllerAdmin::class);
         Route::resource('volunteering-entity', VolunteeringEntityController::class);
         Route::get('volunteering-entity/{id}/update-status/{status}', [VolunteeringEntityController::class, 'UpdateStatus'])->name('ve.UpdateStatus');
-        Route::resource('compliant', CompliantController::class);
+        Route::resource('compliant', AdminCompliantController::class);
+        Route::resource('packages', PackageController::class);
         Route::view('/growth_report', 'admin.test')->name('growth_report');
         Route::view('/trend_report', 'admin.test2')->name('trend_report');
     });

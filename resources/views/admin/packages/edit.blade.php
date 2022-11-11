@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 
-@section('title', 'subscription')
+@section('title', 'packages')
 
 @section('breadcrumb')
-    <li><a href="#">subscription Management </a> > Edit</li>
+    <li><a href="#">packages Management </a> > Edit</li>
 @endsection
 @section('content')
     <div class="container-fluid py-2">
@@ -13,16 +13,16 @@
 
                     <div class="card-header p-0 position-relative mt-n4 mx-3">
                         <div class="bg-gradient-warning shadow-warning border-radius-lg pt-3 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">subscription Management > Edit</h6>
-                            <a href="{{route('admin.subscription.index')}}"
+                            <h6 class="text-white text-capitalize ps-3">packages Management > Edit</h6>
+                            <a href="{{route('admin.packages.index')}}"
                                class="btn btn-dark btn-sm btn-add"><i class="fa fa-times fs-15"></i></a>
                         </div>
                     </div>
                     <div class="card-body ml-3 mr-3">
-                        <form method="post" id="form" action="{{route('admin.subscription.update', $item->SUB_ID)}}">
+                        <form method="post" id="form" action="{{route('admin.packages.update', $item->SUB_ID)}}">
                             @csrf
                             @method('PUT')
-                            @include('admin.subscription.form')
+                            @include('admin.packages.form')
                             <div class="row col-md-2 offset-md-5 text-center">
                                 <button type="submit" class="btn btn-md bg-gradient-warning btn-lg w-100 mt-4 mb-0">
                                     Save <i class="fa fa-file"></i>
@@ -36,5 +36,5 @@
     </div>
 @endsection
 @push('js')
-    {!! JsValidator::formRequest('App\Http\Requests\Admin\SubscriptionRequest', "#form") !!}
+    {!! JsValidator::formRequest('App\Http\Requests\Admin\PackageRequest', "#form") !!}
 @endpush

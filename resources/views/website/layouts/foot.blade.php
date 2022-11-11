@@ -38,5 +38,33 @@
         })
     }
     $('.select2').select2();
+    @if(session('success'))
+    Swal.fire({
+        text: '{{session('success')}}',
+        icon: 'success',
+        confirmButtonText: 'OK',
+    })
+    @endif
+    @if(session('error'))
+    Swal.fire({
+        text: '{{session('error')}}',
+        icon: 'error',
+        confirmButtonText: 'OK',
+    })
+    @endif
+    @if(session('errorLogin'))
+    Swal.fire({
+        text: '{{session('errorLogin')}}',
+        icon: 'error',
+        confirmButtonText: 'OK',
+    })
+    @endif
+    @if(session('not_auth'))
+    Swal.fire({
+        text: '{{session('not_auth')}}',
+        icon: 'error',
+        confirmButtonText: 'OK',
+    })
+    @endif
 </script>
 @stack('js')

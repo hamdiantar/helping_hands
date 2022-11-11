@@ -73,7 +73,7 @@
 {{--                            </div>--}}
 
                             <div class="col-md-6 mb-3 mt-4">
-                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
                             </div>
 
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Compliant;
 
 class CompliantController extends Controller
 {
@@ -10,7 +11,16 @@ class CompliantController extends Controller
 
     public function index()
     {
-        notify()->smiley('success', 'Item has been created successfully');
-        return view($this->view . 'index');
+        $items = Compliant::all();
+        return view($this->view . 'index', [
+            'items' => $items
+        ]);
+    }
+
+    public function show(Compliant $compliant)
+    {
+        return view($this->view . 'show', [
+            'compliant' => $compliant
+        ]);
     }
 }

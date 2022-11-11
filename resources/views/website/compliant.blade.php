@@ -9,26 +9,28 @@
                     <h3>Compliant</h3>
                 </div>
                 <div class="card-body">
-                    <form class="row">
+                    <form class="row" method="post" action="{{route('compliant.post')}}">
+                        @csrf
+                        <input type="hidden" name="VOL_ENTITY_ID" value="{{$volEntity->VOL_ENTITY_ID}}">
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="Title" class="form-label">Title :</label>
-                                <input type="text" class="form-control" id="Title">
+                                <input  name="COMP_TITLE" type="text" class="form-control" id="Title">
                             </div>
 
 
                             <div class="col-md-4 mb-3">
                                 <label for="Against" class="form-label">Against :</label>
-                                <input type="text" class="form-control" id="Against">
+                                <input type="text" name="COMP_AGAINST" class="form-control" id="Against" readonly value="{{$volEntity->VOL_ENTITY_NAME}}">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="Date" class="form-label">Date : </label>
-                                <input type="date" class="form-control" id="Date">
+                                <input type="date" name="COMP_DATE" class="form-control" id="Date">
                             </div>
 
                             <div class="col-md-12 mb-3">
                                 <label for="Description" class="form-label">Description</label>
-                                <textarea rows="3" class="form-control" id="Description"></textarea>
+                                <textarea rows="3" name="COMP_DESCRIPTION" class="form-control" id="Description"></textarea>
                             </div>
                             <div class="col-md-6 mb-3 mt-4">
                                 <button type="submit" class="btn btn-primary">Send</button>

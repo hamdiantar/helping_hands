@@ -8,7 +8,7 @@
         <div class="row gx-4 mb-2">
             <div class="col-auto">
                 <div class="avatar avatar-xl position-relative">
-                    <img src="{{asset('assets/img/bruce-mars.jpg')}}" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                    <span  style="font-size: 30px" class="material-icons opacity-10 text-danger">person</span>
                 </div>
             </div>
             <div class="col-auto my-auto">

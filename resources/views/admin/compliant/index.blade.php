@@ -34,125 +34,40 @@
                                         Against
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Description
+                                        Title
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Date
+                                        Status
                                     </th>
                                     <th class="text-center text-secondary opacity-7">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($items as $item)
                                 <tr>
-                                    <td>name 1</td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">title 1</p>
-                                    </td>
-
+                                    <td>{{optional($item->volunteer)->full_name}}</td>
+                                    <td><p class="text-xs font-weight-bold mb-0">{{$item->COMP_TITLE}}</p></td>
                                     <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">Against 1</span>
+                                        {{optional($item->against)->VOL_ENTITY_NAME}}
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        Description Description
+                                        {{$item->COMP_TITLE}}
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        12-12-2022
+                                        {{$item->COMP_STATUS}}
                                     </td>
                                     <td class="align-middle">
+                                        <a href="{{route('admin.compliant.show',$item->COMP_ID )}}" class="text-secondary font-weight-bold text-xs"
+                                           data-toggle="tooltip" data-original-title="Edit user">
+                                            <i class="fa fa-eye text-info"></i>
+                                        </a>
                                         <a style="cursor: pointer" onclick="replay('#formid', 'delete ?')" class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-comment text-info fa-2x"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>name 1</td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">title 1</p>
-                                    </td>
-
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">Against 1</span>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        Description Description
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        12-12-2022
-                                    </td>
-                                    <td class="align-middle">
-                                        <a style="cursor: pointer" onclick="replay('#formid', 'delete ?')" class="text-secondary font-weight-bold text-xs  ml-2"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-comment text-info fa-2x"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>name 1</td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">title 1</p>
-                                    </td>
-
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">Against 1</span>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        Description Description
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        12-12-2022
-                                    </td>
-                                    <td class="align-middle">
-                                        <a style="cursor: pointer" onclick="replay('#formid', 'delete ?')" class="text-secondary font-weight-bold text-xs  ml-2"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-comment text-info fa-2x"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>name 1</td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">title 1</p>
-                                    </td>
-
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">Against 1</span>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        Description Description
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        12-12-2022
-                                    </td>
-                                    <td class="align-middle">
-                                        <a style="cursor: pointer" onclick="replay('#formid', 'delete ?')" class="text-secondary font-weight-bold text-xs  ml-2"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-comment text-info fa-2x"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>name 1</td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">title 1</p>
-                                    </td>
-
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">Against 1</span>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        Description Description
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        12-12-2022
-                                    </td>
-                                    <td class="align-middle">
-                                        <a style="cursor: pointer" onclick="replay('#formid', 'delete ?')" class="text-secondary font-weight-bold text-xs  ml-2"
-                                           data-toggle="tooltip" data-original-title="Edit user">
-                                            <i class="fa fa-comment text-info fa-2x"></i>
-                                        </a>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

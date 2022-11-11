@@ -3,22 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\SubscriptionRequest;
-use App\Http\Requests\VolEntity\OppRequest;
+use App\Http\Requests\Admin\PackageRequest;
 use App\Models\Opportunity;
-use App\Models\Subscription;
+use App\Models\Package;
 use App\Traits\LoggerError;
 use Exception;
 
-class SubscriptionController extends Controller
+class PackageController extends Controller
 {
     use LoggerError;
 
-    private $view = 'admin.subscription.';
+    private $view = 'admin.packages.';
 
     public function index()
     {
-        $items = Subscription::all();
+        $items = Package::all();
         return view($this->view . 'index', [
             'items' => $items
         ]);
@@ -29,13 +28,13 @@ class SubscriptionController extends Controller
         return view($this->view . 'create');
     }
 
-    public function store(SubscriptionRequest $request)
+    public function store(PackageRequest $request)
     {
         try {
             $data = $request->all();
-            Subscription::create($data);
-            notify()->smiley('success', 'Subscription has been created successfully');
-            return redirect()->route('admin.subscription.index');
+            Package::create($data);
+            notify()->smiley('success', 'Package has been created successfully');
+            return redirect()->route('admin.packages.index');
         } catch (Exception $exception) {
             $this->logErrors($exception);
             notify()->smiley('error', 'something went wrong');
@@ -45,20 +44,20 @@ class SubscriptionController extends Controller
 
     public function edit(int $id)
     {
-        $item = Subscription::findOrFail($id);
+        $item = Package::findOrFail($id);
         return view($this->view . 'edit', [
             'item' => $item
         ]);
     }
 
-    public function update(SubscriptionRequest $request, int $id)
+    public function update(PackageRequest $request, int $id)
     {
         try {
-            $item = Subscription::findOrFail($id);
+            $item = Package::findOrFail($id);
             $data = $request->all();
             $item->update($data);
-            notify()->smiley('success', 'Subscription has been Updated successfully');
-            return redirect()->route('admin.subscription.index');
+            notify()->smiley('success', 'Package has been Updated successfully');
+            return redirect()->route('admin.packages.index');
         } catch (Exception $exception) {
             $this->logErrors($exception);
             notify()->smiley('error', 'something went wrong');
@@ -69,10 +68,10 @@ class SubscriptionController extends Controller
     public function destroy(int $id)
     {
         try {
-            $item = Subscription::findOrFail($id);
+            $item = Package::findOrFail($id);
             $item->delete();
-            notify()->smiley('success', 'Subscription has been Deleted successfully');
-            return redirect()->route('admin.subscription.index');
+            notify()->smiley('success', 'Package has been Deleted successfully');
+            return redirect()->route('admin.packages.index');
         } catch (Exception $exception) {
             $this->logErrors($exception);
             notify()->smiley('error', 'something went wrong');
