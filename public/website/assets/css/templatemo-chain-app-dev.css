@@ -2970,3 +2970,15 @@ blockquote {
   color: #4d9281;
   text-shadow: 1px 1px 1px #ffffff, 1px 2px 1px #ffffff, 1px 3px 1px #ffffff, 1px 4px 1px #ffffff, 1px 5px 1px #ffffff, 1px 6px 1px #fff8f8, 1px 7px 1px #ffffff, 1px 8px 1px #ffffff, 1px 9px 1px #ffffff, 1px 10px 1px #ffffff, 1px 18px 6px rgb(255 203 119), 1px 22px 10px rgb(255 217 120), 1px 25px 35px rgb(255 217 121), 1px 30px 60px rgb(255 217 120);
 }
+.text-des {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 33px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: normal;
+  text-transform: uppercase;
+}
