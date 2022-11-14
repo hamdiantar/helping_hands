@@ -11,10 +11,10 @@
                                  data-wow-delay="1s">
                                 <div class="row textPostion">
                                     <div class="col-lg-12">
-                                        <span class="textMain">Land a hand</span>
+                                        <span style="font-size: 42px">Land a hand</span>
                                     </div>
                                     <div class="col-lg-12">
-                                        <span class="textMain">make a difference</span>
+                                        <span style="font-size: 32px">make a difference</span>
 {{--                                        <div class="white-button first-button scroll-to-section">--}}
 {{--                                            <a href="#contact">Free Quote <i class="fab fa-apple"></i></a>--}}
 {{--                                        </div>--}}
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="{{asset('website/assets/images/help.jpg')}}" alt="">
+{{--                                <img src="{{asset('website/assets/images/help.jpg')}}" alt="">--}}
                             </div>
                         </div>
                     </div>
