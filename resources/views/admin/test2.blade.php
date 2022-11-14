@@ -3,7 +3,7 @@
 @section('title', 'opportunity title')
 
 @section('breadcrumb')
-    <li><a href="#">Trend Report</a></li>
+    <li><a href="#">Overall satisfaction rating on entities</a></li>
 @endsection
 @section('content')
     <div class="container-fluid py-2">
@@ -13,7 +13,7 @@
 
                     <div class="card-header p-0 position-relative mt-n4 mb-4">
                         <div class="bg-gradient-warning shadow-warning border-radius-lg pt-3 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">Trend Report</h6>
+                            <h6 class="text-white text-capitalize ps-3">Overall satisfaction rating on entities</h6>
                         </div>
                     </div>
 

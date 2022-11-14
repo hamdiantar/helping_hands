@@ -930,8 +930,9 @@ Banner Style
   z-index: 2;
   position: relative;
   font-weight: 700;
-  line-height: 70px;
+  line-height: 71px;
   font-size: 50px;
+  color: #568874;
   margin-bottom: 20px;
 }
 
@@ -1602,10 +1603,10 @@ a {
 }
 footer {
     /* background-image: url(../images/footer-bg.png); */
-    margin-top: 130px;
+    /*margin-top: 130px;*/
     padding-top: 39px;
     padding-bottom: 10px;
-    background: #768972;
+    background: linear-gradient(105deg, rgb(245 166 104) 0%, rgb(67 125 118) 100%);
 }
 
 footer .section-heading {
@@ -2959,4 +2960,13 @@ blockquote {
   border-color: #568174 !important;
   text-align: center !important;
   font-size: 18px !important;
+}
+.textMain {
+  transform: translate(50%,-50%);
+  text-transform: uppercase;
+  font-family: verdana, serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #4d9281;
+  text-shadow: 1px 1px 1px #ffffff, 1px 2px 1px #ffffff, 1px 3px 1px #ffffff, 1px 4px 1px #ffffff, 1px 5px 1px #ffffff, 1px 6px 1px #fff8f8, 1px 7px 1px #ffffff, 1px 8px 1px #ffffff, 1px 9px 1px #ffffff, 1px 10px 1px #ffffff, 1px 18px 6px rgb(255 203 119), 1px 22px 10px rgb(255 217 120), 1px 25px 35px rgb(255 217 121), 1px 30px 60px rgb(255 217 120);
 }

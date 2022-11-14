@@ -12,9 +12,7 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{url('/')}}" class="{{isCurrentPage('/')}}">Home</a></li>
-                        <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/list*')}}" href="{{route('vol_entity.list')}}">Volunteering</a></li>
-                        <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/pricing*')}}" href="{{route('vol_entity.pricing')}}">Pricing</a></li>
-                        <li class="scroll-to-section"><a class="{{isCurrentPage('verification*')}}" href="{{route('verification')}}">verification</a></li>
+                        <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/list*')}}" href="{{route('vol_entity.list')}}">Volunteer With Us</a></li>
 {{--                        <li class="scroll-to-section"><a href="{{route('compliant')}}">Compliant</a></li>--}}
                         @auth('volunteer')
                         <li><div class="gradient-button"><a href="{{route('volunteer.profile')}}">Welcome {{getAuthVolunteer()->VOL_FNAME}}   <i class="fa fa-user"></i></a>
@@ -23,7 +21,11 @@
                             <form method="post" action="{{route('volunteer.signOut')}}" id="logoutForm">@csrf</form>
                         @endauth
                         @guest('volunteer')
-                        <li><div class="gradient-button"><a id="modal_trigger2" href="#modal2">Join Us  <i class="fa fa-sign-in-alt"></i></a></div></li>
+                            <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/pricing*')}}" href="{{route('vol_entity.pricing')}}">Pricing</a></li>
+
+                            <li class="scroll-to-section"><a class="{{isCurrentPage('verification*')}}" href="{{route('verification')}}">verification</a></li>
+
+                            <li><div class="gradient-button"><a id="modal_trigger2" href="#modal2">Join Us  <i class="fa fa-sign-in-alt"></i></a></div></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="#modal">Login  <i class="fa fa-sign-in-alt"></i></a></div></li>
                         @endguest
                     </ul>

@@ -26,7 +26,7 @@
                                 <input autocomplete="new-password" type="password" class="form-control" id="Password" name="password">
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="password_confirmation" class="form-label">Password</label>
+                                <label for="password_confirmation" class="form-label">Password confirmation</label>
                                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
                             </div>
 
@@ -37,8 +37,17 @@
 
 
                             <div class="col-md-6 mb-3">
-                                <label for="Sector" class="form-label">Sector : </label>
-                                <input type="text" class="form-control" id="Sector" name="VOL_ENTITY_SECTOR" value="{{old('VOL_ENTITY_SECTOR')}}">
+                                <label for="VOL_ENTITY_SECTOR" class="form-label">Sector : </label>
+                                <select id="VOL_ENTITY_SECTOR" class="form-select select2" name="VOL_ENTITY_SECTOR">
+                                <option value="">Select</option>
+                                <option value="Public Health and social services" {{old('VOL_ENTITY_SECTOR') == 'Public Health and social services' ? 'selected' : ''}}>Public Health and social services</option>
+                                <option value="Community Service" {{old('VOL_ENTITY_SECTOR') == 'Community Service' ? 'selected' : ''}}>Community Service</option>
+                                <option value="Entertainment" {{old('VOL_ENTITY_SECTOR') == 'Entertainment' ? 'selected' : ''}}>Entertainment</option>
+                                <option value="Education" {{old('VOL_ENTITY_SECTOR') == 'Education' ? 'selected' : ''}}>Education</option>
+                                <option value="Hospitality" {{old('VOL_ENTITY_SECTOR') == 'Education' ? 'selected' : ''}}>Hospitality</option>
+                                <option value="Technology" {{old('VOL_ENTITY_SECTOR') == 'Technology' ? 'selected' : ''}}>Technology</option>
+                                <option value="Others" {{old('VOL_ENTITY_SECTOR') == 'Others' ? 'selected' : ''}}>Others</option>
+                                </select>
                             </div>
 
                             <div class="col-md-6 mb-3">
