@@ -27,8 +27,12 @@ class opportunityController extends Controller
         return view($this->view . 'create');
     }
 
-    public function show()
+    public function show(int $id)
     {
+        $item = Opportunity::findOrFail($id);
+        return view($this->view . 'show', [
+            'item' => $item
+        ]);
     }
 
     public function store(OppRequest $request)

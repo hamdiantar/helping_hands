@@ -3,13 +3,17 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CompliantController as AdminCompliantController;
 use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\ApplyController;
 use App\Http\Controllers\CompliantController as VolCompliantController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\Admin\VolunteerController as VolunteerControllerAdmin;
 use App\Http\Controllers\Admin\VolunteeringEntityController;
 use App\Http\Controllers\VolunteeringEntity\CharacteristicController;
 use App\Http\Controllers\VolunteeringEntity\opportunityController;
+use App\Http\Controllers\VolunteeringEntity\RequestController;
+use App\Http\Controllers\VolunteeringEntity\SubscriptionController;
 use App\Http\Controllers\VolunteeringEntity\TaskController;
 use App\Http\Controllers\VolunteeringEntity\VolEntityController;
 use Illuminate\Support\Facades\Route;
@@ -19,9 +23,9 @@ Route::view('/', 'website.home')->name('home');
 Route::view('/vol_entity/register', 'website.vol_entity.register')->name('vol_entity.register');
 Route::post('/vol_entity/register-submit', [VolEntityController::class, 'register'])->name('vol_entity.register.submit');
 Route::get('/vol_entity/list', [HomeController::class, 'index'])->name('vol_entity.list');
-Route::view('/vol_entity/opportunity', 'website.vol_entity.opportunity')->name('vol_entity.opportunity');
+Route::get('/vol_entity/{id}/opportunity', [HomeController::class, 'getOpportunities'])->name('vol_entity.opportunity');
 Route::view('/vol_entity/pricing', 'website.vol_entity.pricing')->name('vol_entity.pricing');
-Route::view('/vol_entity/show', 'website.vol_entity.show')->name('vol_entity.show');
+Route::get('/vol_entity/{id}/show', [HomeController::class, 'showReviews'])->name('vol_entity.show');
 
 
 Route::view('/verification', 'website.verification')->name('verification');
@@ -38,6 +42,10 @@ Route::middleware(['auth:volunteer'])->group(function () {
 
     Route::get('/compliant', [VolCompliantController::class, 'getCompliantForm'])->name('compliant');
     Route::post('/compliant', [VolCompliantController::class, 'addCompliant'])->name('compliant.post');
+
+    Route::get('/volunteer/apply/{volId}/{oppId}', [ApplyController::class, 'showApplyForm'])->name('volunteer.showApplyForm');
+    Route::post('/volunteer/apply/{volId}/{oppId}', [ApplyController::class, 'apply'])->name('volunteer.apply');
+    Route::post('/vol_entity/addReview', [ReviewController::class, 'addReview'])->name('vol_entity.addReview');
 });
 
 //routes for admin
@@ -72,8 +80,38 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
         Route::view('/profile', 'volunteering-entity.profile')->name('profile');
         Route::post('/sign-out', [VolEntityController::class, 'signOut'])->name('signOut');
         Route::resource('opportunities', opportunityController::class);
-        Route::resource('opportunities.tasks', TaskController::class);
-        Route::resource('opportunities.characteristic', CharacteristicController::class);
+        Route::resource('opportunities/tasks', TaskController::class);
+
+        Route::get('opportunities/{opportunity}/characteristic', [CharacteristicController::class, 'index'])
+            ->name('opportunities.characteristic.index');
+        Route::get('opportunities/{opportunity}/characteristic/create', [CharacteristicController::class, 'create'])
+            ->name('opportunities.characteristic.create');
+        Route::post('opportunities/{opportunity}/characteristic', [CharacteristicController::class, 'store'])
+            ->name('opportunities.characteristic.store');
+        Route::get('opportunities/{opportunity}/characteristic/{characteristic}', [CharacteristicController::class, 'edit'])
+            ->name('opportunities.characteristic.edit');
+        Route::put('opportunities/{opportunity}/characteristic/{characteristic}', [CharacteristicController::class, 'update'])
+            ->name('opportunities.characteristic.update');
+        Route::delete('opportunities/{opportunity}/characteristic/{characteristic}', [CharacteristicController::class, 'destroy'])
+            ->name('opportunities.characteristic.destroy');
+
+
+        Route::get('opportunities/{opportunity}/task', [TaskController::class, 'index'])->name('opportunities.tasks.index');
+        Route::get('opportunities/{opportunity}/tasks/create', [TaskController::class, 'create'])->name('opportunities.tasks.create');
+        Route::post('opportunities/{opportunity}/tasks', [TaskController::class, 'store'])->name('opportunities.tasks.store');
+        Route::get('opportunities/{opportunity}/tasks/{task}', [TaskController::class, 'edit'])->name('opportunities.tasks.edit');
+        Route::put('opportunities/{opportunity}/tasks/{task}', [TaskController::class, 'update'])->name('opportunities.tasks.update');
+        Route::delete('opportunities/{opportunity}/tasks/{task}', [TaskController::class, 'destroy'])->name('opportunities.tasks.destroy');
+
+
+        Route::get('requests', [RequestController::class, 'index'])->name('requests.index');
+        Route::get('requests/{id}', [RequestController::class, 'UpdateStatus'])->name('requests.UpdateStatus');
+        Route::view('feedbacks', 'volunteering-entity.feedback')->name('feedback');
+        Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
+        Route::get('subscription/create', [SubscriptionController::class, 'create'])->name('subscription.create');
+        Route::post('subscription', [SubscriptionController::class, 'store'])->name('subscription.store');
+
+
         Route::view('attendance_report', 'volunteering-entity.opportunities.attendance_report')->name('attendance_report');
         Route::view('performance_report', 'volunteering-entity.performance_report')->name('performance_report');
     });

@@ -13,4 +13,20 @@ class HomeController extends Controller
             'items' => $items
         ]);
     }
+
+    public function getOpportunities(int $id)
+    {
+        $item = VolEntity::find($id);
+        return view('website.vol_entity.opportunity', [
+            'item' => $item
+        ]);
+    }
+
+    public function showReviews(int $id)
+    {
+        $item = VolEntity::find($id);
+        return view('website.vol_entity.show', [
+            'item' => $item
+        ]);
+    }
 }

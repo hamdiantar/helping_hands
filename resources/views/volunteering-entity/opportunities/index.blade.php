@@ -54,7 +54,7 @@
                                     </td>
                                     <td class="align-middle">
 
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                        <a href="{{route('volunteering-entity.opportunities.show', $item->OPP_ID)}}" class="text-secondary font-weight-bold text-xs"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye text-info"></i>
                                         </a>

@@ -264,12 +264,12 @@ body {
 .border-button a {
   display: inline-block !important;
   padding: 10px 20px !important;
-  color: #4b8ef1 !important;
-  border: 1px solid #4b8ef1;
+  color: #000000 !important;
+  border: 1px solid #e9a071;
   text-transform: capitalize;
   font-size: 15px;
   display: inline-block;
-  background-color: #fff;
+  background-color: #ffcaa9;
   border-radius: 23px;
   font-weight: 500 !important;
   letter-spacing: 0.3px !important;
@@ -277,8 +277,8 @@ body {
 }
 
 .border-button a:hover {
-  background-color: #4b8ef1;
-  color: #fff !important;
+  background-color: #ffffff;
+  color: #000 !important;
 }
 
 
@@ -1475,7 +1475,7 @@ The Clients
 
 .pricing-item-pro span.price {
   font-size: 28px;
-  color: #1c1c1c;
+  color: #ffffff;
   position: absolute;
   font-weight: 700;
   z-index: 1;
@@ -1603,7 +1603,7 @@ a {
 }
 footer {
     /* background-image: url(../images/footer-bg.png); */
-    /*margin-top: 130px;*/
+    margin-top: 130px;
     padding-top: 39px;
     padding-bottom: 10px;
     background: linear-gradient(105deg, rgb(245 166 104) 0%, rgb(67 125 118) 100%);
@@ -2923,6 +2923,7 @@ blockquote {
   border-color: #f28f5e;
 }
 .nav-tabs {
+  flex-wrap: nowrap !important;
   background: linear-gradient(
           105deg, rgb(213 159 107) 0%, rgb(73 150 134) 100%) !important;
 }

@@ -16,8 +16,6 @@ class Package extends Model
     protected $fillable = [
         'PACKAGE_PRICE',
         'PACKAGE_DURATION',
-        'PACKAGE_START_DATE',
-        'PACKAGE_FINISH_DATE',
     ];
 
 }

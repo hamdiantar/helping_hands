@@ -34,6 +34,33 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/requests*')}}" href="{{route('volunteering-entity.requests.index')}}">
+                    <div class="text-white text-center d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">persons</i>
+                    </div>
+                    <span class="nav-link-text">Applicants</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/feedback*')}}" href="{{route('volunteering-entity.feedback')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">assignment</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Feedback</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/subscription*')}}" href="{{route('volunteering-entity.subscription.index')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">assignment</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Subscription</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link text-white {{isCurrentPage('volunteering-entity/performance_report*')}}" href="{{route('volunteering-entity.performance_report')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">receipt_long</i>

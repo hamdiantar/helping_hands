@@ -37,4 +37,15 @@ class Opportunity extends Model
             $model->VOL_ENTITY_ID =  getAuthVolEntity()->VOL_ENTITY_ID;
         });
     }
+
+
+    public function chars()
+    {
+        return $this->hasMany(Characteristic::class, 'OPP_ID');
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class, 'OPP_ID');
+    }
 }

@@ -61,10 +61,14 @@
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye text-info"></i>
                                         </a>
-                                        <a style="cursor: pointer" onclick="replay('#formid', 'delete ?')" class="text-secondary font-weight-bold text-xs  ml-2"
+                                        <a style="cursor: pointer" href="{{route('admin.compliant.edit',$item->COMP_ID )}}"  class="text-secondary font-weight-bold text-xs  ml-2"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-comment text-info fa-2x"></i>
                                         </a>
+                                        <form id="formid{{$item->COMP_ID}}" style="display: none" method="post" action="{{route('admin.compliant.show',$item->COMP_ID)}}">
+                                            @csrf
+                                            @method('PUT')
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

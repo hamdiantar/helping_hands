@@ -9,7 +9,6 @@
                     <div style="    margin-bottom: 26px" class="section-heading">
                         <h4>We Have The Best Pre-Order <em>Prices</em> You Can Get</h4>
                         <img src="{{asset('website/assets/images/heading-line-dec.png')}}" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
                     </div>
                 </div>
                 <div class="col-lg-4">

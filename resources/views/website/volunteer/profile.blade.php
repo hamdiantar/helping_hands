@@ -6,7 +6,7 @@
         <div class="container mt-2 mb-4 d-flex justify-content-center">
             <div class="col-md-12 card p-2">
               <div class="row">
-                  <div style="border-right: 1px solid #dfdfdf;" class="col-md-4">
+                  <div style="border-right: 1px solid #dfdfdf;" class="col-md-3">
                       <div  class=" image d-flex flex-column justify-content-center align-items-center">
                           <a><img class="img-thumbnail img-profile" src="{{asset('website/logo.png')}}" height="100" width="100"/></a>
                           <span class="name mt-3">{{$volunteer->full_name}}</span> <span class="idd">@ {{$volunteer->VOL_USERNAME}}</span>
@@ -17,16 +17,17 @@
                               <span>Level : {{$volunteer->VOL_GRADE_LEVEL}}</span>
                           </div>
                           <div class=" px-2 rounded mt-4 date ">
-                              <span class="join">Joined May,2021</span>
+
                           </div>
                       </div>
                   </div>
-                  <div class="col-md-8 mt-2">
+                  <div class="col-md-9 mt-2">
                       <nav>
                           <div class="nav nav-tabs" id="nav-tab" role="tablist">
                               <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Profile</button>
                               <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My Attendance</button>
-                              <button style="width: 34% !important;" class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Generate e-certificate</button>
+                              <button  class="nav-link" id="nav-opp-tab" data-bs-toggle="tab" data-bs-target="#nav-opp" type="button" role="tab" aria-controls="nav-opp" aria-selected="false">Requests</button>
+                              <button  class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">certificate</button>
                           </div>
                       </nav>
                       <div class="tab-content" id="nav-tabContent">
@@ -141,6 +142,37 @@
                                       <td>1-2-2023</td>
                                       <td><span class="badge bg-success">attend</span></td>
                                   </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                          <div class="tab-opp fade" id="nav-opp" role="tabpanel" aria-labelledby="nav-opp-tab">
+                              <h5 class="text-center mb-3 mt-3">Requests</h5>
+                              <table class="table table-bordered table-">
+                                  <thead>
+                                  <tr>
+                                      <th>#ID</th>
+                                      <th>Date</th>
+                                      <th>Volunteering Entity</th>
+                                      <th>Opportunity</th>
+                                      <th>Status</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  @if(count($volunteer->requestes))
+                                  @foreach($volunteer->requestes as $request)
+                                      <tr>
+                                      <td>{{$request->REQ_ID}}</td>
+                                      <td>{{$request->REQ_DATE}}</td>
+                                      <td>{{optional($request->volEntity)->VOL_ENTITY_NAME}}</td>
+                                      <td>{{optional($request->opp)->OPP_NAME}}</td>
+                                      <td><span class="badge bg-info">{{$request->REQ_STATUS}}</span></td>
+                                  </tr>
+                                  @endforeach
+                                  @else
+                                      <tr>
+                                          <td colspan="5">No Requests Fount</td>
+                                      </tr>
+                                  @endif
                                   </tbody>
                               </table>
                           </div>

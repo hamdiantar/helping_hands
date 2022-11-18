@@ -10,17 +10,14 @@ class VolunteerRegisterRequest extends FormRequest
     {
         $mailValidation = 'required|max:200|email|unique:VOLUNTEER,VOL_EMAIL';
         $passwordValidation = 'required|min:6|confirmed';
-        $passwordConfirmationValidation = 'required|min:6';
         if ($this->id) {
            $mailValidation = 'required|max:200|email|unique:VOLUNTEER,VOL_EMAIL,'. $this->id.',VOL_ID';
             $passwordValidation = 'nullable|min:6';
-            $passwordConfirmationValidation = 'nullable';
         }
 //        dd($passwordValidation);
         return [
             'VOL_USERNAME' =>  'required|max:200',
             'password' =>  $passwordValidation,
-            'password_confirmation' => $passwordConfirmationValidation,
             'VOL_FNAME' =>  'required|max:200',
             'VOL_LNAME' =>  'required|max:200',
             'VOL_EMAIL' =>  $mailValidation,

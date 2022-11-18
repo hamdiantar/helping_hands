@@ -8,6 +8,7 @@ class CharacteristicRequest extends FormRequest
 {
     public function rules(): array
     {
+
         return [
             'VOL_CH_NAME' => 'required|max:200',
             'VOL_CH_DESCRIPTION' => 'required',

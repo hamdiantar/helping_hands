@@ -20,9 +20,9 @@
                     <div class="service-item first-service">
                         <span class="Available_opportunities">Available opportunities [ {{count($item->opps)}} ]</span>
                         <img height="170px" src="{{$item->logo_path}}">
-                        <h4><a class="text-entity" href="{{route('vol_entity.show')}}">{{$item->VOL_ENTITY_NAME}}</a></h4>
+                        <h4><a class="text-entity" href="{{route('vol_entity.show', ['id' => $item->VOL_ENTITY_ID])}}">{{$item->VOL_ENTITY_NAME}}</a></h4>
                         <div class="text-button">
-                            <a class="btn btn-primary" href="{{route('vol_entity.opportunity')}}">Apply Now <i class="fa fa-arrow-right"></i></a>
+                            <a class="btn btn-primary" href="{{route('vol_entity.opportunity', $item->VOL_ENTITY_ID)}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
                         <div class="rating">
                             <i class="fa fa-star text-warning"></i>
@@ -30,7 +30,7 @@
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-warning"></i>
-                            <a href="{{route('vol_entity.show')}}">(12 Review)</a>
+                            <a href="{{route('vol_entity.show', ['id' => $item->VOL_ENTITY_ID])}}">({{count($item->reviews)}} Review)</a>
                         </div>
                         <a class="comp" href="{{route('compliant', ['vol_entity_id' => $item->VOL_ENTITY_ID])}}">compliant</a>
                     </div>

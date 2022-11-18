@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->VOL_FNAME . ' '.$this->VOL_LNAME;
     }
+
+    public function requestes()
+    {
+        return $this->hasMany(Request::class, 'VOL_ID');
+    }
 }

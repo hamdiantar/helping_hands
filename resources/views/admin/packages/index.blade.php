@@ -28,8 +28,6 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Duration</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Start date</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Finish date</th>
                                     <th class="text-center text-secondary opacity-7">Actions</th>
                                 </tr>
                                 </thead>
@@ -39,8 +37,6 @@
                                     <td>{{$item->PACKAGE_ID}}</td>
                                     <td>{{$item->PACKAGE_PRICE}}</td>
                                     <td>{{$item->PACKAGE_DURATION}}</td>
-                                    <td>{{$item->PACKAGE_START_DATE}}</td>
-                                    <td>{{$item->PACKAGE_FINISH_DATE}}</td>
                                     <td class="align-middle">
                                         <a href="{{route('admin.packages.edit', $item->PACKAGE_ID)}}"
                                            class="text-secondary font-weight-bold text-xs  ml-2"

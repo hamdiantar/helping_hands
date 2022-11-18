@@ -1,6 +1,6 @@
 @extends('website.layouts.app')
 
-@section('title', 'Join Us')
+@section('title', 'Compliant')
 @section('content')
     <div class="main-banner2">
         <div class="container" style="margin-top: 42px;">

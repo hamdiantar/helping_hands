@@ -51,6 +51,21 @@ class VolEntity extends Authenticatable
     {
         return $this->hasMany(Opportunity::class, 'VOL_ENTITY_ID');
     }
+
+    public function requests()
+    {
+        return $this->hasMany(Request::class, 'VOL_ENTITY_ID');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'VOL_ENTITY_ID');
+    }
+
+    public function subs()
+    {
+        return $this->hasMany(Subscription::class, 'VOL_ENTITY_ID');
+    }
 }
 
 

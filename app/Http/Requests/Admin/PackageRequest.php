@@ -11,8 +11,6 @@ class PackageRequest extends FormRequest
         return [
             'PACKAGE_PRICE' => 'required',
             'PACKAGE_DURATION' => 'required',
-            'PACKAGE_START_DATE' => 'required|after_or_equal:' . now(),
-            'PACKAGE_FINISH_DATE' => 'required|date|after:PACKAGE_START_DATE',
         ];
     }
 
