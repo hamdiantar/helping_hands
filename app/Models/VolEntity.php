@@ -66,6 +66,11 @@ class VolEntity extends Authenticatable
     {
         return $this->hasMany(Subscription::class, 'VOL_ENTITY_ID');
     }
+
+    public function compliants()
+    {
+        return $this->hasMany(Compliant::class, 'VOL_ENTITY_ID');
+    }
 }
 
 

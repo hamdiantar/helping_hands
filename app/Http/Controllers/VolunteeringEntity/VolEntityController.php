@@ -4,6 +4,7 @@ namespace App\Http\Controllers\VolunteeringEntity;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VolEntity\VolEntityRegisterRequest;
+use App\Http\Requests\VolEntity\VolEntityUpdateRequest;
 use App\Models\VolEntity;
 use App\Traits\LoggerError;
 use App\Traits\UploadFile;
@@ -55,11 +56,15 @@ class VolEntityController extends Controller
         return back()->with('error', 'Login details are not valid');
     }
 
-    public function update(Request $request): RedirectResponse
+    public function update(VolEntityUpdateRequest $request): RedirectResponse
     {
         try {
             $user = getAuthVolEntity();
-            $user->update($request->all());
+            $data = $request->all();
+            if ($request->hasFile('VOL_ENTITY_LOGO')) {
+                $data['VOL_ENTITY_LOGO'] = $this->upload($request->VOL_ENTITY_LOGO);
+            }
+            $user->update($data);
             notify()->smiley('success', 'You have update your profile successfully');
             return back();
 

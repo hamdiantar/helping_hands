@@ -14,6 +14,7 @@ use App\Http\Controllers\VolunteeringEntity\AttendancesController;
 use App\Http\Controllers\VolunteeringEntity\CertificationController;
 use App\Http\Controllers\VolunteeringEntity\CharacteristicController;
 use App\Http\Controllers\VolunteeringEntity\opportunityController;
+use App\Http\Controllers\VolunteeringEntity\ReportController;
 use App\Http\Controllers\VolunteeringEntity\RequestController;
 use App\Http\Controllers\VolunteeringEntity\SubscriptionController;
 use App\Http\Controllers\VolunteeringEntity\TaskController;
@@ -82,6 +83,7 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
         Route::get('/', [VolEntityController::class, 'dashboard']);
         Route::view('/profile', 'volunteering-entity.profile')->name('profile');
         Route::post('/sign-out', [VolEntityController::class, 'signOut'])->name('signOut');
+        Route::put('/profile/update', [VolEntityController::class, 'update'])->name('profile.update');
         Route::resource('opportunities', opportunityController::class);
         Route::resource('opportunities/tasks', TaskController::class);
 
@@ -131,7 +133,7 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
 
 
         Route::view('attendance_report', 'volunteering-entity.opportunities.attendance_report')->name('attendance_report');
-        Route::view('performance_report', 'volunteering-entity.performance_report')->name('performance_report');
+        Route::get('performance_report', [ReportController::class, 'showPerformanceReport'])->name('performance_report');
     });
 });
 //Auth::routes();
