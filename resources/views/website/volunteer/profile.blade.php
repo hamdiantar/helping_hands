@@ -2,8 +2,8 @@
 
 @section('title', 'Join Us')
 @section('content')
-    <div class="main-banner2">
-        <div class="container mt-2 mb-4 d-flex justify-content-center">
+    <div style="padding: 135px 10px 0 5px !important;" class="main-banner2">
+        <div class=" mt-2 mb-4 d-flex justify-content-center">
             <div class="col-md-12 card p-2">
               <div class="row">
                   <div style="border-right: 1px solid #dfdfdf;" class="col-md-3">
@@ -118,34 +118,35 @@
                           </div>
                           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                               <h5 class="text-center mb-3 mt-3">My Attendance</h5>
-                              <button style="float: right;  margin: 10px;" class="btn">print <i class="fa fa-print"></i></button>
-                              <table class="table table-bordered table-">
-                                  <tbody>
+                              <button onclick="printData()" style="float: right;  margin: 10px;" class="btn">print <i class="fa fa-print"></i></button>
+                              <table class="table table-bordered" id="printTable">
+                                  <thead>
                                   <tr>
                                       <th>#</th>
-                                      <th>Event Name</th>
-                                      <th>Start Date</th>
-                                      <th>End Date</th>
+                                      <th>Opportunity Name</th>
+                                      <th>Date</th>
                                       <th>status</th>
                                   </tr>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>Event Name</td>
-                                      <td>12-12-2022</td>
-                                      <td>1-2-2023</td>
-                                      <td><span class="badge bg-danger">absent</span></td>
-                                  </tr>
-                                  <tr>
-                                      <td>2</td>
-                                      <td>Event Name</td>
-                                      <td>12-12-2022</td>
-                                      <td>1-2-2023</td>
-                                      <td><span class="badge bg-success">attend</span></td>
-                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  @foreach($volunteer->attends as $attend)
+                                      <tr>
+                                      <td>{{$attend->ATT_ID}}</td>
+                                      <td>{{optional($attend->oppo)->OPP_NAME}}</td>
+                                      <td>{{$attend->ATT_DATE}}</td>
+                                      <td>
+                                          @if($attend->ATT_STATUS == 'attend')
+                                              <span class="badge bg-success">Attend</span>
+                                          @else
+                                              <span class="badge bg-danger">absent</span>
+                                          @endif
+                                      </td>
+                                      </tr>
+                                  @endforeach
                                   </tbody>
                               </table>
                           </div>
-                          <div class="tab-opp fade" id="nav-opp" role="tabpanel" aria-labelledby="nav-opp-tab">
+                          <div class="tab-pane fade" id="nav-opp" role="tabpanel" aria-labelledby="nav-opp-tab">
                               <h5 class="text-center mb-3 mt-3">Requests</h5>
                               <table class="table table-bordered table-">
                                   <thead>
@@ -170,7 +171,7 @@
                                   @endforeach
                                   @else
                                       <tr>
-                                          <td colspan="5">No Requests Fount</td>
+                                          <td colspan="5">No Requests Found</td>
                                       </tr>
                                   @endif
                                   </tbody>
@@ -178,7 +179,37 @@
                           </div>
                           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                               <div class="col-md-12 p-5 text-center">
-                                  <a target="_blank" href="{{route('generate')}}" class="btn">Generate Your Certificate Now <i class="fa fa-graduation-cap"></i></a>
+                                  <h5 class="text-center mb-3 mt-3">Generate Certifications</h5>
+                                  <table class="table table-bordered table-">
+                                      <thead>
+                                      <tr>
+                                          <th>#ID</th>
+                                          <th>Volunteering Entity</th>
+                                          <th>Opportunity</th>
+                                          <th>Issue Date</th>
+                                          <th>Generate</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                      @if(count($volunteer->certifications))
+                                          @foreach($volunteer->certifications as $cert)
+                                              <tr>
+                                                  <td>{{$cert->CER_ID}}</td>
+                                                  <td>{{optional($cert->oppo->volEntity)->VOL_ENTITY_NAME}}</td>
+                                                  <td>{{optional($cert->oppo)->OPP_NAME}}</td>
+                                                  <td>{{$cert->CER_ISSUE_DATE}}</td>
+                                                  <td>
+                                                      <a target="_blank" href="{{route('generate.certification', $cert->CER_ID)}}" class="btn p-2">Generate<i class="fa fa-graduation-cap"></i></a>
+                                                  </td>
+                                              </tr>
+                                          @endforeach
+                                      @else
+                                          <tr>
+                                              <td colspan="5">No Certifications Found</td>
+                                          </tr>
+                                      @endif
+                                      </tbody>
+                                  </table>
                               </div>
                           </div>
                       </div>

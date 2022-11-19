@@ -1,9 +1,9 @@
 @extends('volunteering-entity.layouts.app')
 
-@section('title', 'opportunities | tasks')
+@section('title', 'opportunities | Attendances')
 
 @section('breadcrumb')
-    <li><a href="#">{{$opportunity->OPP_NAME}} > Tasks ></a> > Edit</li>
+    <li><a href="#">{{$opportunity->OPP_NAME}} > Attendances ></a> > Edit</li>
 @endsection
 @section('content')
     <div class="container-fluid py-2">
@@ -13,20 +13,18 @@
 
                     <div class="card-header p-0 position-relative mt-n4 mx-3">
                         <div class="bg-gradient-warning shadow-warning border-radius-lg pt-3 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">{{$opportunity->OPP_NAME}} > Tasks > Edit</h6>
-                            <a href="{{route('volunteering-entity.opportunities.tasks.index', $opportunity->OPP_ID)}}"
+                            <h6 class="text-white text-capitalize ps-3">{{$opportunity->OPP_NAME}} > Attendances > Edit</h6>
+                            <a href="{{route('volunteering-entity.opportunities.attendances.index', $opportunity->OPP_ID)}}"
                                class="btn btn-dark btn-sm btn-add"><i class="fa fa-times fs-15"></i></a>
                         </div>
                     </div>
                     <div class="card-body ml-3 mr-3">
-                        <form id="form" method="post" action="{{route('volunteering-entity.opportunities.tasks.update',  ['opportunity' => $opportunity->OPP_ID, 'task' => $item->OPP_TASK_ID])}}">
+                        <form id="form" method="post" action="{{route('volunteering-entity.opportunities.attendances.update',  ['opportunity' => $opportunity->OPP_ID, 'attendence' => $item->ATT_ID])}}">
                             @csrf
                             @method('PUT')
-                            @include('volunteering-entity.tasks.form')
+                            @include('volunteering-entity.attendences.form')
                             <div class="row col-md-2 offset-md-5 text-center">
-                                <button type="submit" class="btn btn-md bg-gradient-warning btn-lg w-100 mt-4 mb-0">
-                                    Save <i class="fa fa-file"></i>
-                                </button>
+                                <button type="submit" class="btn btn-md bg-gradient-warning btn-lg w-100 mt-4 mb-0">Save <i class="fa fa-file"></i></button>
                             </div>
                         </form>
                     </div>
@@ -36,5 +34,5 @@
     </div>
 @endsection
 @push('js')
-    {!! JsValidator::formRequest('App\Http\Requests\VolEntity\TaskRequest', "#form") !!}
+    {!! JsValidator::formRequest('App\Http\Requests\VolEntity\AttendanceRequest', "#form") !!}
 @endpush

@@ -4,16 +4,12 @@
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
                     <a href="{{url('/')}}" class="logo">
                           <img height="109px" src="{{asset('website/logo.png')}}" alt="Chain App Dev">
                     </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{url('/')}}" class="{{isCurrentPage('/')}}">Home</a></li>
                         <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/list*')}}" href="{{route('vol_entity.list')}}">Volunteer With Us</a></li>
-{{--                        <li class="scroll-to-section"><a href="{{route('compliant')}}">Compliant</a></li>--}}
                         @auth('volunteer')
                         <li><div class="gradient-button"><a href="{{route('volunteer.profile')}}">Welcome {{getAuthVolunteer()->VOL_FNAME}}   <i class="fa fa-user"></i></a>
                             </div></li>
@@ -22,9 +18,7 @@
                         @endauth
                         @guest('volunteer')
                             <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/pricing*')}}" href="{{route('vol_entity.pricing')}}">Pricing</a></li>
-
                             <li class="scroll-to-section"><a class="{{isCurrentPage('verification*')}}" href="{{route('verification')}}">verification</a></li>
-
                             <li><div class="gradient-button"><a id="modal_trigger2" href="#modal2">Join Us  <i class="fa fa-sign-in-alt"></i></a></div></li>
                         <li><div class="gradient-button"><a id="modal_trigger" href="#modal">Login  <i class="fa fa-sign-in-alt"></i></a></div></li>
                         @endguest
@@ -45,13 +39,11 @@
         <span class="modal_close"><i class="fa fa-times"></i></span>
     </div>
     <section class="popupBody">
-        <!-- Social Login -->
         <div class="social_login">
             <div class="action_btns">
                 <div class="one_half"><a id="modal_trigger3" href="#modal3"  class="btn">Volunteer <i class="fa fa-sign-in-alt"></i></a></div>
                 <div class="one_half last"><a href="{{route('volunteering-entity.showLoginForm')}}" class="btn">Volunteering Entity <i class="fa fa-sign-in-alt"></i></a></div>
             </div>
-
         </div>
     </section>
 </div>
@@ -67,7 +59,7 @@
         <div class="user_login">
             <form method="post" action="{{route('volunteer.login')}}" id="loginForm">
                 @csrf
-                <label>Email / Username</label>
+                <label>E-Mail</label>
                 <input name="VOL_EMAIL" type="text" class="form-control"/>
                 <br />
                 <label>Password</label>
@@ -78,8 +70,7 @@
                     <label for="remember">Remember me on this computer</label>
                 </div>
                 <div class="action_btns">
-                    <div class="one_half last">
-                        <button type="submit" form="loginForm"  class="btn">Login</button></div>
+                    <div class="one_half last"><button type="submit" form="loginForm"  class="btn">Login</button></div>
                 </div>
             </form>
         </div>

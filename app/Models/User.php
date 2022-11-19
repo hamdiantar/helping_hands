@@ -55,4 +55,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Request::class, 'VOL_ID');
     }
+
+    public function attends()
+    {
+        return $this->hasMany(Attendence::class, 'VOL_ID');
+    }
+
+    public function certifications()
+    {
+        return $this->hasMany(Certification::class, 'VOL_ID');
+    }
 }

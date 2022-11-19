@@ -48,4 +48,19 @@ class Opportunity extends Model
     {
         return $this->hasMany(Task::class, 'OPP_ID');
     }
+
+    public function attends()
+    {
+        return $this->hasMany(Attendence::class, 'OPP_ID');
+    }
+
+    public function certifications()
+    {
+        return $this->hasMany(Certification::class, 'OPP_ID');
+    }
+
+    public function volEntity()
+    {
+        return $this->belongsTo(VolEntity::class, 'VOL_ENTITY_ID');
+    }
 }

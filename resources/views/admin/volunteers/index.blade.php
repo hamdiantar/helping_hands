@@ -62,6 +62,16 @@
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye text-info fa-2x"></i>
                                         </a>
+
+                                        <a style="cursor: pointer" onclick="confirmAction('formid{{$item->VOL_ID}}', 'delete ?')"
+                                           class="text-secondary font-weight-bold text-xs  ml-2"
+                                           data-toggle="tooltip" data-original-title="Edit user">
+                                            <i class="fa fa-trash text-danger fa-2x"></i>
+                                        </a>
+                                        <form id="formid{{$item->VOL_ID}}" method="post" action="{{route('admin.volunteers.destroy', $item->VOL_ID)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

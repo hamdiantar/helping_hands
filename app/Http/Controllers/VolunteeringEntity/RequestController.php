@@ -28,7 +28,8 @@ class RequestController extends Controller
             $req->update([
                 'REQ_STATUS' => $request->status
             ]);
-            return redirect()->back()->with('success', 'Request has been updated successfully');
+            notify()->smiley('success', 'Request has been updated successfully');
+            return redirect()->back();
         } catch (Exception $exception) {
             $this->logErrors($exception);
             return redirect()->back()->with('error', 'something went wrong');

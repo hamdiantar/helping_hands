@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certification;
 use App\Models\VolEntity;
 
 class HomeController extends Controller
@@ -27,6 +28,14 @@ class HomeController extends Controller
         $item = VolEntity::find($id);
         return view('website.vol_entity.show', [
             'item' => $item
+        ]);
+    }
+
+    public function generateCertification(int $certId)
+    {
+        $certification = Certification::find($certId);
+        return view('website.generate', [
+           'certification' => $certification
         ]);
     }
 }

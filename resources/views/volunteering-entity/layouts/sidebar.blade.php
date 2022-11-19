@@ -59,6 +59,14 @@
                     <span class="nav-link-text ms-1">Subscription</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/certifications')}} {{isCurrentPage('volunteering-entity/opportunities/*certifications*')}}" href="{{route('volunteering-entity.certifications')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">workspace_premium</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Certifications</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link text-white {{isCurrentPage('volunteering-entity/performance_report*')}}" href="{{route('volunteering-entity.performance_report')}}">
@@ -77,52 +85,6 @@
                 </a>
             </li>
 
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link text-white " href="../pages/billing.html">--}}
-{{--                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">--}}
-{{--                        <i class="material-icons opacity-10">receipt_long</i>--}}
-{{--                    </div>--}}
-{{--                    <span class="nav-link-text ms-1">Billing</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-
-
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link text-white " href="../pages/notifications.html">--}}
-{{--                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">--}}
-{{--                        <i class="material-icons opacity-10">notifications</i>--}}
-{{--                    </div>--}}
-{{--                    <span class="nav-link-text ms-1">Notifications</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item mt-3">--}}
-{{--                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>--}}
-{{--            </li>--}}
-
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link text-white " href="../pages/profile.html">--}}
-{{--                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">--}}
-{{--                        <i class="material-icons opacity-10">person</i>--}}
-{{--                    </div>--}}
-{{--                    <span class="nav-link-text ms-1">Profile</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link text-white " href="../pages/sign-in.html">--}}
-{{--                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">--}}
-{{--                        <i class="material-icons opacity-10">login</i>--}}
-{{--                    </div>--}}
-{{--                    <span class="nav-link-text ms-1">Sign In</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link text-white " href="../pages/sign-up.html">--}}
-{{--                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">--}}
-{{--                        <i class="material-icons opacity-10">assignment</i>--}}
-{{--                    </div>--}}
-{{--                    <span class="nav-link-text ms-1">Sign Up</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
         </ul>
     </div>
 

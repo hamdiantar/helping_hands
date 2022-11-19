@@ -10,6 +10,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\Admin\VolunteerController as VolunteerControllerAdmin;
 use App\Http\Controllers\Admin\VolunteeringEntityController;
+use App\Http\Controllers\VolunteeringEntity\AttendancesController;
+use App\Http\Controllers\VolunteeringEntity\CertificationController;
 use App\Http\Controllers\VolunteeringEntity\CharacteristicController;
 use App\Http\Controllers\VolunteeringEntity\opportunityController;
 use App\Http\Controllers\VolunteeringEntity\RequestController;
@@ -30,6 +32,7 @@ Route::get('/vol_entity/{id}/show', [HomeController::class, 'showReviews'])->nam
 
 Route::view('/verification', 'website.verification')->name('verification');
 Route::view('/generate', 'website.generate')->name('generate');
+Route::get('generate/{id}', [HomeController::class, 'generateCertification'])->name('generate.certification');
 
 //routes for volunteer
 Route::get('/volunteer/register', [VolunteerController::class, 'showRegisterForm'])->name('volunteer.showRegisterForm');
@@ -102,6 +105,21 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
         Route::get('opportunities/{opportunity}/tasks/{task}', [TaskController::class, 'edit'])->name('opportunities.tasks.edit');
         Route::put('opportunities/{opportunity}/tasks/{task}', [TaskController::class, 'update'])->name('opportunities.tasks.update');
         Route::delete('opportunities/{opportunity}/tasks/{task}', [TaskController::class, 'destroy'])->name('opportunities.tasks.destroy');
+
+        Route::get('opportunities/{opportunity}/attendances', [AttendancesController::class, 'index'])->name('opportunities.attendances.index');
+        Route::get('opportunities/{opportunity}/attendances/create', [AttendancesController::class, 'create'])->name('opportunities.attendances.create');
+        Route::post('opportunities/{opportunity}/attendances', [AttendancesController::class, 'store'])->name('opportunities.attendances.store');
+        Route::get('opportunities/{opportunity}/attendances/{attendence}', [AttendancesController::class, 'edit'])->name('opportunities.attendances.edit');
+        Route::put('opportunities/{opportunity}/attendances/{attendence}', [AttendancesController::class, 'update'])->name('opportunities.attendances.update');
+        Route::delete('opportunities/{opportunity}/attendances/{attendence}', [AttendancesController::class, 'destroy'])->name('opportunities.attendances.destroy');
+
+        Route::get('certifications', [CertificationController::class, 'getOpp'])->name('certifications');
+        Route::get('opportunities/{opportunity}/certifications', [CertificationController::class, 'index'])->name('opportunities.certifications.index');
+        Route::get('opportunities/{opportunity}/certifications/create', [CertificationController::class, 'create'])->name('opportunities.certifications.create');
+        Route::post('opportunities/{opportunity}/certifications', [CertificationController::class, 'store'])->name('opportunities.certifications.store');
+        Route::get('opportunities/{opportunity}/certifications/{certification}', [CertificationController::class, 'edit'])->name('opportunities.certifications.edit');
+        Route::put('opportunities/{opportunity}/certifications/{certification}', [CertificationController::class, 'update'])->name('opportunities.certifications.update');
+        Route::delete('opportunities/{opportunity}/certifications/{certification}', [CertificationController::class, 'destroy'])->name('opportunities.certifications.destroy');
 
 
         Route::get('requests', [RequestController::class, 'index'])->name('requests.index');
