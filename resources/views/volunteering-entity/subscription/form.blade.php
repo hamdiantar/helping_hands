@@ -4,7 +4,7 @@
         <select required class="form-control" name="PACKAGE_ID">
             <option>Select</option>
             @foreach($packages as $package)
-                <option value="{{$package->PACKAGE_ID}}">{{$package->PACKAGE_DURATION}} / {{$package->PACKAGE_PRICE}} SAR</option>
+                <option value="{{$package->PACKAGE_ID}}">{{$package->PACKAGE_DURATION}} day / {{$package->PACKAGE_PRICE}} SAR</option>
             @endforeach
         </select>
     </div>

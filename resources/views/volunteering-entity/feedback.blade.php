@@ -21,7 +21,7 @@
                             <table class="table table-bordered mb-0" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <td>Reviewer Name</td>
+                                    <td>Volunteer Name</td>
                                     <td>Comment</td>
                                     <td>Date</td>
                                     <td>Rating</td>

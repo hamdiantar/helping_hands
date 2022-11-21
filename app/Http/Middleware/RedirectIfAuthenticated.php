@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                     return redirect()->route('admin.dashboard');
                 }
                 if($guard === 'volEntity'){
-                    return redirect()->route(' volunteering-entity.');
+                    return redirect()->route('volunteering-entity.');
                 }
                 if($guard === 'volunteer'){
                     return redirect()->route('home');
