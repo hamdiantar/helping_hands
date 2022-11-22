@@ -24,27 +24,19 @@
                             <table class="table  table-bordered mb-0 text-center" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Name
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                       Title
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Against
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Title
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Status
-                                    </th>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Title</th>
+                                    <th>Against</th>
+                                    <th>Title</th>
+                                    <th>Status</th>
                                     <th class="text-center text-secondary opacity-7">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($items as $item)
                                 <tr>
+                                    <td>{{$item->COMP_ID}}</td>
                                     <td>{{optional($item->volunteer)->full_name}}</td>
                                     <td><p class="text-xs font-weight-bold mb-0">{{$item->COMP_TITLE}}</p></td>
                                     <td class="align-middle text-center">

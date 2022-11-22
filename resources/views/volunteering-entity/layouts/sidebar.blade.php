@@ -57,6 +57,16 @@
                     <span class="nav-link-text ms-1">Subscription</span>
                 </a>
             </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('volunteering-entity/compliant*')}}" href="{{route('volunteering-entity.compliant.index')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">assignment</i>
+                    </div>
+                    <span class="nav-link-text ms-1">compliant</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link text-white {{isCurrentPage('volunteering-entity/certifications')}} {{isCurrentPage('volunteering-entity/opportunities/*certifications*')}}" href="{{route('volunteering-entity.certifications')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

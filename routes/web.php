@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CompliantController as AdminCompliantController;
+use App\Http\Controllers\Admin\OpportunityPostController;
 use App\Http\Controllers\Admin\PackageController;
+use App\Http\Controllers\Admin\ReportAdminController;
 use App\Http\Controllers\ApplyController;
 use App\Http\Controllers\CompliantController as VolCompliantController;
+use App\Http\Controllers\VolunteeringEntity\CompliantController as EntityCompliantController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VolunteerController;
@@ -61,6 +64,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware(['auth:admin'])->group(function(){
         Route::get('/', [AdminController::class, 'dashboard']);
         Route::put('/profile/update', [AdminController::class, 'update'])->name('profile.update');
+        Route::get('/Joining-requests', [VolunteeringEntityController::class, 'getJoiningRequests'])->name('Joining.requests');
         Route::post('/sign-out', [AdminController::class, 'signOut'])->name('signOut');
         Route::view('/profile', 'admin.profile')->name('profile');
         Route::resource('volunteers', VolunteerControllerAdmin::class);
@@ -68,8 +72,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('volunteering-entity/{id}/update-status/{status}', [VolunteeringEntityController::class, 'UpdateStatus'])->name('ve.UpdateStatus');
         Route::resource('compliant', AdminCompliantController::class);
         Route::resource('packages', PackageController::class);
-        Route::view('/growth_report', 'admin.test')->name('growth_report');
-        Route::view('/trend_report', 'admin.test2')->name('trend_report');
+        Route::get('posts', [OpportunityPostController::class, 'getOpportunities'])->name('posts');
+        Route::post('posts/confirm/{id}', [OpportunityPostController::class, 'confirmPost'])->name('confirmPost');
+        Route::get('/growth_report', [ReportAdminController::class, 'growthReport'])->name('growth_report');
+        Route::get('/overallSatisfaction', [ReportAdminController::class, 'overallSatisfaction'])->name('overallSatisfaction');
     });
 });
 
@@ -134,6 +140,9 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
 
         Route::view('attendance_report', 'volunteering-entity.opportunities.attendance_report')->name('attendance_report');
         Route::get('performance_report', [ReportController::class, 'showPerformanceReport'])->name('performance_report');
+
+        Route::get('requests/volunteer/{id}', [EntityCompliantController::class, 'getVolunteerWithComplaint'])->name('getVolunteerWithComplaint');
+        Route::resource('compliant', EntityCompliantController::class);
     });
 });
 //Auth::routes();

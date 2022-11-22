@@ -19,22 +19,7 @@
 
                     <div class="card-body ml-3 mr-3">
                         <div class="row box-custom">
-                            <div class="col-md-6">
-                                <label>Date From :</label>
-                                <input type="date" class="form-control">
-                            </div>
-                            <div class="col-md-6">
-                                <label>Date To :</label>
-                                <input type="date" class="form-control">
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0">
-                                    Generate Report <i class="fa fa-file"></i>
-                                </button>
-                                <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0 mr-2">
-                                    print <i class="fa fa-print"></i>
-                                </button>
-                            </div>
+                            <h3 class="text-center">Growth Report</h3>
                         </div>
                         <div class="table-responsive text-center p-0">
                             <table class="table text-center table-bordered mb-0 text-center" id="dataTable">
@@ -47,8 +32,8 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td><span class="badge bg-success">60</span></td>
-                                    <td><span class="badge bg-danger">20</span></td>
+                                    <td><span class="badge bg-success">{{$volEntityCountReigstered}}</span></td>
+                                    <td><span class="badge bg-danger">{{$volEntityCountReject}}</span></td>
                                     <td><a href="#">read more....</a></td>
                                 </tr>
                                 </tbody>

@@ -39,9 +39,6 @@ class opportunityController extends Controller
     {
         try {
             $data = $request->all();
-            if (!$request->file('OPP_STATUS')) {
-                $data['OPP_STATUS'] = 0;
-            }
             Opportunity::create($data);
             notify()->smiley('success', 'Opportunity has been created successfully');
             return redirect()->route('volunteering-entity.opportunities.index');
@@ -65,9 +62,6 @@ class opportunityController extends Controller
         try {
             $item = Opportunity::findOrFail($id);
             $data = $request->all();
-            if (!$request->file('OPP_STATUS')) {
-                $data['OPP_STATUS'] = 0;
-            }
             $item->update($data);
             notify()->smiley('success', 'Opportunity has been Updated successfully');
             return redirect()->route('volunteering-entity.opportunities.index');

@@ -19,6 +19,7 @@ class VolunteerController extends Controller
         return view($this->view.'index', compact('items'));
     }
 
+
     public function show(int $userId)
     {
         $item = User::findOrFail($userId);

@@ -30,7 +30,7 @@ class Compliant extends Model
         parent::boot();
         static::creating(function($model)
         {
-            $model->VOL_ID =  getAuthVolunteer()->VOL_ID;
+            $model->VOL_ID =  getAuthVolunteer()->VOL_ID ?? $model->VOL_ID;
         });
     }
 

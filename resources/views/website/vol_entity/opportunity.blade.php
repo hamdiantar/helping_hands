@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="section-heading  wow fadeInDown animated" data-wow-duration="1s" data-wow-delay="0.5s" style="visibility: visible;-webkit-animation-duration: 1s; -moz-animation-duration: 1s; animation-duration: 1s;-webkit-animation-delay: 0.5s; -moz-animation-delay: 0.5s; animation-delay: 0.5s;">
-                        <h4>Available opportunities  [ {{count($item->opps)}} ]<em> &amp;  in {{$item->VOL_ENTITY_NAME}}</em> </h4>
+                        <h4>Available opportunities  [ {{count($item->opps->where('OPP_STATUS', 1))}} ]<em> &amp;  in {{$item->VOL_ENTITY_NAME}}</em> </h4>
                         <!-- Button trigger modal -->
                     </div>
                 </div>
@@ -15,8 +15,8 @@
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                @if(count($item->opps))
-                    @foreach($item->opps as $opp)
+                @if(count($item->opps->where('OPP_STATUS', 1)))
+                    @foreach($item->opps->where('OPP_STATUS', 1) as $opp)
                 <article class="col-md-10 mb-5 post vt-post">
                     <div class="row">
                         <div class="col-md-12">

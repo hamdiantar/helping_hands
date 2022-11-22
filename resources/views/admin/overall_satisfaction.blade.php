@@ -31,9 +31,6 @@
                                 <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0">
                                     Generate Report <i class="fa fa-file"></i>
                                 </button>
-                                <button type="button" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0 mr-2">
-                                    print <i class="fa fa-print"></i>
-                                </button>
                             </div>
                         </div>
                         <div class="table-responsive text-center p-0">
@@ -46,40 +43,25 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($opps as $opp)
                                 <tr>
-                                    <td>Ithra Aramco </td>
-                                    <td><span class="badge bg-danger">1</span></td>
+                                    <td>{{$opp->OPP_NAME}}</td>
+                                    <td><span class="badge bg-danger">{{count(optional($opp->volEntity)->compliants)}}</span></td>
                                     <td>
                                         <div class="progress-wrapper w-75 mx-auto">
                                             <div class="progress-success">
                                                 <div class="progress-percentage">
-                                                    <span class="text-xs font-weight-bold">80%</span>
+                                                    <span class="text-xs font-weight-bold">{{count(optional($opp->volEntity)->reviews) * 10}}%</span>
                                                 </div>
                                             </div>
                                             <div class="progress">
-                                                <div class="progress-bar bg-gradient-success w-80" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div style="width: {{count(optional($opp->volEntity)->reviews) * 10}}%" class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </td>
 
                                 </tr>
-                                <tr>
-                                    <td> General Entertainment Authority  </td>
-                                    <td><span class="badge bg-danger">2</span></td>
-                                    <td>
-                                        <div class="progress-wrapper w-75 mx-auto">
-                                            <div class="progress-danger">
-                                                <div class="progress-percentage">
-                                                    <span class="text-xs font-weight-bold">50%</span>
-                                                </div>
-                                            </div>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-gradient-danger w-50" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

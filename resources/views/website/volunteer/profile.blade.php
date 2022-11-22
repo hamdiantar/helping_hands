@@ -6,7 +6,7 @@
         <div class=" mt-2 mb-4 d-flex justify-content-center">
             <div class="col-md-12 card p-2">
               <div class="row">
-                  <div style="border-right: 1px solid #dfdfdf;" class="col-md-3">
+                  <div style="border-right: 1px solid #dfdfdf;" class="col-md-2">
                       <div  class=" image d-flex flex-column justify-content-center align-items-center">
                           <a><img class="img-thumbnail img-profile" src="{{asset('website/logo.png')}}" height="100" width="100"/></a>
                           <span class="name mt-3">{{$volunteer->full_name}}</span> <span class="idd">@ {{$volunteer->VOL_USERNAME}}</span>
@@ -21,12 +21,13 @@
                           </div>
                       </div>
                   </div>
-                  <div class="col-md-9 mt-2">
+                  <div class="col-md-10 mt-2">
                       <nav>
                           <div class="nav nav-tabs" id="nav-tab" role="tablist">
                               <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Profile</button>
                               <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My Attendance</button>
-                              <button  class="nav-link" id="nav-opp-tab" data-bs-toggle="tab" data-bs-target="#nav-opp" type="button" role="tab" aria-controls="nav-opp" aria-selected="false">Requests</button>
+                              <button  class="nav-link" id="nav-opp-tab" data-bs-toggle="tab" data-bs-target="#nav-opp" type="button" role="tab" aria-controls="nav-opp" aria-selected="false">My Requests</button>
+                              <button  class="nav-link" id="nav-Compliant-tab" data-bs-toggle="tab" data-bs-target="#nav-Compliant" type="button" role="tab" aria-controls="nav-Compliant" aria-selected="false">My Compliant</button>
                               <button  class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">certificate</button>
                           </div>
                       </nav>
@@ -172,6 +173,37 @@
                                   @else
                                       <tr>
                                           <td colspan="5">No Requests Found</td>
+                                      </tr>
+                                  @endif
+                                  </tbody>
+                              </table>
+                          </div>
+                          <div class="tab-pane fade" id="nav-Compliant" role="tabpanel" aria-labelledby="nav-Compliant-tab">
+                              <h5 class="text-center mb-3 mt-3">Compliant</h5>
+                              <table class="table table-bordered table-">
+                                  <thead>
+                                  <tr>
+                                      <th>#ID</th>
+                                      <th>Title</th>
+                                      <th>Against</th>
+                                      <th>Date</th>
+                                      <th>Relay</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  @if(count($volunteer->compliants))
+                                      @foreach($volunteer->compliants as $request)
+                                          <tr>
+                                              <td>{{$request->COMP_ID}}</td>
+                                              <td>{{$request->COMP_TITLE}}</td>
+                                              <td>{{$request->COMP_AGAINST}}</td>
+                                              <td>{{$request->COMP_DATE}}</td>
+                                              <td>{{$request->COMP_REPLY}}</td>
+                                          </tr>
+                                      @endforeach
+                                  @else
+                                      <tr>
+                                          <td colspan="5">No compliant Found</td>
                                       </tr>
                                   @endif
                                   </tbody>

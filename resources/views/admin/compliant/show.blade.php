@@ -24,7 +24,7 @@
                             <table style="text-align: left !important;" class="table table-striped table-bordered mb-0 text-lg-end">
                                 <tbody>
                                 <tr>
-                                    <td colspan="3" class="text-danger"> Volunteer Entity</td>
+                                    <td colspan="3" class="text-danger"> Volunteer</td>
                                 </tr>
                                 <tr>
                                     <td><strong>FullName</strong> : {{optional($compliant->volunteer)->full_name}}</td>

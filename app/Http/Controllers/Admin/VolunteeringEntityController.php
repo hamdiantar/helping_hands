@@ -16,11 +16,20 @@ class VolunteeringEntityController extends Controller
 
     public function index()
     {
-        $items = VolEntity::all();
+        $items = VolEntity::where('VOL_ENTITY_STATUS', '!=', 0)->get();
         return view($this->view.'index', [
             'items' => $items
         ]);
     }
+
+    public function getJoiningRequests()
+    {
+        $items = VolEntity::where('VOL_ENTITY_STATUS', 0)->get();
+        return view($this->view.'index', [
+            'items' => $items
+        ]);
+    }
+
     public function UpdateStatus(int $id, int $status): RedirectResponse
     {
         $item = VolEntity::findOrFail($id);
@@ -32,10 +41,17 @@ class VolunteeringEntityController extends Controller
     }
 
 
-    public function destroy(int $userId)
+    public function show(int $id)
+    {
+        $item = VolEntity::findOrFail($id);
+        return view($this->view.'show', [
+            'item' => $item
+        ]);
+    }
+    public function destroy(int $id)
     {
         try {
-            $item = VolEntity::findOrFail($userId);
+            $item = VolEntity::findOrFail($id);
             $item->delete();
             notify()->smiley('success', 'Volunteering Entity has been Deleted successfully');
             return redirect()->route('admin.volunteering-entity.index');

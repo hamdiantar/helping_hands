@@ -49,11 +49,17 @@ class VolEntityController extends Controller
             'VOL_ENTITY_EMAIL' => 'required',
             'password' => 'required',
         ]);
+        $vol = VolEntity::where('VOL_ENTITY_EMAIL', $request->VOL_ENTITY_EMAIL)->first();
+        if ($vol && ($vol->VOL_ENTITY_STATUS == 0 || $vol->VOL_ENTITY_STATUS == 2)) {
+            notify()->smiley('error', 'please until admin accept your joining request');
+            return back();
+        }
         $credentials = $request->only('VOL_ENTITY_EMAIL', 'password');
         if ($this->guard()->attempt($credentials)) {
             return redirect()->intended('/volunteering-entity');
         }
-        return back()->with('error', 'Login details are not valid');
+        notify()->smiley('error', 'Login details are not valid');
+        return back();
     }
 
     public function update(VolEntityUpdateRequest $request): RedirectResponse

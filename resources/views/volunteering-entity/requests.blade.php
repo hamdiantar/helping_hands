@@ -27,6 +27,7 @@
                                     <th class="text-center">Date</th>
                                     <th class="text-center">Opportunity</th>
                                     <th class="text-center">Status</th>
+                                    <th class="text-center">Rating</th>
                                     <th class="text-center">actions</th>
                                 </tr>
                                 </thead>
@@ -38,6 +39,7 @@
                                     <td>{{$item->REQ_DATE}}</td>
                                     <td>{{optional($item->opp)->OPP_NAME}}</td>
                                     <td><span class="badge bg-success">{{$item->REQ_STATUS}}</span></td>
+                                    <td><a href="{{route('volunteering-entity.getVolunteerWithComplaint', optional($item->volunteer)->VOL_ID)}}">Show Rating</a></td>
                                     <td>
                                         @if($item->REQ_STATUS == 'pending')
                                             <a href="{{route('volunteering-entity.requests.UpdateStatus', ['status' => 'accept', 'id' => $item->REQ_ID])}}" class="text-success font-weight-bold text-xs ml-2"

@@ -44,13 +44,7 @@
         <label class="form-label">location</label>
         <input type="text" name="OPP_LOCATION" value="{{isset($item) ? $item->OPP_LOCATION : old('OPP_LOCATION')}}" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
     </div>
-    <div class="form-check col-md-6 form-check-warning text-start">
-        <input type="hidden" name="OPP_STATUS" value="0">
-        <input class="form-check-input" type="checkbox" name="OPP_STATUS" value="1" id="flexCheckDefault"{{isset($item) && $item->OPP_STATUS == 1 ? 'checked' : ''}}">
-        <label class="form-check-label" for="flexCheckDefault">
-            <a href="javascript:;" class="text-dark font-weight-bolder">Status</a>
-        </label>
-    </div>
+
     <div class="input-group col-md-6 mb-3">
 {{--        <label class="form-label">decription</label>--}}
         <textarea style="border: 1px solid #ff993a" name="OPP_DESCRIPTION" rows="4" class="form-control">{{isset($item) ? $item->OPP_DESCRIPTION : old('OPP_DESCRIPTION')}}</textarea>

@@ -13,8 +13,7 @@
 
                     <div class="card-header p-0 position-relative mt-n4 mx-3">
                         <div class="bg-gradient-warning shadow-warning border-radius-lg pt-3 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">Volunteering Entity
-                                [ Pending Requests <span class="badge bg-danger">{{$items->where('VOL_ENTITY_STATUS', 0)->count()}}</span>  ]</h6>
+                            <h6 class="text-white text-capitalize ps-3">Volunteering Entity</h6>
                         </div>
                     </div>
 
@@ -79,7 +78,7 @@
                                         @endif
                                     </td>
                                     <td class="align-middle">
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                        <a href="{{route('admin.volunteering-entity.show', $item->VOL_ENTITY_ID)}}" class="text-secondary font-weight-bold text-xs"
                                            data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa fa-eye fa-2x "></i>
                                         </a>
