@@ -17,8 +17,13 @@
     </div>
 
 
-      <div class="input-group col-md-6 input-group-outline mb-3 is-filled">
-          <label class="form-label">Cert Type</label>
-          <input required type="text" class="form-control" name="CER_TYPE" value="{{isset($item) ? $item->CER_TYPE : old('CER_TYPE')}}">
-      </div>
+{{--      <div class="input-group col-md-6 input-group-outline mb-3 is-filled">--}}
+{{--          <label class="form-label">Cert Type</label>--}}
+{{--          <select required class="form-control" name="CER_TYPE">--}}
+{{--              <option value="">Select</option>--}}
+{{--              <option value="Business">Business</option>--}}
+{{--              <option value="Education">Education</option>--}}
+{{--              <option value="Culture">Culture</option>--}}
+{{--          </select>--}}
+{{--      </div>--}}
 </div>

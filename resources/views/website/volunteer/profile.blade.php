@@ -6,22 +6,34 @@
         <div class=" mt-2 mb-4 d-flex justify-content-center">
             <div class="col-md-12 card p-2">
               <div class="row">
-                  <div style="border-right: 1px solid #dfdfdf;" class="col-md-2">
+                  <div style="border-right: 1px solid #dfdfdf;" class="col-md-3">
                       <div  class=" image d-flex flex-column justify-content-center align-items-center">
                           <a><img class="img-thumbnail img-profile" src="{{asset('website/logo.png')}}" height="100" width="100"/></a>
                           <span class="name mt-3">{{$volunteer->full_name}}</span> <span class="idd">@ {{$volunteer->VOL_USERNAME}}</span>
-                          <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                              <span class="idd1">{{$volunteer->VOL_TARGET_HOUR}} Target Hours</span><span><i class="fa fa-clock"></i></span>
-                          </div>
                           <div class=" d-flex mt-2">
                               <span>Level : {{$volunteer->VOL_GRADE_LEVEL}}</span>
                           </div>
                           <div class=" px-2 rounded mt-4 date ">
-
+                              <table class="table table-bordered">
+                                  <tbody>
+                                  <tr>
+                                      <td>Target Hours</td>
+                                      <td><strong class="text-danger">{{$volunteer->VOL_TARGET_HOUR}} h</strong></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Completed Hours</td>
+                                      <td><strong class="text-danger">{{$volunteer->completedHours()}} h</strong></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Remaining Hours</td>
+                                      <td><strong class="text-danger">{{$volunteer->remainingHours()}} h</strong></td>
+                                  </tr>
+                                  </tbody>
+                              </table>
                           </div>
                       </div>
                   </div>
-                  <div class="col-md-10 mt-2">
+                  <div class="col-md-9 mt-2">
                       <nav>
                           <div class="nav nav-tabs" id="nav-tab" role="tablist">
                               <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Profile</button>
@@ -90,10 +102,10 @@
                                           <input type="number" class="form-control" id="Target" name="VOL_TARGET_HOUR"  value="{{$volunteer->VOL_TARGET_HOUR}}">
                                       </div>
 
-                                      <div class="col-md-6 mb-3">
-                                          <label for="Completed" class="form-label">Completed Hours : </label>
-                                          <input type="number" class="form-control" id="Completed" name="VOL_COMPLETED_HOUR"  value="{{$volunteer->VOL_COMPLETED_HOUR}}">
-                                      </div>
+{{--                                      <div class="col-md-6 mb-3">--}}
+{{--                                          <label for="Completed" class="form-label">Completed Hours : </label>--}}
+{{--                                          <input type="number" class="form-control" id="Completed" name="VOL_COMPLETED_HOUR"  value="{{$volunteer->VOL_COMPLETED_HOUR}}">--}}
+{{--                                      </div>--}}
 
                                       <div class="col-md-6 mb-3">
                                           <label for="VOL_GRADE_LEVEL" class="form-label">Grade Level : </label>
@@ -187,7 +199,7 @@
                                       <th>Title</th>
                                       <th>Against</th>
                                       <th>Date</th>
-                                      <th>Relay</th>
+                                      <th>Reply</th>
                                   </tr>
                                   </thead>
                                   <tbody>

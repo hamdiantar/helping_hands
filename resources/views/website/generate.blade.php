@@ -50,7 +50,7 @@
             text-align: left !important;
             font-size: 17px;
             padding: 23px !important;
-            font-family: "Satisfy", cursive;
+            /*font-family: "Satisfy", cursive;*/
         }
 
         .end {
@@ -91,18 +91,20 @@
 <table class="cert">
     <tr>
         <td align="center" class="crt_logo">
-            <img style="height: 126px;width: 141px;" src="{{optional($certification->oppo->volEntity)->logo_path}}" alt="logo">
+            <img style="height: 126px;width: 141px;" src="{{optional($certification->oppo->volEntity)->logo_path}}"
+                 alt="logo">
         </td>
         <td align="center" class="crt_logo"><img src="{{asset('website/logo.png')}}" alt="logo"></td>
     </tr>
     <tr>
         <td colspan="2" align="center">
-            <h1 class="crt_title">Volunteering Work Certificate
-                <p>The Community Service at Ithra Center would like to express its thanks and appreciation to</p>
+            <h1 class="crt_title">Volunteering Work Certificate</h1>
+                <p>The Community Service at {{optional($certification->oppo->volEntity)->VOL_ENTITY_NAME}}  would like to express its thanks and appreciation to</p>
                 <h1 class="colorGreen crt_user">{{optional($certification->volunteer)->full_name}}</h1>
-                <p class="afterName">ID Number (1110002201) School (Second Secondary School) Role (Organizer) In
-                    recognition of this outstanding volunteer work and effort in the volunteer opportunity (School
-                    Visits Operation) in Dhahran from 10/10/2022 to 12/10/2022 with a rate of (9) volunteering hours.
+                <p class="afterName">ID Number ({{optional($certification->volunteer)->VOL_ID}}) School ({{optional($certification->volunteer)->VOL_SCHOOL_NAME}}) Role (Volunteer) In
+                    recognition of this outstanding volunteer work and effort in the volunteer opportunity
+                    ({{optional($certification->oppo)->OPP_NAME}}) in {{optional($certification->oppo)->OPP_CITY}}
+                    from {{optional($certification->oppo)->OPP_START_DATE}}  to {{optional($certification->oppo)->OPP_FINISH_DATE}}  with a rate of ({{optional($certification->oppo)->OPP_TOTAL_HOUR}}) volunteering hours.
                     Wishing further success in the future </p>
 
 
@@ -123,12 +125,18 @@
         </td>
         <td>
             <p style="font-size:12px !important; margin-bottom:-26px;">Certification ID: {{$certification->CER_ID}}</p>
-            <p style="font-size: 12px !important;"> Certification Hyperlink:-----------------</p>
         </td>
     </tr>
 </table>
 
 
 @include('website.layouts.foot')
+<script>
+    @if(!isset($noprint))
+        window.onload = function () {
+        window.print();
+    }
+    @endif
+</script>
 </body>
 </html>

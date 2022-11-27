@@ -102,6 +102,24 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('admin/report-packages*')}}" href="{{route('admin.report-packages')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">receipt_long</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Report Packages</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white {{isCurrentPage('admin/report-complaint*')}}" href="{{route('admin.report-complaint')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">receipt_long</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Report Complaint</span>
+                </a>
+            </li>
+
         </ul>
     </div>
 

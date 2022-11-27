@@ -39,6 +39,9 @@
                                         <td>{{$item->OPP_START_DATE}}</td>
                                         <td>{{$item->OPP_FINISH_DATE}}</td>
                                         <td class="align-middle">
+                                            <a href="{{route('admin.posts.show', ['volentityID' => $item->VOL_ENTITY_ID, 'oppoID' => $item->OPP_ID])}}" style="cursor: pointer" class="text-secondary font-weight-bold text-xs  ml-2">
+                                                <i class="fa fa-eye text-success fa-2x"></i>
+                                            </a>
                                             <a style="cursor: pointer" onclick="confirmAction('formid{{$item->OPP_ID}}', 'publish this Opportunity ?')"
                                                class="text-secondary font-weight-bold text-xs  ml-2">
                                                 <i class="fa fa-check text-success fa-2x"></i>

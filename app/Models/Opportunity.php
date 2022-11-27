@@ -63,4 +63,26 @@ class Opportunity extends Model
     {
         return $this->belongsTo(VolEntity::class, 'VOL_ENTITY_ID');
     }
+
+    public function totalBooked()
+    {
+        $totalApplications = Request::where('OPP_ID', $this->OPP_ID)->count();
+        return $totalApplications;
+    }
+
+    public function totalAvailable()
+    {
+        $totalApplications = Request::where('OPP_ID', $this->OPP_ID)->count();
+        return $this->OPP_CAPACITY - $totalApplications;
+    }
+
+    public function getStartTimeAttribute()
+    {
+        return date('h:i A', strtotime($this->OPP_START_TIME));
+    }
+
+    public function getEndTimeAttribute()
+    {
+        return date('h:i A', strtotime($this->OPP_END_TIME));
+    }
 }

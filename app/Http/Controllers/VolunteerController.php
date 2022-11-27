@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certification;
 use Illuminate\Support\Facades\Session;
 use Exception;
 use App\Models\User;
@@ -17,10 +18,13 @@ class VolunteerController extends Controller
 
     private $view = 'website.volunteer.';
 
-    public function profile()
+    public function profile(Request $request)
     {
         $volunteer = getAuthVolunteer();
-        return view($this->view . 'profile', compact('volunteer'));
+        if ($request->filled('success')) {
+            return view($this->view . 'profile', compact('volunteer'));
+        }
+        return view($this->view . 'final', compact('volunteer'));
     }
     public function showRegisterForm()
     {
@@ -77,5 +81,16 @@ class VolunteerController extends Controller
         Session::flush();
         Auth::guard('volunteer')->logout();
         return Redirect('/');
+    }
+
+    public function verification(Request $request)
+    {
+        if ($request->filled('id')) {
+            $cert = Certification::find($request->id);
+            if ($cert) {
+                return view('website.verification', compact('cert'));
+            }
+        }
+       return view('website.verification');
     }
 }

@@ -71,6 +71,15 @@ class VolEntity extends Authenticatable
     {
         return $this->hasMany(Compliant::class, 'VOL_ENTITY_ID');
     }
+
+    public function certificationTotal()
+    {
+       $total = 0;
+        foreach ($this->opps as $opp) {
+            $total += count($opp->certifications);
+       }
+        return $total;
+    }
 }
 
 

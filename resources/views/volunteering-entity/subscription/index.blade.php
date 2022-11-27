@@ -24,6 +24,7 @@
                                     <th>Package Price</th>
                                     <th>Package Duration</th>
                                     <th>Subscription Date</th>
+                                    <th>Payment Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -33,6 +34,7 @@
                                     <td>{{optional($item->package)->PACKAGE_PRICE}} SAR</td>
                                     <td>{{optional($item->package)->PACKAGE_DURATION}}</td>
                                     <td>{{$item->SUB_DATE}}</td>
+                                    <td><span class="badge bg-success">PIAD</span></td>
                                 </tr>
                                 @endforeach
                                 </tbody>

@@ -34,7 +34,7 @@ Route::view('/vol_entity/pricing', 'website.vol_entity.pricing')->name('vol_enti
 Route::get('/vol_entity/{id}/show', [HomeController::class, 'showReviews'])->name('vol_entity.show');
 
 
-Route::view('/verification', 'website.verification')->name('verification');
+Route::get('/verification', [VolunteerController::class, 'verification'])->name('verification');
 Route::view('/generate', 'website.generate')->name('generate');
 Route::get('generate/{id}', [HomeController::class, 'generateCertification'])->name('generate.certification');
 
@@ -73,9 +73,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::resource('compliant', AdminCompliantController::class);
         Route::resource('packages', PackageController::class);
         Route::get('posts', [OpportunityPostController::class, 'getOpportunities'])->name('posts');
+        Route::get('posts/{volentityID}/{oppoID}', [OpportunityPostController::class, 'getOpportunitiesDetails'])->name('posts.show');
         Route::post('posts/confirm/{id}', [OpportunityPostController::class, 'confirmPost'])->name('confirmPost');
         Route::get('/growth_report', [ReportAdminController::class, 'growthReport'])->name('growth_report');
         Route::get('/overallSatisfaction', [ReportAdminController::class, 'overallSatisfaction'])->name('overallSatisfaction');
+        Route::get('/report-packages', [ReportAdminController::class, 'reportPackages'])->name('report-packages');
+        Route::get('/report-complaint', [ReportAdminController::class, 'reportComplaint'])->name('report-complaint');
     });
 });
 

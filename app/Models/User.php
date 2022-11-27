@@ -71,4 +71,18 @@ class User extends Authenticatable
     {
         return $this->hasMany(Compliant::class, 'VOL_ID');
     }
+
+    public function completedHours()
+    {
+        $total = 0;
+        foreach ($this->certifications as $request) {
+            $total += optional($request->oppo)->OPP_TOTAL_HOUR;
+        }
+        return $total;
+    }
+
+    public function remainingHours()
+    {
+        return $this->VOL_TARGET_HOUR - $this->completedHours();
+    }
 }

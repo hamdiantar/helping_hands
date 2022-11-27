@@ -11,7 +11,6 @@ class CertificationRequest extends FormRequest
 
         return [
             'CER_ISSUE_DATE' => 'required',
-            'CER_TYPE' => 'required',
             'VOL_ID' => 'required',
         ];
     }

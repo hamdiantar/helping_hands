@@ -45,6 +45,7 @@ class CertificationController extends Controller
     public function store(CertificationRequest $request, int $oppId)
     {
         try {
+            $volEntity = getAuthVolEntity();
             $oldCertification = Certification::where([
                 'OPP_ID' => $oppId,
                 'VOL_ID' => $request->VOL_ID,
@@ -55,6 +56,7 @@ class CertificationController extends Controller
             }
             $data = $request->all();
             $data['OPP_ID'] = $oppId;
+            $data['CER_TYPE'] = $volEntity->VOL_ENTITY_SECTOR;
             Certification::create($data);
             notify()->smiley('success', 'Certification has been created successfully');
             return redirect()->route('volunteering-entity.opportunities.certifications.index', $oppId);

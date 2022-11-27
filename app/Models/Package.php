@@ -18,5 +18,10 @@ class Package extends Model
         'PACKAGE_DURATION',
     ];
 
+    public function subs()
+    {
+        return $this->hasMany(Subscription::class, 'PACKAGE_ID');
+    }
+
 }
 

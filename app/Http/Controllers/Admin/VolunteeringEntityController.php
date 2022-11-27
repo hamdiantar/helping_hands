@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\SendEmail;
 use App\Models\VolEntity;
 use App\Traits\LoggerError;
 use Exception;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Mail;
 
 class VolunteeringEntityController extends Controller
 {
@@ -36,6 +38,10 @@ class VolunteeringEntityController extends Controller
         $item->update([
             'VOL_ENTITY_STATUS' => $status
         ]);
+        $data = [
+          'name' => $item->VOL_ENTITY_NAME
+        ];
+        Mail::to($item->VOL_ENTITY_EMAIL)->send(new SendEmail($data));
         notify()->smiley('success', 'Volunteering entity has been Updated successfully');
         return back();
     }

@@ -36,7 +36,7 @@ class VolEntityController extends Controller
             $data = $request->all();
             $data['VOL_ENTITY_LOGO'] = $this->upload($request->VOL_ENTITY_LOGO);
             VolEntity::create($data);
-            return back()->with('success', 'you have register successfully, admin will review your request');
+            return back()->with('success', 'you have register successfully,we will inbox you in your E-Mail After Accepting Your Request');
         } catch (Exception $exception) {
             $this->logErrors($exception);
             return back()->with('error', 'something went wrong');

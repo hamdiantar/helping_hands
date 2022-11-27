@@ -122,12 +122,12 @@
                                                                     <td>Location</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td><span class="badge bg-info">{{$opp->OPP_CAPACITY}}</span> student</td>
-                                                                    <td><span class="badge bg-danger">{{$opp->sdfsdf}}</span> student</td>
-                                                                    <td><span class="badge bg-success">{{$opp->sdfsdf}}</span> student</td>
+                                                                    <td><span class="badge bg-info">{{$opp->OPP_CAPACITY}}</span> </td>
+                                                                    <td><span class="badge bg-danger">{{$opp->totalBooked()}}</span></td>
+                                                                    <td><span class="badge bg-success">{{$opp->totalAvailable()}}</span></td>
                                                                     <td>{{$opp->OPP_TOTAL_HOUR}} Hours</td>
-                                                                    <td><p>{{$opp->OPP_START_DATE}} | {{$opp->OPP_START_TIME}}</p></td>
-                                                                    <td><p>{{$opp->OPP_FINISH_DATE}} | {{$opp->OPP_END_TIME}}</p></td>
+                                                                    <td><p>{{$opp->OPP_START_DATE}} | {{$opp->start_time}}</p></td>
+                                                                    <td><p>{{$opp->OPP_FINISH_DATE}} | {{$opp->end_time}}</p></td>
                                                                     <td>{{$opp->OPP_LOCATION}}</td>
                                                                 </tr>
                                                                 </tbody>
