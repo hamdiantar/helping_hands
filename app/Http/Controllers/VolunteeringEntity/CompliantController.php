@@ -19,7 +19,7 @@ class CompliantController extends Controller
 
     public function index()
     {
-        $items = Compliant::where('VOL_ENTITY_ID', getAuthVolEntity()->VOL_ENTITY_ID)->get();
+        $items = Compliant::where('VOL_ENTITY_ID', getAuthVolEntity()->VOL_ENTITY_ID)->where('type', 'from_entity')->get();
         return view($this->view . 'index', [
             'items' => $items
         ]);
@@ -48,6 +48,7 @@ class CompliantController extends Controller
             $volEntity = getAuthVolEntity();
             $data = $request->all();
             $data['VOL_ENTITY_ID'] = $volEntity->VOL_ENTITY_ID;
+            $data['type'] = 'from_entity';
             Compliant::create($data);
             notify()->smiley('success', 'Compliant has been created successfully');
             return redirect()->route('volunteering-entity.compliant.index');

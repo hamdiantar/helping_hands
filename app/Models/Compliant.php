@@ -22,6 +22,7 @@ class Compliant extends Model
         'VOL_ENTITY_ID',
         'VOL_ID',
         'ADMIN_ID',
+        'type',
     ];
 
 

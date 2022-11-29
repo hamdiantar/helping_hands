@@ -8,6 +8,7 @@ use App\Models\VolEntity;
 use App\Traits\LoggerError;
 use Exception;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class VolunteeringEntityController extends Controller
@@ -16,11 +17,14 @@ class VolunteeringEntityController extends Controller
 
     private $view = 'admin.volunteering-entity.';
 
-    public function index()
+    public function index(Request $request)
     {
-        $items = VolEntity::where('VOL_ENTITY_STATUS', '!=', 0)->get();
+        $items = VolEntity::where('VOL_ENTITY_STATUS', '!=', 0);
+        if ($request->filled('status')) {
+            $items = $items->where('VOL_ENTITY_STATUS', $request->status);
+        }
         return view($this->view.'index', [
-            'items' => $items
+            'items' => $items->get()
         ]);
     }
 

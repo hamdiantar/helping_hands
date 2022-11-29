@@ -18,30 +18,35 @@
                     </div>
 
                     <div class="card-body ml-3 mr-3">
+                        <form method="get">
+                            <div class="row mt-5">
+                                <div class="input-group col-md-4 input-group-outline mb-3 is-filled">
+                                    <label class="form-label">Select  Status</label>
+                                    <select class="form-control" name="status">
+                                        <option value="">Select</option>
+                                        <option {{request()->status == 1 ? 'selected' : ''}} value="1">Accept</option>
+                                        <option {{request()->status == 2 ? 'selected' : ''}} value="2">Reject</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <button type="submit" class="btn bg-gradient-warning btn-sm w-100 p-2">
+                                        search
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                         <div class="pb-3"></div>
                         <div class="table-responsive p-0">
                             <table class="table  table-bordered mb-0 text-center" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ID
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Entity Name
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Sector
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        CR number
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        UserName
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Status
-                                    </th>
-                                    <th class="text-center text-secondary opacity-7">Actions</th>
+                                    <th>ID</th>
+                                    <th>Entity Name</th>
+                                    <th>Sector</th>
+                                    <th>CR number</th>
+                                    <th>UserName</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -58,17 +63,10 @@
                                             </div>
                                         </div>
                                     </td>
+                                    <td>{{$item->VOL_ENTITY_SECTOR}}</td>
+                                    <td>{{$item->VOL_ENTITY_CR_NO}}</td>
+                                    <td><span class="text-secondary text-xs font-weight-bold">{{$item->VOL_ENTITY_USERNAME}}</span></td>
                                     <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{$item->VOL_ENTITY_SECTOR}}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{$item->VOL_ENTITY_CR_NO}}</p>
-                                    </td>
-
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">{{$item->VOL_ENTITY_USERNAME}}</span>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
                                         @if($item->VOL_ENTITY_STATUS == 1)
                                             <span class="badge badge-sm bg-gradient-success">Accepted</span>
                                         @elseif($item->VOL_ENTITY_STATUS == 2)

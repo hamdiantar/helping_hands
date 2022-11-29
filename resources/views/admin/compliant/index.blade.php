@@ -19,16 +19,31 @@
                     </div>
 
                     <div class="card-body ml-3 mr-3">
-                        <div class="pb-3"></div>
+                       <form method="get">
+                           <div class="row mt-5">
+                               <div class="input-group col-md-4 input-group-outline mb-3 is-filled">
+                                   <label class="form-label">Select Complaint Type</label>
+                                   <select class="form-control" name="type">
+                                       <option value="">Select</option>
+                                       <option {{request()->type == 'from_volunteer' ? 'selected' : ''}} value="from_volunteer">From Volunteer</option>
+                                       <option {{request()->type == 'from_entity' ? 'selected' : ''}} value="from_entity">From Volunteering Entity</option>
+                                   </select>
+                               </div>
+                               <div class="col-md-2 text-center">
+                                   <button type="submit" class="btn bg-gradient-warning btn-sm w-100 p-2">
+                                       search
+                                   </button>
+                               </div>
+                           </div>
+                       </form>
                         <div class="table-responsive p-0">
-                            <table class="table  table-bordered mb-0 text-center" id="dataTable">
+                            <table class="table  table-bordered mb-0" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Title</th>
                                     <th>Against</th>
-                                    <th>Title</th>
                                     <th>Status</th>
                                     <th class="text-center text-secondary opacity-7">Actions</th>
                                 </tr>
@@ -37,17 +52,18 @@
                                 @foreach($items as $item)
                                 <tr>
                                     <td>{{$item->COMP_ID}}</td>
+                                    @if($item->type == 'from_volunteer')
                                     <td>{{optional($item->volunteer)->full_name}}</td>
-                                    <td><p class="text-xs font-weight-bold mb-0">{{$item->COMP_TITLE}}</p></td>
-                                    <td class="align-middle text-center">
-                                        {{optional($item->against)->VOL_ENTITY_NAME}}
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        {{$item->COMP_TITLE}}
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        {{$item->COMP_STATUS}}
-                                    </td>
+                                    @else
+                                        <td>{{optional($item->against)->VOL_ENTITY_NAME}}</td>
+                                    @endif
+                                    <td>{{$item->COMP_TITLE}}</td>
+                                    @if($item->type == 'from_entity')
+                                        <td><strong class="text-danger">{{optional($item->volunteer)->full_name}}</strong></td>
+                                    @else
+                                        <td><strong class="text-danger">{{optional($item->against)->VOL_ENTITY_NAME}}</strong></td>
+                                    @endif
+                                    <td>{{$item->COMP_STATUS}}</td>
                                     <td class="align-middle">
                                         <a href="{{route('admin.compliant.show',$item->COMP_ID )}}" class="text-secondary font-weight-bold text-xs"
                                            data-toggle="tooltip" data-original-title="Edit user">

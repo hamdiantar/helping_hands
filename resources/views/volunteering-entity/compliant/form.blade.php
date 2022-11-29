@@ -17,11 +17,6 @@
     </div>
 
     <div class="input-group col-md-6 input-group-outline mb-3 is-filled">
-        <label class="form-label">Against</label>
-        <input type="text" name="COMP_AGAINST" value="{{isset($item) ? $item->COMP_AGAINST : old('COMP_AGAINST')}}" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
-    </div>
-
-    <div class="input-group col-md-6 input-group-outline mb-3 is-filled">
         <label class="form-label">Date</label>
         <input type="date" name="COMP_DATE" value="{{isset($item) ? $item->COMP_DATE : old('COMP_DATE')}}" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
     </div>

@@ -11,7 +11,7 @@ class VolComplaintRequest extends FormRequest
         return [
             'VOL_ID' => 'required',
             'COMP_TITLE' => 'required',
-            'COMP_AGAINST' => 'required',
+//            'COMP_AGAINST' => 'required',
             'COMP_DATE' => 'required',
             'COMP_DESCRIPTION' => 'required',
         ];

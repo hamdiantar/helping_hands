@@ -83,7 +83,9 @@
                     <span class="nav-link-text ms-1">Posts</span>
                 </a>
             </li>
-
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Reports</h6>
+            </li>
             <li class="nav-item">
                 <a class="nav-link text-white {{isCurrentPage('admin/growth_report*')}}" href="{{route('admin.growth_report')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

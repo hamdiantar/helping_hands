@@ -14,11 +14,14 @@ class CompliantController extends Controller
 
     private $view = 'admin.compliant.';
 
-    public function index()
+    public function index(Request $request)
     {
-        $items = Compliant::all();
+        $items = Compliant::query();
+        if ($request->filled('type')) {
+            $items = $items->where('type', $request->type);
+        }
         return view($this->view . 'index', [
-            'items' => $items
+            'items' => $items->get()
         ]);
     }
 

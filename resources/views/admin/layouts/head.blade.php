@@ -13,5 +13,13 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 <link id="pagestyle" href="{{asset('assets/css/material-dashboard.css?v=3.0.4')}}" rel="stylesheet"/>
 <link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<style>
+   .buttons-print {
+      background: #ff8f35;
+      padding: 10px;
+      color: white;
+      border-radius: 10px;
+   }
+</style>
 @notifyCss
 @stack('css')

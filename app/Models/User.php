@@ -69,7 +69,7 @@ class User extends Authenticatable
 
     public function compliants(): HasMany
     {
-        return $this->hasMany(Compliant::class, 'VOL_ID');
+        return $this->hasMany(Compliant::class, 'VOL_ID')->where('type', 'from_volunteer');
     }
 
     public function completedHours()
