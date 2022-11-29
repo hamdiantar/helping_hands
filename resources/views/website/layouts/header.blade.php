@@ -10,6 +10,7 @@
                     <ul class="nav">
                         <li class="scroll-to-section"><a href="{{url('/')}}" class="{{isCurrentPage('/')}}">Home</a></li>
                         <li class="scroll-to-section"><a class="{{isCurrentPage('vol_entity/list*')}}" href="{{route('vol_entity.list')}}">Volunteer With Us</a></li>
+                        <li class="scroll-to-section"><a class="{{isCurrentPage('contact-us*')}}" href="{{route('contactus')}}">Contact Us</a></li>
                         @auth('volunteer')
                         <li><div class="gradient-button"><a href="{{route('volunteer.profile')}}">Welcome {{getAuthVolunteer()->VOL_FNAME}}   <i class="fa fa-user"></i></a>
                             </div></li>
@@ -40,9 +41,11 @@
     </div>
     <section class="popupBody">
         <div class="social_login">
-            <div class="action_btns">
+            <div class="action_btns d-flex">
                 <div class="one_half"><a id="modal_trigger3" href="#modal3"  class="btn">Volunteer <i class="fa fa-sign-in-alt"></i></a></div>
-                <div class="one_half last"><a href="{{route('volunteering-entity.showLoginForm')}}" class="btn">Volunteering Entity <i class="fa fa-sign-in-alt"></i></a></div>
+                <div class="one_half last"><a href="{{route('volunteering-entity.showLoginForm')}}" class="btn"> Entity <i class="fa fa-sign-in-alt"></i></a></div>
+                <div class="one_half last"><a href="{{route('admin.login')}}" class="btn">Admin <i class="fa fa-user-secret"></i></a></div>
+
             </div>
         </div>
     </section>

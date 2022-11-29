@@ -39,9 +39,21 @@ class ReportAdminController extends Controller
 
     public function reportComplaint()
     {
-        $entities = VolEntity::withCount('compliants')->orderBy('compliants_count', 'desc')->get();
+        $entities = VolEntity::withCount('compliants')->whereHas('compliants', function ($q) {
+            $q->where('type', 'from_volunteer');
+        })->orderBy('compliants_count', 'desc')->get();
         return view('admin.report_complaint', [
             "entities" => $entities,
+        ]);
+    }
+
+    public function reportComplaintByEntity(int $id)
+    {
+        $volEntity = VolEntity::find($id);
+        $complaints = Compliant::where('type', 'from_volunteer')->where('VOL_ENTITY_ID', $volEntity->VOL_ENTITY_ID)->get();
+        return view('admin.complaint_by_entity', [
+            "volEntity" => $volEntity,
+            "complaints" => $complaints,
         ]);
     }
 }

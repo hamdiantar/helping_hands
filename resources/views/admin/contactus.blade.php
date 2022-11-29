@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Most Volunteering Entity Has Complaint')
+@section('title', 'Contact Us Messages')
 
 @section('breadcrumb')
-    <li><a href="#">Most Volunteering Entity Has Complaint</a></li>
+    <li><a href="#">Contact Us Messages</a></li>
 @endsection
 @section('content')
     <div class="container-fluid py-2">
@@ -13,7 +13,7 @@
 
                     <div class="card-header p-0 position-relative mt-n4 mb-4">
                         <div class="bg-gradient-warning shadow-warning border-radius-lg pt-3 pb-3">
-                            <h6 class="text-white text-capitalize ps-3">Most Volunteering Entity Has Complaint</h6>
+                            <h6 class="text-white text-capitalize ps-3">Contact Us Messages</h6>
                         </div>
                     </div>
 
@@ -22,22 +22,21 @@
                             <table class="table text-center table-bordered mb-0 text-center" id="dataTableReports">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Entity Name</th>
-                                    <th class="text-center">Number Of Complaint</th>
+                                    <th class="text-center">#ID</th>
+                                    <th class="text-center">Name</th>
+                                    <th class="text-center">E-Mail</th>
+                                    <th class="text-center">Subject</th>
+                                    <th class="text-center">Message</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($entities as $entity)
+                                @foreach(\App\Models\ContactUs::all() as $item)
                                     <tr>
-                                        <td>{{$entity->VOL_ENTITY_NAME}}</td>
-                                        <td>
-                                            @if($entity->compliants_count == 0)
-                                                <span class="badge bg-danger">{{ $entity->compliants_count }}</span>
-                                            @else
-
-                                                <a href="{{route('admin.report-complaint.volEntity', $entity->VOL_ENTITY_ID)}}"><span class="badge bg-success">{{ $entity->compliants_count }}</span></a>
-                                            @endif
-                                        </td>
+                                        <td>{{$item->id}}</td>
+                                        <td>{{$item->name}}</td>
+                                        <td>{{$item->email}}</td>
+                                        <td>{{$item->subject}}</td>
+                                        <td>{{$item->message}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

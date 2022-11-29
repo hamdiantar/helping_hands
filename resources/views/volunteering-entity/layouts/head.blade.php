@@ -16,9 +16,10 @@
 <style>
    .buttons-print {
       background: #ff8f35;
-      padding: 10px;
+      padding: 8px;
       color: white;
-      border-radius: 10px;
+      border-radius: 7px;
+      width: 72px;
    }
 </style>
 @notifyCss

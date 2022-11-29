@@ -17,6 +17,7 @@ class Attendence extends Model
         'ATT_STATUS',
         'OPP_ID',
         'VOL_ID',
+        'NOTES',
     ];
 
     public function volunteer()

@@ -139,6 +139,7 @@
                                       <th>Opportunity Name</th>
                                       <th>Date</th>
                                       <th>status</th>
+                                      <th>notes</th>
                                   </tr>
                                   </thead>
                                   <tbody>
@@ -154,6 +155,7 @@
                                               <span class="badge bg-danger">absent</span>
                                           @endif
                                       </td>
+                                          <td>{{$attend->NOTES}}</td>
                                       </tr>
                                   @endforeach
                                   </tbody>

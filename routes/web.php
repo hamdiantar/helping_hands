@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ReportAdminController;
 use App\Http\Controllers\ApplyController;
 use App\Http\Controllers\CompliantController as VolCompliantController;
+use App\Http\Controllers\contactUsController;
 use App\Http\Controllers\VolunteeringEntity\CompliantController as EntityCompliantController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReviewController;
@@ -32,6 +33,8 @@ Route::get('/vol_entity/list', [HomeController::class, 'index'])->name('vol_enti
 Route::get('/vol_entity/{id}/opportunity', [HomeController::class, 'getOpportunities'])->name('vol_entity.opportunity');
 Route::view('/vol_entity/pricing', 'website.vol_entity.pricing')->name('vol_entity.pricing');
 Route::get('/vol_entity/{id}/show', [HomeController::class, 'showReviews'])->name('vol_entity.show');
+Route::get('contact-us', [ContactUsController::class, 'getContactUsForm'])->name('contactus');
+Route::post('contact-us', [ContactUsController::class, 'contactus'])->name('contactus.post');
 
 
 Route::get('/verification', [VolunteerController::class, 'verification'])->name('verification');
@@ -79,6 +82,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/overallSatisfaction', [ReportAdminController::class, 'overallSatisfaction'])->name('overallSatisfaction');
         Route::get('/report-packages', [ReportAdminController::class, 'reportPackages'])->name('report-packages');
         Route::get('/report-complaint', [ReportAdminController::class, 'reportComplaint'])->name('report-complaint');
+        Route::get('/report-complaint/{volEntityId}', [ReportAdminController::class, 'reportComplaintByEntity'])->name('report-complaint.volEntity');
+        Route::view('contactus', 'admin.contactus')->name('contactus');
     });
 });
 

@@ -12,11 +12,47 @@
 <script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.print.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
 <script>
     $(document).ready( function () {
         $('#dataTable').DataTable({
             dom: 'Bfrtip',
-            buttons: ['print']
+            buttons: [
+                {
+                    exportOptions: {
+                        columns: ':visible:not(:last-child)'
+                    },
+                    // title: '',
+                    text: '<i class="fa fa-print"></i>',
+                    extend: 'print',
+                    messageTop: `@include('admin.layouts.print')`,
+                    autoPrint: true,
+                    customize: function (win) {
+                        $(win.document.body).find('th').css('text-align', 'center');
+                        $(win.document.body).find('h1').css('text-align', 'center');
+                        $(win.document.body).find('h1').css('font-size', '28px');
+                        $(win.document.body).find('h1').css('margin', '14px');
+                    }
+                }
+            ]
+        });
+
+        $('#dataTableReports').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    text: '<i class="fa fa-print"></i>',
+                    extend: 'print',
+                    messageTop: `@include('admin.layouts.print')`,
+                    autoPrint: true,
+                    customize: function (win) {
+                        $(win.document.body).find('th').css('text-align', 'center');
+                        $(win.document.body).find('h1').css('text-align', 'center');
+                        $(win.document.body).find('h1').css('font-size', '28px');
+                        $(win.document.body).find('h1').css('margin', '14px');
+                    }
+                }
+            ]
         });
     } );
    function confirmAction(formId, type) {

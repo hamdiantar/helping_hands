@@ -6,8 +6,8 @@
             <option value="">Select</option>
         @foreach($volunteers as $volunteer)
                 <option value="{{$volunteer->VOL_ID}}"
-                        {{isset($item) && $item->VOL_ID  == $volunteer->VOL_ID ? 'selected' : ''}} >{{optional($volunteer->volunteer)->full_name}}</option>
-            @endforeach
+                {{isset($item) && $item->VOL_ID  == $volunteer->VOL_ID ? 'selected' : ''}} >{{optional($volunteer->volunteer)->full_name}}</option>
+        @endforeach
         </select>
     </div>
 
@@ -19,9 +19,14 @@
       <div class="input-group col-md-6 input-group-outline mb-3 is-filled">
           <label class="form-label">Status</label>
           <select class="form-control" name="ATT_STATUS">
-              <option>Select</option>
-                  <option value="attend" {{isset($item) && $item->ATT_STATUS  == 'attend' ? 'selected' : ''}} >attend</option>
-                  <option value="absent" {{isset($item) && $item->ATT_STATUS  == 'absent' ? 'selected' : ''}} >absent</option>
+              <option value=""> Select</option>
+              <option value="attend" {{isset($item) && $item->ATT_STATUS  == 'attend' ? 'selected' : ''}} >attend</option>
+              <option value="absent" {{isset($item) && $item->ATT_STATUS  == 'absent' ? 'selected' : ''}} >absent</option>
           </select>
+      </div>
+
+      <div class="col-md-12 mb-3">
+          <label class="form-label">Notes</label>
+          <textarea style="border: 1px solid #ff993a" name="NOTES" rows="4" class="form-control">{{isset($item) ? $item->NOTES : old('NOTES')}}</textarea>
       </div>
 </div>

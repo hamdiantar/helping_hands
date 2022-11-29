@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'opportunity title')
+@section('title', 'Growth Report')
 
 @section('breadcrumb')
     <li><a href="#">Growth Report</a></li>
@@ -22,7 +22,7 @@
                             <h3 class="text-center">Growth Report</h3>
                         </div>
                         <div class="table-responsive text-center p-0">
-                            <table class="table text-center table-bordered mb-0 text-center" id="dataTable">
+                            <table class="table text-center table-bordered mb-0 text-center" id="dataTableReports">
                                 <thead>
                                 <tr>
                                     <th class="text-center">Number Of Entity Registered</th>

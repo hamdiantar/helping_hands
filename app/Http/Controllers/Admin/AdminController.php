@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\UpdateAdminRequest;
+use App\Models\VolEntity;
 use App\Traits\LoggerError;
 use Exception;
 use Illuminate\Http\RedirectResponse;
@@ -20,7 +21,10 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view($this->view.'home');
+        $entities = VolEntity::withCount('opps')->get();
+        $labels = $entities->pluck('VOL_ENTITY_NAME');
+        $datasets = $entities->pluck('opps_count');
+        return view($this->view.'home', compact('labels', 'datasets'));
     }
 
     public function showLoginForm()

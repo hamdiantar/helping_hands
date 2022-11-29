@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'opportunity title')
+@section('title', 'Most Packages Subscribed')
 
 @section('breadcrumb')
     <li><a href="#">Most Packages Subscribed</a></li>
@@ -19,7 +19,7 @@
 
                     <div class="card-body ml-3 mr-3">
                         <div class="table-responsive text-center p-0">
-                            <table class="table text-center table-bordered mb-0 text-center" id="dataTable">
+                            <table class="table text-center table-bordered mb-0 text-center" id="dataTableReports">
                                 <thead>
                                 <tr>
                                     <th class="text-center"> Package Price</th>
