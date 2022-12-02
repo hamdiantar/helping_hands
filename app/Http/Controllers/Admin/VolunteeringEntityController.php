@@ -19,20 +19,21 @@ class VolunteeringEntityController extends Controller
 
     public function index(Request $request)
     {
-        $items = VolEntity::where('VOL_ENTITY_STATUS', '!=', 0);
+        $items = VolEntity::where('VOL_ENTITY_STATUS', 1);
         if ($request->filled('status')) {
             $items = $items->where('VOL_ENTITY_STATUS', $request->status);
         }
         return view($this->view.'index', [
-            'items' => $items->get()
+            'items' => $items->get(),
         ]);
     }
 
     public function getJoiningRequests()
     {
-        $items = VolEntity::where('VOL_ENTITY_STATUS', 0)->get();
+        $items = VolEntity::whereIn('VOL_ENTITY_STATUS', [2,0])->get();
         return view($this->view.'index', [
-            'items' => $items
+            'items' => $items,
+            'filter' => true,
         ]);
     }
 

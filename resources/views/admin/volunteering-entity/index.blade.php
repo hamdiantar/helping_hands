@@ -18,23 +18,25 @@
                     </div>
 
                     <div class="card-body ml-3 mr-3">
-                        <form method="get">
-                            <div class="row mt-5">
-                                <div class="input-group col-md-4 input-group-outline mb-3 is-filled">
-                                    <label class="form-label">Select  Status</label>
-                                    <select class="form-control" name="status">
-                                        <option value="">Select</option>
-                                        <option {{request()->status == 1 ? 'selected' : ''}} value="1">Accept</option>
-                                        <option {{request()->status == 2 ? 'selected' : ''}} value="2">Reject</option>
-                                    </select>
+                @isset($filter)
+                            <form method="get">
+                                <div class="row mt-5">
+                                    <div class="input-group col-md-4 input-group-outline mb-3 is-filled">
+                                        <label class="form-label">Select  Status</label>
+                                        <select class="form-control" name="status">
+                                            <option value="">Select</option>
+                                            <option {{request()->status == 1 ? 'selected' : ''}} value="1">Accept</option>
+                                            <option {{request()->status == 2 ? 'selected' : ''}} value="2">Reject</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 text-center">
+                                        <button type="submit" class="btn bg-gradient-warning btn-sm w-100 p-2">
+                                            search
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="col-md-2 text-center">
-                                    <button type="submit" class="btn bg-gradient-warning btn-sm w-100 p-2">
-                                        search
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        @endisset
                         <div class="pb-3"></div>
                         <div class="table-responsive p-0">
                             <table class="table  table-bordered mb-0 text-center" id="dataTable">

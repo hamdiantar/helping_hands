@@ -25,6 +25,7 @@ class CompliantController extends Controller
     {
         try {
             $data = $request->all();
+//            dd($data);
             $data['type'] = 'from_volunteer';
             Compliant::create($data);
             return redirect()->back()->with('success', 'Compliant has been sent successfully');

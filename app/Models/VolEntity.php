@@ -69,7 +69,7 @@ class VolEntity extends Authenticatable
 
     public function compliants()
     {
-        return $this->hasMany(Compliant::class, 'VOL_ENTITY_ID')->where('type', 'from_entity');
+        return $this->hasMany(Compliant::class, 'VOL_ENTITY_ID');
     }
 
     public function certificationTotal()

@@ -8,6 +8,7 @@ use App\Models\Opportunity;
 use App\Models\Package;
 use App\Models\VolEntity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReportAdminController extends Controller
 {
@@ -23,7 +24,8 @@ class ReportAdminController extends Controller
 
     public function overallSatisfaction(Request $request)
     {
-        $opps = Opportunity::with('volEntity')->get();
+        DB::enableQueryLog();
+        $opps = Opportunity::with(['volEntity'])->get();
         return view('admin.overall_satisfaction', [
             "opps" => $opps,
         ]);
@@ -42,6 +44,7 @@ class ReportAdminController extends Controller
         $entities = VolEntity::withCount('compliants')->whereHas('compliants', function ($q) {
             $q->where('type', 'from_volunteer');
         })->orderBy('compliants_count', 'desc')->get();
+//        dd($entities);
         return view('admin.report_complaint', [
             "entities" => $entities,
         ]);
@@ -50,6 +53,7 @@ class ReportAdminController extends Controller
     public function reportComplaintByEntity(int $id)
     {
         $volEntity = VolEntity::find($id);
+//        dd($volEntity)
         $complaints = Compliant::where('type', 'from_volunteer')->where('VOL_ENTITY_ID', $volEntity->VOL_ENTITY_ID)->get();
         return view('admin.complaint_by_entity', [
             "volEntity" => $volEntity,

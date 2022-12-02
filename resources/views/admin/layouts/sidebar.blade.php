@@ -100,7 +100,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">receipt_long</i>
                     </div>
-                    <span class="nav-link-text ms-1">Growth Report</span>
+                    <span class="nav-link-text ms-1"> Growth Report</span>
                 </a>
             </li>
 
@@ -118,7 +118,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">receipt_long</i>
                     </div>
-                    <span class="nav-link-text ms-1">Report Packages</span>
+                    <span class="nav-link-text ms-1">Packages Report</span>
                 </a>
             </li>
 
@@ -127,7 +127,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">receipt_long</i>
                     </div>
-                    <span class="nav-link-text ms-1">Report Complaint</span>
+                    <span class="nav-link-text ms-1">Complaint Report</span>
                 </a>
             </li>
 
