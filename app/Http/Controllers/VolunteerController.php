@@ -21,7 +21,7 @@ class VolunteerController extends Controller
     public function profile(Request $request)
     {
         $volunteer = getAuthVolunteer();
-        if ($request->filled('success')) {
+        if (!$volunteer->remainingHours() == 0 || $request->filled('success')) {
             return view($this->view . 'profile', compact('volunteer'));
         }
         return view($this->view . 'final', compact('volunteer'));
