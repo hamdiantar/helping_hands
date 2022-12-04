@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="service-item first-service">
-                        <span class="Available_opportunities">Available opportunities [ 20 ]</span>
+                        <span class="Available_opportunities">Available opportunities [ {{count($item->opps)}} ]</span>
                         <img height="170px" src="{{asset('website/assets/images/vo_1.jpeg')}}">
                         <h4>App Maintenance</h4>
                         <div class="text-button">
@@ -28,7 +28,7 @@
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-warning"></i>
                             <i class="fa fa-star text-warning"></i>
-                            <a href="{{route('vol_entity.show', $item->VOL_ENTITY_ID)}}">(10 Review)</a>
+                            <a href="{{route('vol_entity.show', $item->VOL_ENTITY_ID)}}">({{count($item->reviews)}} Review)</a>
                         </div>
                     </div>
                 </div>

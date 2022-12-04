@@ -5,6 +5,7 @@ namespace App\Http\Controllers\VolunteeringEntity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VolEntity\VolEntityRegisterRequest;
 use App\Http\Requests\VolEntity\VolEntityUpdateRequest;
+use App\Models\Opportunity;
 use App\Models\VolEntity;
 use App\Traits\LoggerError;
 use App\Traits\UploadFile;
@@ -22,7 +23,13 @@ class VolEntityController extends Controller
 
     public function dashboard()
     {
-        return view($this->view.'home');
+        $items = Opportunity::withCount('applicants')->where('VOL_ENTITY_ID', getAuthVolEntity()->VOL_ENTITY_ID)->get();
+        $labels = $items->pluck('OPP_NAME');
+        $datasets = $items->pluck('applicants_count');
+        return view($this->view.'home',[
+            "labels" => $labels,
+            "datasets" => $datasets,
+        ]);
     }
 
     public function showLoginForm()

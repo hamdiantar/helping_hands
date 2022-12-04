@@ -25,7 +25,7 @@
                                         <label class="form-label">Select  Status</label>
                                         <select class="form-control" name="status">
                                             <option value="">Select</option>
-                                            <option {{request()->status == 1 ? 'selected' : ''}} value="1">Accept</option>
+                                            <option {{request()->status == '0' ? 'selected' : ''}} value="0">Pending</option>
                                             <option {{request()->status == 2 ? 'selected' : ''}} value="2">Reject</option>
                                         </select>
                                     </div>

@@ -48,7 +48,7 @@
 
                             <div class="col-md-6 mb-3">
                                 <label for="National" class="form-label">National Id : </label>
-                                <input type="number" value="{{old('VOL_NATIONAL_ID')}}" class="form-control" id="National" name="VOL_NATIONAL_ID">
+                                <input type="text" value="{{old('VOL_NATIONAL_ID')}}" class="form-control" id="National" name="VOL_NATIONAL_ID">
                             </div>
 
                             <div class="col-md-6 mb-3">

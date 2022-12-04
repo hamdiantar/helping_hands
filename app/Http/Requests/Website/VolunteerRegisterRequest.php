@@ -14,7 +14,6 @@ class VolunteerRegisterRequest extends FormRequest
            $mailValidation = 'required|max:200|email|unique:VOLUNTEER,VOL_EMAIL,'. $this->id.',VOL_ID';
             $passwordValidation = 'nullable|min:6';
         }
-//        dd($passwordValidation);
         return [
             'VOL_USERNAME' =>  'required|max:200',
             'password' =>  $passwordValidation,
@@ -22,12 +21,11 @@ class VolunteerRegisterRequest extends FormRequest
             'VOL_LNAME' =>  'required|max:200',
             'VOL_EMAIL' =>  $mailValidation,
             'VOL_PHONE' =>  'required',
-            'VOL_NATIONAL_ID' =>  'required|max:200',
+            'VOL_NATIONAL_ID' =>  'required|numeric',
             'VOL_SCHOOL_NAME' =>  'required|max:200',
             'VOL_GRADE_LEVEL' =>  'required',
             'VOL_CITY' =>  'required',
             'VOL_TARGET_HOUR' =>  'required|min:0',
-//            'VOL_COMPLETED_HOUR' =>  'required|min:0',
             'VOL_GENDER' =>  'required|in:male,female',
         ];
     }
@@ -47,6 +45,7 @@ class VolunteerRegisterRequest extends FormRequest
             "VOL_TARGET_HOUR" => "TARGET_HOUR",
             "VOL_COMPLETED_HOUR" => "COMPLETED_HOUR",
             "VOL_GENDER" => "GENDER",
+            "NATIONAL_ID" => "national Id",
         ];
     }
 }

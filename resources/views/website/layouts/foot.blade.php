@@ -43,6 +43,12 @@
         text: '{{session('success')}}',
         icon: 'success',
         confirmButtonText: 'OK',
+    }).then( (result) => {
+        if(result) {
+            @if(session('register_success'))
+            $("#modal_trigger3").click();
+            @endif
+        }
     })
     @endif
     @if(session('error'))
@@ -64,6 +70,12 @@
         text: '{{session('not_auth')}}',
         icon: 'error',
         confirmButtonText: 'OK',
+    }).then( (result) => {
+        if(result) {
+            @if(session('not_auth'))
+            $("#modal_trigger3").click();
+            @endif
+        }
     })
     @endif
 
@@ -75,5 +87,6 @@
         newWin.print();
         // newWin.close();
     }
+
 </script>
 @stack('js')

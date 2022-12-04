@@ -35,6 +35,7 @@ class VolunteerController extends Controller
     {
         try {
              User::create($request->all());
+             \session()->flash('register_success', 'success');
              return back()->with('success', 'you have register successfully, you can login now');
         } catch (Exception $exception) {
             $this->logErrors($exception);

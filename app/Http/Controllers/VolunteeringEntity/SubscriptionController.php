@@ -51,4 +51,12 @@ class SubscriptionController extends Controller
             return redirect()->back()->with('error', 'something went wrong');
         }
     }
+
+    public function paymentDetails(int $subID)
+    {
+        $sub = Subscription::with('payment')->find($subID);
+        return view('volunteering-entity.subscription.payment_details', [
+            'sub' => $sub
+        ]);
+    }
 }

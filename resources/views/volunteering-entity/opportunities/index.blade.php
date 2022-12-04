@@ -25,13 +25,12 @@
                             <table class="table  table-bordered mb-0 text-center" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Title</th>
-                                    <th>Attendances</th>
-                                    <th>Report</th>
-                                    <th>characteristic</th>
-                                    <th>Tasks</th>
-                                    <th>Actions</th>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Title</th>
+                                    <th class="text-center">Attendances</th>
+                                    <th class="text-center">characteristic</th>
+                                    <th class="text-center">Tasks</th>
+                                    <th class="text-center">Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -45,9 +44,6 @@
                                                 <i class="fa fa-calendar text-info fa-2x"></i>
                                             </a>
                                         </td>
-                                        <td><a href="{{route('volunteering-entity.attendance_report')}}"
-                                               class="text-secondary font-weight-bold text-xs"><i
-                                                        class="fa fa-file text-info fa-2x"></i></a></td>
                                         <td>
                                             <a href="{{route('volunteering-entity.opportunities.characteristic.index',$item->OPP_ID )}}"
                                                class="text-secondary font-weight-bold text-xs"><i

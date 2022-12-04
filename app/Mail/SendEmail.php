@@ -26,7 +26,7 @@ class SendEmail extends Mailable
     public function build()
     {
         $details = $this->data;
-        return $this->subject('Mail From Helping Hands Team')
+        return $this->subject('Registration in HelpingHands')
             ->view('email', compact('details'));
     }
 }

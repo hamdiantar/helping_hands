@@ -144,6 +144,7 @@ Route::prefix('volunteering-entity')->name('volunteering-entity.')->group(functi
         Route::get('subscription', [SubscriptionController::class, 'index'])->name('subscription.index');
         Route::get('subscription/create', [SubscriptionController::class, 'create'])->name('subscription.create');
         Route::post('subscription', [SubscriptionController::class, 'store'])->name('subscription.store');
+        Route::get('subscription/payment-details/{payment}', [SubscriptionController::class, 'paymentDetails'])->name('subscription.payment');
 
 
         Route::view('attendance_report', 'volunteering-entity.opportunities.attendance_report')->name('attendance_report');

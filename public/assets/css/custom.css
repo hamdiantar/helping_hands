@@ -36,3 +36,18 @@
     border-radius: 26px;
 }
 
+.dateTime {
+    background: #ff9b3c;
+    /* padding: 7px; */
+    color: white;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    left: -193px;
+    border-radius: 37px;
+    font-weight: lighter;
+}
+
+.dateTime p {
+    font-weight: bolder;
+}

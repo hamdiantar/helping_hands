@@ -4,12 +4,22 @@
 @section('content')
     <div id="services" class="services section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
                     <div class="section-heading  wow fadeInDown animated" data-wow-duration="1s" data-wow-delay="0.5s"
                          style="visibility: visible;-webkit-animation-duration: 1s; -moz-animation-duration: 1s; animation-duration: 1s;-webkit-animation-delay: 0.5s; -moz-animation-delay: 0.5s; animation-delay: 0.5s;">
                         <h4>Volunteering <em>Entity &amp; volunteer</em> now</h4>
+                    <form>
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-md-5">
+                                <input type="search" name="key" class="form-control" value="{{request()->key}}">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

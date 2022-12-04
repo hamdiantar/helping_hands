@@ -22,4 +22,9 @@ class Subscription extends Model
     {
         return $this->belongsTo(Package::class, 'PACKAGE_ID');
     }
+
+    public function payment()
+    {
+        return $this->hasOne(Payment::class, 'SUB_ID');
+    }
 }

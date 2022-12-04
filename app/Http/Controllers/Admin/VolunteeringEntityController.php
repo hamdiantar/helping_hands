@@ -44,7 +44,8 @@ class VolunteeringEntityController extends Controller
             'VOL_ENTITY_STATUS' => $status
         ]);
         $data = [
-          'name' => $item->VOL_ENTITY_NAME
+          'name' => $item->VOL_ENTITY_NAME,
+          'status' => $status,
         ];
         Mail::to($item->VOL_ENTITY_EMAIL)->send(new SendEmail($data));
         notify()->smiley('success', 'Volunteering entity has been Updated successfully');

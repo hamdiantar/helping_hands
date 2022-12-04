@@ -25,16 +25,20 @@
                                     <th>Package Duration</th>
                                     <th>Subscription Date</th>
                                     <th>Payment Status</th>
+                                    <th>Payment Details</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($volEntity->subs as $item)
                                 <tr>
-                                    <td>{{$item->PACKAGE_ID}}</td>
+                                    <td>{{$item->SUB_ID}}</td>
                                     <td>{{optional($item->package)->PACKAGE_PRICE}} SAR</td>
                                     <td>{{optional($item->package)->PACKAGE_DURATION}}</td>
                                     <td>{{$item->SUB_DATE}}</td>
                                     <td><span class="badge bg-success">PIAD</span></td>
+                                    <td>
+                                        <a href="{{route('volunteering-entity.subscription.payment', $item->SUB_ID)}}" class="btn btn-outline-primary">Show </a>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>
