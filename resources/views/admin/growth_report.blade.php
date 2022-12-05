@@ -27,14 +27,12 @@
                                 <tr>
                                     <th class="text-center">Number Of Entity Registered</th>
                                     <th class="text-center">Number Of Entity Canceled</th>
-                                    <th class="text-center">actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td><span class="badge bg-success">{{$volEntityCountReigstered}}</span></td>
                                     <td><span class="badge bg-danger">{{$volEntityCountReject}}</span></td>
-                                    <td><a href="#">read more....</a></td>
                                 </tr>
                                 </tbody>
                             </table>

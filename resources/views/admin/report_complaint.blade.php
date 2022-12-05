@@ -19,7 +19,7 @@
 
                     <div class="card-body ml-3 mr-3">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-12">
                                 <div class="table-responsive text-center p-0">
                                     <table class="table text-center table-bordered mb-0 text-center"
                                            id="dataTableReports">
@@ -48,7 +48,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="col-md-7 mt-5">
+                            <div class="col-md-12 mt-5">
                                 <div class="card z-index-2 ">
                                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
                                         <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
