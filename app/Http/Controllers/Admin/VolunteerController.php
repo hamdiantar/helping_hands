@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Traits\LoggerError;
 use Exception;
+use Illuminate\Http\Request;
 
 class VolunteerController extends Controller
 {
@@ -13,10 +14,15 @@ class VolunteerController extends Controller
 
     private $view = 'admin.volunteers.';
 
-    public function index()
+    public function index(Request $request)
     {
-        $items = User::all();
-        return view($this->view.'index', compact('items'));
+        $items = User::query();
+        if ($request->filled('VOL_CITY')) {
+            $items = $items->where('VOL_CITY', $request->VOL_CITY);
+        }
+        return view($this->view.'index',[
+            'items' => $items->get()
+        ]);
     }
 
 
