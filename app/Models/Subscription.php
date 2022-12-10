@@ -23,6 +23,11 @@ class Subscription extends Model
         return $this->belongsTo(Package::class, 'PACKAGE_ID');
     }
 
+    public function volEntity()
+    {
+        return $this->belongsTo(VolEntity::class, 'VOL_ENTITY_ID');
+    }
+
     public function payment()
     {
         return $this->hasOne(Payment::class, 'SUB_ID');

@@ -44,9 +44,12 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center">Event Name</th>
-                                    <th class="text-center">Number Of Attendance</th>
+                                    <th class="text-center">Attendance</th>
+                                    <th class="text-center">Applicants</th>
+                                    <th class="text-center">Applicants <i class="fa fa-check-circle text-success"></i></th>
+                                    <th class="text-center">Applicants <i class="fa fa-times-circle text-danger"></i></th>
                                     <th class="text-center">compliant ?</th>
-                                    <th class="text-center">responsible</th>
+{{--                                    <th class="text-center">responsible</th>--}}
                                     <th class="text-center">Start Date</th>
                                 </tr>
                                 </thead>
@@ -55,6 +58,9 @@
                                 <tr>
                                     <td>{{$item->OPP_NAME}}</td>
                                     <td><span class="badge bg-success">{{count($item->attends)}}</span></td>
+                                    <td><span class="badge bg-dark">{{count($item->applicants)}}</span></td>
+                                    <td><span class="badge bg-success">{{count($item->applicantsAccept)}}</span></td>
+                                    <td><span class="badge bg-danger">{{count($item->applicantsReject)}}</span></td>
                                     <td>
                                         @if($item->volEntity && $item->volEntity->compliants)
                                             <p>Yes</p>
@@ -62,12 +68,18 @@
                                             <p>No</p>
                                         @endif
                                     </td>
-                                    <td>{{optional($item->volEntity)->VOL_ENTITY_NAME}}</td>
+{{--                                    <td>{{optional($item->volEntity)->VOL_ENTITY_NAME}}</td>--}}
                                     <td>{{$item->OPP_START_DATE}}</td>
                                 </tr>
                                 @endforeach
                                 </tbody>
                             </table>
+                        </div>
+
+                        <div class="row col-md-12">
+                            <div class="chart">
+                                <canvas id="chart-bars" class="chart-canvas" height="300"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,3 +87,97 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script src="{{asset('assets/js/plugins/chartjs.min.js')}}"></script>
+
+    <script>
+        var ctx = document.getElementById("chart-bars").getContext("2d");
+        new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: @json($labels),
+                datasets: [{
+                    label: "Applicants Accepted",
+                    tension: 0.4,
+                    borderWidth: 0,
+                    borderRadius: 4,
+                    borderSkipped: false,
+                    backgroundColor: "rgb(37,137,37)",
+                    data: @json($dataSet1),
+                    maxBarThickness: 100
+                },
+                    {
+                        label: "Applicants Rejected",
+                        tension: 0.4,
+                        borderWidth: 0,
+                        borderRadius: 4,
+                        borderSkipped: false,
+                        backgroundColor: "rgb(197,35,53)",
+                        data: @json($dataSet2),
+                        maxBarThickness: 100
+                    }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'index',
+                },
+                scales: {
+                    y: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(0,0,0,0.2)'
+                        },
+                        ticks: {
+                            suggestedMin: 0,
+                            suggestedMax: 500,
+                            beginAtZero: true,
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                            color: "#000000"
+                        },
+                    },
+                    x: {
+                        grid: {
+                            drawBorder: false,
+                            display: true,
+                            drawOnChartArea: true,
+                            drawTicks: false,
+                            borderDash: [5, 5],
+                            color: 'rgba(255, 255, 255, .2)'
+                        },
+                        ticks: {
+                            display: true,
+                            color: '#000000',
+                            padding: 10,
+                            font: {
+                                size: 14,
+                                weight: 300,
+                                family: "Roboto",
+                                style: 'normal',
+                                lineHeight: 2
+                            },
+                        }
+                    },
+                },
+            },
+        });
+    </script>
+@endpush

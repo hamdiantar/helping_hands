@@ -17,9 +17,14 @@ class ReportController extends Controller
         if ($request->filled('date_from') && $request->filled('date_to')) {
             $items = $items->whereBetween('OPP_START_DATE', [$request->date_from, $request->date_to]);
         }
-
+        $labels = $items->pluck('OPP_NAME');
+        $dataSet1 = $items->withCount('applicantsAccept')->pluck('applicants_accept_count');
+        $dataSet2 = $items->withCount('applicantsReject')->pluck('applicants_reject_count');
         return view('volunteering-entity.performance_report', [
-            'items' => $items->get()
+            'items' => $items->get(),
+            'labels' => $labels,
+            'dataSet1' => $dataSet1,
+            'dataSet2' => $dataSet2,
         ]);
     }
 }

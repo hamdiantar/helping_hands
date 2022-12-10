@@ -59,6 +59,16 @@ class Opportunity extends Model
         return $this->hasMany(Request::class, 'OPP_ID');
     }
 
+    public function applicantsAccept()
+    {
+        return $this->hasMany(Request::class, 'OPP_ID')->where('REQ_STATUS', 'accept');
+    }
+
+    public function applicantsReject()
+    {
+        return $this->hasMany(Request::class, 'OPP_ID')->where('REQ_STATUS', 'reject');
+    }
+
     public function certifications()
     {
         return $this->hasMany(Certification::class, 'OPP_ID');
