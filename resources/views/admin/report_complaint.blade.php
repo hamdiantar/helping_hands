@@ -18,6 +18,20 @@
                     </div>
 
                     <div class="card-body ml-3 mr-3">
+                        <div class="col-md-12 mt-5 mb-5">
+                            <div class="card z-index-2 ">
+                                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
+                                    <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
+                                        <div class="chart">
+                                            <canvas id="chart-bars" class="chart-canvas" height="300"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="table-responsive text-center p-0">
@@ -48,19 +62,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="col-md-12 mt-5">
-                                <div class="card z-index-2 ">
-                                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
-                                        <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
-                                            <div class="chart">
-                                                <canvas id="chart-bars" class="chart-canvas" height="300"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

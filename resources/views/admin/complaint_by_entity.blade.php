@@ -20,8 +20,23 @@
                     </div>
 
                     <div class="card-body ml-3 mr-3">
-                            <div class="row mt-5">
+                        <form>
+                            <div class="row box-custom">
+                                <div class="col-md-6">
+                                    <label>Date From :</label>
+                                    <input type="date" value="{{request()->date_from}}" name="date_from" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Date To :</label>
+                                    <input type="date" value="{{request()->date_to}}" name="date_to" class="form-control">
+                                </div>
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0">
+                                        Generate Report <i class="fa fa-file"></i>
+                                    </button>
+                                </div>
                             </div>
+                        </form>
                         <div class="table-responsive p-0">
                             <table class="table  table-bordered mb-0" id="dataTable">
                                 <thead>
@@ -31,6 +46,7 @@
                                     <th>Title</th>
                                     <th>Against</th>
                                     <th>Status</th>
+                                    <th>Date</th>
                                     <th>Reply</th>
                                 </tr>
                                 </thead>
@@ -50,6 +66,7 @@
                                             <td><strong class="text-danger">{{optional($item->against)->VOL_ENTITY_NAME}}</strong></td>
                                         @endif
                                         <td>{{$item->COMP_STATUS}}</td>
+                                        <td>{{$item->COMP_DATE}}</td>
                                         <td>{{$item->COMP_REPLY}}</td>
                                     </tr>
                                 @endforeach

@@ -45,10 +45,10 @@
                                 <tr>
                                     <th class="text-center">Event Name</th>
                                     <th class="text-center">Attendance</th>
-                                    <th class="text-center">Applicants</th>
+                                    <th class="text-center">Total Applicants</th>
                                     <th class="text-center">Applicants <i class="fa fa-check-circle text-success"></i></th>
                                     <th class="text-center">Applicants <i class="fa fa-times-circle text-danger"></i></th>
-                                    <th class="text-center">compliant ?</th>
+                                    <th class="text-center">complaint ?</th>
 {{--                                    <th class="text-center">responsible</th>--}}
                                     <th class="text-center">Start Date</th>
                                 </tr>

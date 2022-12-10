@@ -62,7 +62,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">warning</i>
                     </div>
-                    <span class="nav-link-text ms-1">Compliant</span>
+                    <span class="nav-link-text ms-1">complaints</span>
                 </a>
             </li>
 
@@ -127,7 +127,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">receipt_long</i>
                     </div>
-                    <span class="nav-link-text ms-1">Complaint Report</span>
+                    <span class="nav-link-text ms-1">complaint Report</span>
                 </a>
             </li>
 

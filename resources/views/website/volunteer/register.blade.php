@@ -67,7 +67,7 @@
 
                             <div class="col-md-6 mb-3">
                                 <label for="Target" class="form-label">Target Hours : </label>
-                                <input type="number" value="{{old('VOL_TARGET_HOUR') ?? 0}}" class="form-control" id="Target" name="VOL_TARGET_HOUR">
+                                <input min="0" type="number" value="{{old('VOL_TARGET_HOUR') ?? 0}}" class="form-control" id="Target" name="VOL_TARGET_HOUR">
                             </div>
 
                             <div class="col-md-6 mb-3">
@@ -81,8 +81,35 @@
                             </div>
 
                             <div class="col-md-6 mb-3">
-                                <label for="City" class="form-label">City : </label>
-                                <input type="text" value="{{old('VOL_CITY')}}" class="form-control" id="City" name="VOL_CITY">
+                                <label for="VOL_CITY" class="form-label">City : </label>
+                                <select id="VOL_CITY" class="form-select select2" name="VOL_CITY">
+                                    <option value="">Select</option>
+                                    <option value="Abha" {{old('VOL_ENTITY_SECTOR') == 'Abha' ? 'selected' : ''}}>Abha</option>
+                                    <option value="Abqaiq" {{old('VOL_ENTITY_SECTOR') == 'Abqaiq' ? 'selected' : ''}}>Abqaiq</option>
+                                    <option value="Al-Bahah" {{old('VOL_ENTITY_SECTOR') == 'Al-Bahah' ? 'selected' : ''}}>Al-Bahah</option>
+                                    <option value="Al-Dammam" {{old('VOL_ENTITY_SECTOR') == 'Al-Dammam' ? 'selected' : ''}}>Al-Dammam</option>
+                                    <option value="Al-Jubail" {{old('VOL_ENTITY_SECTOR') == 'Al-Jubail' ? 'selected' : ''}}>Al-Jubail</option>
+                                    <option value="Al-Hufuf" {{old('VOL_ENTITY_SECTOR') == 'Al-Hufuf' ? 'selected' : ''}}>Al-Hufuf</option>
+                                    <option value="Al-Jawf" {{old('VOL_ENTITY_SECTOR') == 'Al-Jawf' ? 'selected' : ''}}>Al-Jawf</option>
+                                    <option value="Al-Kharj (oasis)" {{old('VOL_ENTITY_SECTOR') == 'Al-Kharj (oasis)' ? 'selected' : ''}}>Al-Kharj (oasis)</option>
+                                    <option value="Al-Khubar" {{old('VOL_ENTITY_SECTOR') == 'Al-Khubar' ? 'selected' : ''}}>Al-Khubar</option>
+                                    <option value="Al-Qatif" {{old('VOL_ENTITY_SECTOR') == 'Al-Qatif' ? 'selected' : ''}}>Al-Qatif</option>
+                                    <option value=" Al-Taif" {{old('VOL_ENTITY_SECTOR') == ' Al-Taif' ? 'selected' : ''}}> Al-Taif</option>
+                                    <option value="Buraydah" {{old('VOL_ENTITY_SECTOR') == 'Buraydah' ? 'selected' : ''}}>Buraydah</option>
+                                    <option value="Dhahran" {{old('VOL_ENTITY_SECTOR') == 'Dhahran' ? 'selected' : ''}}>Dhahran</option>
+                                    <option value="Hail" {{old('VOL_ENTITY_SECTOR') == 'Hail' ? 'selected' : ''}}>Hail</option>
+                                    <option value="Jiddah" {{old('VOL_ENTITY_SECTOR') == 'Jiddah' ? 'selected' : ''}}>Jiddah</option>
+                                    <option value="Jizan" {{old('VOL_ENTITY_SECTOR') == 'Jizan' ? 'selected' : ''}}>Jizan</option>
+                                    <option value=" Khamis Mushayt" {{old('VOL_ENTITY_SECTOR') == ' Khamis Mushayt' ? 'selected' : ''}}> Khamis Mushayt</option>
+                                    <option value="King Khalid Military City" {{old('VOL_ENTITY_SECTOR') == 'King Khalid Military City' ? 'selected' : ''}}>King Khalid Military City</option>
+                                    <option value="Mecca" {{old('VOL_ENTITY_SECTOR') == 'Mecca' ? 'selected' : ''}}>Mecca</option>
+                                    <option value="Medina" {{old('VOL_ENTITY_SECTOR') == 'Medina' ? 'selected' : ''}}>Medina</option>
+                                    <option value="Najran" {{old('VOL_ENTITY_SECTOR') == 'Najran' ? 'selected' : ''}}>Najran</option>
+                                    <option value="Ras Tanura" {{old('VOL_ENTITY_SECTOR') == 'Ras Tanura' ? 'selected' : ''}}>Ras Tanura</option>
+                                    <option value="Riyadh" {{old('VOL_ENTITY_SECTOR') == 'Riyadh' ? 'selected' : ''}}>Riyadh</option>
+                                    <option value="Sakaka" {{old('VOL_ENTITY_SECTOR') == 'Sakaka' ? 'selected' : ''}}>Sakaka</option>
+                                    <option value="Tabuk" {{old('VOL_ENTITY_SECTOR') == 'Tabuk' ? 'selected' : ''}}>Tabuk</option>
+                                </select>
                             </div>
 
                             <div class="col-md-6 mb-3 mt-4">

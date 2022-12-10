@@ -14,8 +14,16 @@
                         <input type="hidden" name="VOL_ENTITY_ID" value="{{$volEntity->VOL_ENTITY_ID}}">
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <label for="Title" class="form-label">Title :</label>
-                                <input  name="COMP_TITLE" type="text" class="form-control" id="Title">
+                                <label for="COMP_TITLE" class="form-label">Title :</label>
+                                <select id="COMP_TITLE" class="form-select select2" name="COMP_TITLE">
+                                    <option value="">Select</option>
+                                    <option value="Time Management" {{old('VOL_ENTITY_SECTOR') == 'Time Management' ? 'selected' : ''}}>Time Management</option>
+                                    <option value="Mistreatment" {{old('VOL_ENTITY_SECTOR') == 'Mistreatment' ? 'selected' : ''}}>Mistreatment</option>
+                                    <option value="Violence" {{old('VOL_ENTITY_SECTOR') == 'Violence' ? 'selected' : ''}}>Violence</option>
+                                    <option value="Attendance" {{old('VOL_ENTITY_SECTOR') == 'Attendance' ? 'selected' : ''}}>Attendance</option>
+                                    <option value="Overtasked" {{old('VOL_ENTITY_SECTOR') == 'Overtasked' ? 'selected' : ''}}>Overtasked</option>
+                                    <option value="others" {{old('VOL_ENTITY_SECTOR') == 'others' ? 'selected' : ''}}>others</option>
+                                </select>
                             </div>
 
 

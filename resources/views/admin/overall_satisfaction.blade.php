@@ -38,6 +38,7 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center"> Entity Name</th>
+                                    <th class="text-center">Total Volunteers</th>
                                     <th class="text-center">Number Of Complaint</th>
                                     <th class="text-center">Average Of Rating</th>
                                 </tr>
@@ -46,8 +47,10 @@
                                 @foreach($opps as $opp)
                                 <tr>
                                     <td>{{$opp->OPP_NAME}}</td>
+                                    <td><span class="badge bg-success">{{count($opp->applicants)}}</span></td>
                                     <td><span class="badge bg-danger">{{count(optional($opp->volEntity)->compliants)}}</span></td>
                                     <td>
+                                        @if(count(optional($opp->volEntity)->reviews) * 10 > 50)
                                         <div class="progress-wrapper w-75 mx-auto">
                                             <div class="progress-success">
                                                 <div class="progress-percentage">
@@ -55,9 +58,21 @@
                                                 </div>
                                             </div>
                                             <div class="progress">
-                                                <div style="width: {{count(optional($opp->volEntity)->reviews) * 10}}%" class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div style="width: {{count(optional($opp->volEntity)->reviews) * 10}}%" class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                             </div>
                                         </div>
+                                        @else
+                                            <div class="progress-wrapper w-75 mx-auto">
+                                                <div class="progress-success">
+                                                    <div class="progress-percentage">
+                                                        <span class="text-xs font-weight-bold">{{count(optional($opp->volEntity)->reviews) * 10}}%</span>
+                                                    </div>
+                                                </div>
+                                                <div class="progress">
+                                                    <div style="width: {{count(optional($opp->volEntity)->reviews) * 10}}%" class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        @endif
                                     </td>
 
                                 </tr>

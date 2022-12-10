@@ -181,7 +181,16 @@
                                       <td>{{$request->REQ_DATE}}</td>
                                       <td>{{optional($request->volEntity)->VOL_ENTITY_NAME}}</td>
                                       <td>{{optional($request->opp)->OPP_NAME}}</td>
-                                      <td><span class="badge bg-info">{{$request->REQ_STATUS}}</span></td>
+                                          @if($request->REQ_STATUS == 'accept')
+                                           <td><span class="badge bg-success">{{$request->REQ_STATUS}}</span></td>
+                                          @endif
+                                          @if($request->REQ_STATUS == 'reject')
+                                              <td><span class="badge bg-danger">{{$request->REQ_STATUS}}</span></td>
+                                          @endif
+                                          @if($request->REQ_STATUS == 'pending')
+                                              <td><span class="badge bg-warning">{{$request->REQ_STATUS}}</span></td>
+                                          @endif
+
                                   </tr>
                                   @endforeach
                                   @else

@@ -16,18 +16,32 @@ class ReportAdminController extends Controller
     public function growthReport(Request $request)
     {
         $volEntityCountReigstered = VolEntity::query();
+        $volEntityCountAccepted = VolEntity::where('VOL_ENTITY_STATUS', 1);
         $volEntityCountPending = VolEntity::where('VOL_ENTITY_STATUS', 0);
         $volEntityCountReject = VolEntity::where('VOL_ENTITY_STATUS', 2);
         if ($request->filled('VOL_ENTITY_SECTOR')) {
             $volEntityCountReigstered = $volEntityCountReigstered->where('VOL_ENTITY_SECTOR', $request->VOL_ENTITY_SECTOR);
+            $volEntityCountAccepted = $volEntityCountAccepted->where('VOL_ENTITY_SECTOR', $request->VOL_ENTITY_SECTOR);
             $volEntityCountPending = $volEntityCountPending->where('VOL_ENTITY_SECTOR', $request->VOL_ENTITY_SECTOR);
             $volEntityCountReject = $volEntityCountReject->where('VOL_ENTITY_SECTOR', $request->VOL_ENTITY_SECTOR);
         }
+        $subs = Subscription::with('package');
+        if ($request->filled('date_from') && $request->filled('date_to')) {
+            $subs = $subs->whereBetween('SUB_DATE', [$request->date_from, $request->date_to]);
+        }
+       $total = 0;
+        $subsData = $subs->get();
+       foreach ($subsData as $sub) {
+           $total += optional($sub->package)->PACKAGE_PRICE;
+       }
         return view('admin.growth_report', [
+            "subs" => $subsData,
+            "total" => $total,
             "volEntityCountReigstered" => $volEntityCountReigstered->get(),
             "volEntityCountReject" => $volEntityCountReject->get(),
             "volEntityCountPending" => $volEntityCountPending->get(),
-            "dataset" => [count($volEntityCountReigstered->get()), count($volEntityCountPending->get()), count($volEntityCountReject->get())],
+            "volEntityCountAccepted" => $volEntityCountAccepted->get(),
+            "dataset" => [count($volEntityCountAccepted->get()), count($volEntityCountPending->get()), count($volEntityCountReject->get())],
         ]);
     }
 
@@ -68,14 +82,17 @@ class ReportAdminController extends Controller
         ]);
     }
 
-    public function reportComplaintByEntity(int $id)
+    public function reportComplaintByEntity(Request $request, int $id)
     {
         $volEntity = VolEntity::find($id);
-        $complaints = Compliant::where('type', 'from_volunteer')->where('VOL_ENTITY_ID', $volEntity->VOL_ENTITY_ID)->get();
+        $complaints = Compliant::where('type', 'from_volunteer')->where('VOL_ENTITY_ID', $volEntity->VOL_ENTITY_ID);
+        if ($request->filled('date_from') && $request->filled('date_to')) {
+            $complaints = $complaints->whereBetween('COMP_DATE', [$request->date_from, $request->date_to]);
+        }
 
         return view('admin.complaint_by_entity', [
             "volEntity" => $volEntity,
-            "complaints" => $complaints,
+            "complaints" => $complaints->get(),
         ]);
     }
 }

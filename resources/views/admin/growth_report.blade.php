@@ -22,7 +22,7 @@
                             <div class="row box-custom">
                                 <h3 class="text-center mb-4">Growth Report</h3>
 
-                                <div class="col-md-12">
+                                <div class="col-md-4">
                                     <label>Sector :</label>
                                     <select id="VOL_ENTITY_SECTOR" class="form-select select2" name="VOL_ENTITY_SECTOR">
                                         <option value="">All</option>
@@ -30,10 +30,19 @@
                                         <option value="Community Service" {{request()->VOL_ENTITY_SECTOR == 'Community Service' ? 'selected' : ''}}>Community Service</option>
                                         <option value="Entertainment" {{request()->VOL_ENTITY_SECTOR == 'Entertainment' ? 'selected' : ''}}>Entertainment</option>
                                         <option value="Education" {{request()->VOL_ENTITY_SECTOR == 'Education' ? 'selected' : ''}}>Education</option>
-                                        <option value="Hospitality" {{request()->VOL_ENTITY_SECTOR == 'Education' ? 'selected' : ''}}>Hospitality</option>
+                                        <option value="Hospitality" {{request()->VOL_ENTITY_SECTOR == 'Hospitality' ? 'selected' : ''}}>Hospitality</option>
                                         <option value="Technology" {{request()->VOL_ENTITY_SECTOR == 'Technology' ? 'selected' : ''}}>Technology</option>
                                         <option value="Others" {{request()->VOL_ENTITY_SECTOR == 'Others' ? 'selected' : ''}}>Others</option>
                                     </select>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label>Date From :</label>
+                                    <input type="date" value="{{request()->date_from}}" name="date_from" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Date To :</label>
+                                    <input type="date" value="{{request()->date_to}}" name="date_to" class="form-control">
                                 </div>
                                 <div class="col-md-12 text-center">
                                     <button type="submit" class="btn btn-md bg-gradient-warning btn-lg w-30 mt-4 mb-0">
@@ -59,14 +68,16 @@
                               <table class="table text-center table-bordered mb-0 text-center" id="">
                                   <thead>
                                   <tr>
-                                      <th class="text-center">Number Of Entity Registered</th>
+                                      <th class="text-center">Total Entities</th>
+                                      <th class="text-center">Number Of Entity Accepted</th>
                                       <th class="text-center">Number Of Entity Pending</th>
-                                      <th class="text-center">Number Of Entity Canceled</th>
+                                      <th class="text-center">Number Of Entity Rejected</th>
                                   </tr>
                                   </thead>
                                   <tbody>
                                   <tr>
-                                      <td><span class="badge bg-success">{{count($volEntityCountReigstered)}}</span></td>
+                                      <td><span class="badge bg-dark">{{count($volEntityCountReigstered)}}</span></td>
+                                      <td><span class="badge bg-success">{{count($volEntityCountAccepted)}}</span></td>
                                       <td><span class="badge bg-warning">{{count($volEntityCountPending)}}</span></td>
                                       <td><span class="badge bg-danger">{{count($volEntityCountReject)}}</span></td>
                                   </tr>
@@ -75,10 +86,10 @@
 
                           </div>
                           <div class="table-responsive p-0 mt-3 mb-3">
-                              <table class="table  table-bordered">
+                              <table class="table  table-bordered text-center">
                                   <thead>
                                   <tr>
-                                      <th style="text-align: center;padding: 10px" colspan="3"> Entity Registered [{{count($volEntityCountReigstered)}}]</th>
+                                      <th style="text-align: center;padding: 10px" colspan="3"> Entity Accepted [{{count($volEntityCountAccepted)}}]</th>
                                   </tr>
                                   <tr>
                                       <th>#</th>
@@ -98,7 +109,7 @@
                               </table>
                           </div>
                           <div class="table-responsive p-0 mt-3 mb-3">
-                              <table class="table  table-bordered">
+                              <table class="table  table-bordered text-center">
                                   <thead>
                                   <tr>
                                       <th style="text-align: center;padding: 10px" colspan="3"> Entity Pending [{{count($volEntityCountPending)}}]</th>
@@ -121,10 +132,10 @@
                               </table>
                           </div>
                           <div class="table-responsive p-0 mt-3 mb-3">
-                              <table class="table  table-bordered">
+                              <table class="table  table-bordered text-center">
                                   <thead>
                                   <tr>
-                                      <th style="text-align: center;padding: 10px" colspan="3"> Entity Cancelled [{{count($volEntityCountReject)}}]</th>
+                                      <th style="text-align: center;padding: 10px" colspan="3"> Entity Rejected [{{count($volEntityCountReject)}}]</th>
                                   </tr>
                                   <tr>
                                       <th>#</th>
@@ -143,6 +154,27 @@
                                   </tbody>
                               </table>
                           </div>
+
+
+                          <div class="table-responsive p-0 mt-3 mb-3">
+                              <table class="table  table-bordered text-center">
+                                  <thead>
+                                  <tr>
+                                      <th style="text-align: center;padding: 10px" colspan="3">Total Earnings</th>
+                                  </tr>
+                                  <tr>
+                                      <th>Number Of Subscription</th>
+                                      <th>Total Amount</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td class="text-success">{{count($subs)}}</td>
+                                          <td class="text-success">{{$total}} SAR</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
                       </div>
                     </div>
                 </div>
@@ -158,7 +190,7 @@
         new Chart(ctx, {
             type: "doughnut",
             data: {
-                labels: ['Registered', 'Pending', 'Cancelled'],
+                labels: ['Accepted', 'Pending', 'Rejected'],
                 datasets: [{
                     label: 'Volunteering Entity',
                     data: @json($dataset),
