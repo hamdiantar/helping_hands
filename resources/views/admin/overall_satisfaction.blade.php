@@ -46,7 +46,7 @@
                                 <tbody>
                                 @foreach($opps as $opp)
                                 <tr>
-                                    <td>{{$opp->OPP_NAME}}</td>
+                                    <td>{{optional($opp->volEntity)->VOL_ENTITY_NAME}}</td>
                                     <td><span class="badge bg-success">{{count($opp->applicants)}}</span></td>
                                     <td><span class="badge bg-danger">{{count(optional($opp->volEntity)->compliants)}}</span></td>
                                     <td>

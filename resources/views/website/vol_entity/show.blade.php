@@ -17,8 +17,8 @@
                 <div class="col-lg-4">
                     <div class="service-item first-service">
                         <span class="Available_opportunities">Available opportunities [ {{count($item->opps)}} ]</span>
-                        <img height="170px" src="{{asset('website/assets/images/vo_1.jpeg')}}">
-                        <h4>App Maintenance</h4>
+                        <img height="170px" src="{{$item->logo_path}}">
+                        <h4>{{$item->VOL_ENTITY_NAME}}</h4>
                         <div class="text-button">
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity', $item->VOL_ENTITY_ID)}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>

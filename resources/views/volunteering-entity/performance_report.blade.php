@@ -57,7 +57,7 @@
                                 @foreach($items as $item)
                                 <tr>
                                     <td>{{$item->OPP_NAME}}</td>
-                                    <td><span class="badge bg-success">{{count($item->attends)}}</span></td>
+                                    <td><span class="badge bg-success">{{$item->attends_count}}</span></td>
                                     <td><span class="badge bg-dark">{{count($item->applicants)}}</span></td>
                                     <td><span class="badge bg-success">{{count($item->applicantsAccept)}}</span></td>
                                     <td><span class="badge bg-danger">{{count($item->applicantsReject)}}</span></td>

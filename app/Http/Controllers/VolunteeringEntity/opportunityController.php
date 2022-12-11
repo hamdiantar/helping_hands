@@ -39,6 +39,7 @@ class opportunityController extends Controller
     {
         try {
             $data = $request->all();
+            $data['OPP_STATUS'] = 0;
             Opportunity::create($data);
             notify()->smiley('success', 'Opportunity has been created successfully');
             return redirect()->route('volunteering-entity.opportunities.index');
