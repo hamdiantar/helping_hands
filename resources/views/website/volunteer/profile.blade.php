@@ -39,7 +39,7 @@
                               <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My Profile</button>
                               <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">My Attendance</button>
                               <button  class="nav-link" id="nav-opp-tab" data-bs-toggle="tab" data-bs-target="#nav-opp" type="button" role="tab" aria-controls="nav-opp" aria-selected="false">My Requests</button>
-                              <button  class="nav-link" id="nav-Compliant-tab" data-bs-toggle="tab" data-bs-target="#nav-Compliant" type="button" role="tab" aria-controls="nav-Compliant" aria-selected="false">My Compliant</button>
+                              <button  class="nav-link" id="nav-Compliant-tab" data-bs-toggle="tab" data-bs-target="#nav-Compliant" type="button" role="tab" aria-controls="nav-Compliant" aria-selected="false">My Complaints</button>
                               <button  class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">certificate</button>
                           </div>
                       </nav>
@@ -119,7 +119,34 @@
 
                                       <div class="col-md-6 mb-3">
                                           <label for="City" class="form-label">City : </label>
-                                          <input type="text" class="form-control" id="City" name="VOL_CITY"  value="{{$volunteer->VOL_CITY}}">
+                                          <select id="VOL_CITY" class="form-select select2" name="VOL_CITY">
+                                              <option value="">Select</option>
+                                              <option value="Abha" {{isset($volunteer) && $volunteer->VOL_CITY == 'Abha' ? 'selected' : ''}}>Abha</option>
+                                              <option value="Abqaiq" {{isset($volunteer) && $volunteer->VOL_CITY == 'Abqaiq' ? 'selected' : ''}}>Abqaiq</option>
+                                              <option value="Al-Bahah" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Bahah' ? 'selected' : ''}}>Al-Bahah</option>
+                                              <option value="Al-Dammam" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Dammam' ? 'selected' : ''}}>Al-Dammam</option>
+                                              <option value="Al-Jubail" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Jubail' ? 'selected' : ''}}>Al-Jubail</option>
+                                              <option value="Al-Hufuf" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Hufuf' ? 'selected' : ''}}>Al-Hufuf</option>
+                                              <option value="Al-Jawf" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Jawf' ? 'selected' : ''}}>Al-Jawf</option>
+                                              <option value="Al-Kharj (oasis)" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Kharj (oasis)' ? 'selected' : ''}}>Al-Kharj (oasis)</option>
+                                              <option value="Al-Khubar" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Khubar' ? 'selected' : ''}}>Al-Khubar</option>
+                                              <option value="Al-Qatif" {{isset($volunteer) && $volunteer->VOL_CITY == 'Al-Qatif' ? 'selected' : ''}}>Al-Qatif</option>
+                                              <option value=" Al-Taif" {{isset($volunteer) && $volunteer->VOL_CITY == ' Al-Taif' ? 'selected' : ''}}> Al-Taif</option>
+                                              <option value="Buraydah" {{isset($volunteer) && $volunteer->VOL_CITY == 'Buraydah' ? 'selected' : ''}}>Buraydah</option>
+                                              <option value="Dhahran" {{isset($volunteer) && $volunteer->VOL_CITY == 'Dhahran' ? 'selected' : ''}}>Dhahran</option>
+                                              <option value="Hail" {{isset($volunteer) && $volunteer->VOL_CITY == 'Hail' ? 'selected' : ''}}>Hail</option>
+                                              <option value="Jiddah" {{isset($volunteer) && $volunteer->VOL_CITY == 'Jiddah' ? 'selected' : ''}}>Jiddah</option>
+                                              <option value="Jizan" {{isset($volunteer) && $volunteer->VOL_CITY == 'Jizan' ? 'selected' : ''}}>Jizan</option>
+                                              <option value=" Khamis Mushayt" {{isset($volunteer) && $volunteer->VOL_CITY == ' Khamis Mushayt' ? 'selected' : ''}}> Khamis Mushayt</option>
+                                              <option value="King Khalid Military City" {{isset($volunteer) && $volunteer->VOL_CITY == 'King Khalid Military City' ? 'selected' : ''}}>King Khalid Military City</option>
+                                              <option value="Mecca" {{isset($volunteer) && $volunteer->VOL_CITY == 'Mecca' ? 'selected' : ''}}>Mecca</option>
+                                              <option value="Medina" {{isset($volunteer) && $volunteer->VOL_CITY == 'Medina' ? 'selected' : ''}}>Medina</option>
+                                              <option value="Najran" {{isset($volunteer) && $volunteer->VOL_CITY == 'Najran' ? 'selected' : ''}}>Najran</option>
+                                              <option value="Ras Tanura" {{isset($volunteer) && $volunteer->VOL_CITY == 'Ras Tanura' ? 'selected' : ''}}>Ras Tanura</option>
+                                              <option value="Riyadh" {{isset($volunteer) && $volunteer->VOL_CITY == 'Riyadh' ? 'selected' : ''}}>Riyadh</option>
+                                              <option value="Sakaka" {{isset($volunteer) && $volunteer->VOL_CITY == 'Sakaka' ? 'selected' : ''}}>Sakaka</option>
+                                              <option value="Tabuk" {{isset($volunteer) && $volunteer->VOL_CITY == 'Tabuk' ? 'selected' : ''}}>Tabuk</option>
+                                          </select>
                                       </div>
 
                                       <div class="col-md-6 mb-3 mt-4">
@@ -202,7 +229,7 @@
                               </table>
                           </div>
                           <div class="tab-pane fade" id="nav-Compliant" role="tabpanel" aria-labelledby="nav-Compliant-tab">
-                              <h5 class="text-center mb-3 mt-3">Compliant</h5>
+                              <h5 class="text-center mb-3 mt-3">Complaints</h5>
                               <table class="table table-bordered table-">
                                   <thead>
                                   <tr>

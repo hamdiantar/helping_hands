@@ -21,7 +21,7 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $entities = VolEntity::withCount('opps')->get();
+        $entities = VolEntity::withCount('opps')->where('VOL_ENTITY_STATUS', 1)->get();
         $labels = $entities->pluck('VOL_ENTITY_NAME');
         $datasets = $entities->pluck('opps_count');
         return view($this->view.'home', compact('labels', 'datasets'));

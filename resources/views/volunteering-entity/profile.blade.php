@@ -52,7 +52,7 @@
 
                     <div class="input-group col-md-6 input-group-outline mb-3 is-filled">
                         <label class="form-label">Sector</label>
-                        <input type="text" value="{{getAuthVolEntity()->VOL_ENTITY_SECTOR}}" name="VOL_ENTITY_SECTOR" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="text" readonly value="{{getAuthVolEntity()->VOL_ENTITY_SECTOR}}" name="VOL_ENTITY_SECTOR" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                     </div>
 
                     <div class="input-group col-md-6 input-group-outline mb-3 is-filled">

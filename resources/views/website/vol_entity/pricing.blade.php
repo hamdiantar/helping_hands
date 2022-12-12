@@ -18,16 +18,8 @@
                         <div class="icon">
                             <img src="{{asset('website/assets/images/pricing-table-01.png')}}" alt="">
                         </div>
-{{--                        <ul>--}}
-{{--                            <li>Lorem Ipsum Dolores</li>--}}
-{{--                            <li>20 TB of Storage</li>--}}
-{{--                            <li class="non-function">Life-time Support</li>--}}
-{{--                            <li class="non-function">Premium Add-Ons</li>--}}
-{{--                            <li class="non-function">Fastest Network</li>--}}
-{{--                            <li class="non-function">More Options</li>--}}
-{{--                        </ul>--}}
                         <div class="border-button">
-                            <a href="#">Purchase This Plan Now</a>
+                            <a href="{{route('vol_entity.register')}}">Purchase This Plan Now</a>
                         </div>
                     </div>
                 </div>
@@ -38,16 +30,8 @@
                         <div class="icon">
                             <img src="{{asset('website/assets/images/pricing-table-01.png')}}" alt="">
                         </div>
-{{--                        <ul>--}}
-{{--                            <li>Lorem Ipsum Dolores</li>--}}
-{{--                            <li>50 TB of Storage</li>--}}
-{{--                            <li>Life-time Support</li>--}}
-{{--                            <li>Premium Add-Ons</li>--}}
-{{--                            <li class="non-function">Fastest Network</li>--}}
-{{--                            <li class="non-function">More Options</li>--}}
-{{--                        </ul>--}}
                         <div class="border-button">
-                            <a href="#">Purchase This Plan Now</a>
+                            <a href="{{route('vol_entity.register')}}">Purchase This Plan Now</a>
                         </div>
                     </div>
                 </div>
@@ -58,16 +42,8 @@
                         <div class="icon">
                             <img src="{{asset('website/assets/images/pricing-table-01.png')}}" alt="">
                         </div>
-{{--                        <ul>--}}
-{{--                            <li>Lorem Ipsum Dolores</li>--}}
-{{--                            <li>120 TB of Storage</li>--}}
-{{--                            <li>Life-time Support</li>--}}
-{{--                            <li>Premium Add-Ons</li>--}}
-{{--                            <li>Fastest Network</li>--}}
-{{--                            <li>More Options</li>--}}
-{{--                        </ul>--}}
                         <div class="border-button">
-                            <a href="#">Purchase This Plan Now</a>
+                            <a href="{{route('vol_entity.register')}}">Purchase This Plan Now</a>
                         </div>
                     </div>
                 </div>

@@ -80,7 +80,7 @@
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <span class="material-icons opacity-10">post_add</span>
                     </div>
-                    <span class="nav-link-text ms-1">Posts</span>
+                    <span class="nav-link-text ms-1">Posts Requests</span>
                 </a>
             </li>
 

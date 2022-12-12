@@ -101,7 +101,7 @@
             <h1 class="crt_title">Volunteering Work Certificate</h1>
                 <p>The Community Service at {{optional($certification->oppo->volEntity)->VOL_ENTITY_NAME}}  would like to express its thanks and appreciation to</p>
                 <h1 class="colorGreen crt_user">{{optional($certification->volunteer)->full_name}}</h1>
-                <p class="afterName">ID Number ({{optional($certification->volunteer)->VOL_ID}}) School ({{optional($certification->volunteer)->VOL_SCHOOL_NAME}}) Role (Volunteer) In
+                <p class="afterName">ID Number ({{optional($certification->volunteer)->VOL_NATIONAL_ID}}) School ({{optional($certification->volunteer)->VOL_SCHOOL_NAME}}) Role (Volunteer) In
                     recognition of this outstanding volunteer work and effort in the volunteer opportunity
                     ({{optional($certification->oppo)->OPP_NAME}}) in {{optional($certification->oppo)->OPP_CITY}}
                     from {{optional($certification->oppo)->OPP_START_DATE}}  to {{optional($certification->oppo)->OPP_FINISH_DATE}}  with a rate of ({{optional($certification->oppo)->OPP_TOTAL_HOUR}}) volunteering hours.

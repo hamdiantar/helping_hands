@@ -19,6 +19,9 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="caption">
+                                        @if($opp->totalAvailable()  == 0)
+                                        <h4 class="alert p-4 m-5 alert-danger text-center">Sorry! The opportunity is Fully Booked</h4>
+                                        @endif
                                         <h3 class="md-heading text-center"><a href="#">{{$opp->OPP_NAME}}</a></h3>
                                         <p>{{$opp->OPP_DESCRIPTION}}</p>
                                         <div class="author-info-2">
@@ -93,7 +96,9 @@
                                             </form>
 
                                         </div>
+                                            @if($opp->totalAvailable()  != 0)
                                         <button type="submit" form="applyForm"  class="btn btn-primary btn-book" role="button">Confirm Applying <i class="fa fa-save"></i></button> </div>
+                                           @endif
                                 </div>
                             </div>
                         </article>

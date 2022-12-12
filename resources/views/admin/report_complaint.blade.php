@@ -80,7 +80,7 @@
             data: {
                 labels: @json($labels),
                 datasets: [{
-                    label: "Opportunities",
+                    label: "complaints",
                     tension: 0.4,
                     borderWidth: 0,
                     borderRadius: 4,

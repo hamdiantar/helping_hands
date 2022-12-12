@@ -35,14 +35,17 @@ class SubscriptionController extends Controller
     {
 
         try {
+            date_default_timezone_set('Asia/Riyadh');
             $data = $request->all();
             $package = Package::find($request->PACKAGE_ID);
             $data['VOL_ENTITY_ID'] = getAuthVolEntity()->VOL_ENTITY_ID;
+            $data['SUB_DATE'] = now();
             $subscription = Subscription::create($data);
             Payment::create([
                 "PMT_DESCRPTION" => $package->PACKAGE_PRICE. ' | '. $package->PACKAGE_DURATION,
                 "PMT_AMOUNT" => $package->PACKAGE_PRICE,
                 "SUB_ID" => $subscription->SUB_ID,
+                "PMT_DATE" => now(),
             ]);
             notify()->smiley('success', 'Subscription has been created successfully');
             return redirect()->route('volunteering-entity.subscription.index');

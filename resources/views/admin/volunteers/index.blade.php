@@ -76,7 +76,13 @@
                                         E-Mail
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                       completed Hours
+                                       Target Hours
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Remaining Hours
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Completed Hours
                                     </th>
                                     <th class="text-center text-secondary opacity-7">Actions</th>
                                 </tr>
@@ -94,9 +100,9 @@
                                     <td>
                                         <p class="text-xs font-weight-bold mb-0">{{$item->VOL_EMAIL}}</p>
                                     </td>
-                                    <td>
-                                        <span class="badge bg-success">{{$item->VOL_COMPLETED_HOUR}}</span>
-                                    </td>
+                                    <td><span class="badge bg-dark">{{$item->VOL_TARGET_HOUR}}</span></td>
+                                    <td><span class="badge bg-warning">{{$item->remainingHours()}}</span></td>
+                                    <td><span class="badge bg-success">{{$item->completedHours()}}</span></td>
 
                                     <td class="align-middle">
                                         <a href="{{route('admin.volunteers.show', $item->VOL_ID)}}" class="text-secondary font-weight-bold text-xs"
