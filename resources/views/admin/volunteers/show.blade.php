@@ -38,9 +38,11 @@
                                   <td><strong>Grade Level</strong> : {{$item->VOL_GRADE_LEVEL}}</td>
                                   <td><strong>City</strong> : {{$item->VOL_CITY}}</td>
                                   <td><strong>Target Hours</strong> : {{$item->VOL_TARGET_HOUR}}</td>
+
                               </tr>
                               <tr>
-                                  <td><strong>Completed Hours</strong> : {{$item->VOL_COMPLETED_HOUR}}</td>
+                                  <td><strong>Remaining Hours</strong> :{{$item->remainingHours()}}</td>
+                                  <td><strong>Completed Hours</strong> :{{$item->completedHours()}}</td>
                                   <td><strong>Gender</strong> : {{$item->VOL_GENDER}}</td>
                               </tr>
                               </tbody>

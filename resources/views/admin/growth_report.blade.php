@@ -247,6 +247,7 @@
             var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
             mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+            mywindow.document.write(`<link href="{{asset('assets/css/material-dashboard.css?v=3.0.4')}}" rel="stylesheet"/>`);
             mywindow.document.write(`</head><body >@include('admin.layouts.print')`);
             mywindow.document.write('<h1>' + document.title  + '</h1>');
             mywindow.document.write(document.getElementById(elem).innerHTML);

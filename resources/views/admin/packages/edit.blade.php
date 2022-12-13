@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="card-body ml-3 mr-3">
-                        <form method="post" id="form" action="{{route('admin.packages.update', $item->SUB_ID)}}">
+                        <form method="post" id="form" action="{{route('admin.packages.update', $item->PACKAGE_ID)}}">
                             @csrf
                             @method('PUT')
                             @include('admin.packages.form')
