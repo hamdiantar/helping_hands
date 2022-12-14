@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\VolEntity\CertificationRequest;
 use App\Models\Certification;
 use App\Models\Opportunity;
+use App\Models\User;
 use App\Traits\LoggerError;
 use Exception;
 
@@ -53,6 +54,13 @@ class CertificationController extends Controller
             if ($oldCertification) {
                 notify()->smiley('error', 'You have already added certification this volunteer before');
                 return back();
+            }
+            $volunteer = User::find($request->VOL_ID);
+            $opp = Opportunity::find($request->OPP_ID);
+            if ($volunteer && $opp) {
+                $volunteer->update([
+                    'VOL_COMPLETED_HOUR' => $opp->OPP_TOTAL_HOUR + $volunteer->VOL_COMPLETED_HOUR
+                ]);
             }
             $data = $request->all();
             $data['OPP_ID'] = $oppId;

@@ -62,6 +62,13 @@ class VolEntity extends Authenticatable
         return $this->hasMany(Review::class, 'VOL_ENTITY_ID');
     }
 
+    public function totalRate()
+    {
+        $totalRate = Review::sum('FEED_VOL_RATE');
+        $rating = $this->reviews()->sum('FEED_VOL_RATE');
+        return $rating ? round($rating / (($totalRate * 5) / 100)) : 0;
+    }
+
     public function subs()
     {
         return $this->hasMany(Subscription::class, 'VOL_ENTITY_ID');

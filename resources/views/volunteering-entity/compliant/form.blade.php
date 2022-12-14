@@ -13,7 +13,16 @@
 
     <div class="input-group col-md-6 input-group-outline mb-3 is-filled">
         <label class="form-label">Complaint Title</label>
-        <input type="text" name="COMP_TITLE" value="{{isset($item) ? $item->COMP_TITLE : old('COMP_TITLE')}}" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+        <select class="form-control" name="COMP_TITLE" {{isset($item) ? 'readonly' : ''}}>
+            <option value="">Select</option>
+                <option value="Time Management" {{isset($item) && $item->COMP_TITLE  =='Time Management' ? 'selected' : ''}} >Time Management</option>
+                <option value="Mistreatment" {{isset($item) && $item->COMP_TITLE  =='Mistreatment' ? 'selected' : ''}} >Mistreatment</option>
+                <option value="Violence" {{isset($item) && $item->COMP_TITLE  =='Violence' ? 'selected' : ''}} >Violence</option>
+                <option value="Attendance" {{isset($item) && $item->COMP_TITLE  =='Attendance' ? 'selected' : ''}} >Attendance</option>
+                <option value="Irresponsibility" {{isset($item) && $item->COMP_TITLE  =='Irresponsibility' ? 'selected' : ''}} >Irresponsibility</option>
+                <option value="Uncommittment" {{isset($item) && $item->COMP_TITLE  =='Uncommittment' ? 'selected' : ''}} >Uncommittment</option>
+                <option value="Others" {{isset($item) && $item->COMP_TITLE  =='Others' ? 'selected' : ''}} >Others</option>
+        </select>
     </div>
 
     <div class="input-group col-md-6 input-group-outline mb-3 is-filled">

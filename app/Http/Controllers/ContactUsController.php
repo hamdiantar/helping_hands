@@ -11,10 +11,4 @@ class contactUsController extends Controller
     {
         return view('website.contactus');
     }
-
-    public function contactus(Request $request)
-    {
-        ContactUs::create($request->all());
-        return redirect()->back()->with('success', 'Your Message Has Been Sent Successfully');
-    }
 }

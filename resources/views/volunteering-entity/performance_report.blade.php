@@ -1,6 +1,6 @@
 @extends('volunteering-entity.layouts.app')
 
-@section('title', 'opportunity title')
+@section('title', 'Entity Performance Summary Report')
 
 @section('breadcrumb')
     <li><a href="#">Entity performance summary report</a></li>

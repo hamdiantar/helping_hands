@@ -104,6 +104,7 @@ class CompliantController extends Controller
         $volunteer = User::find($id);
         return view($this->view . 'volunteer_compliant', [
             'volunteer' => $volunteer,
+            'compliants' => $volunteer->compliantsFromEntity,
         ]);
     }
 }

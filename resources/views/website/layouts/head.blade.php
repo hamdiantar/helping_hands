@@ -14,4 +14,26 @@
 <link rel="stylesheet" href="{{asset('website/assets/css/animated.css')}}">
 <link rel="stylesheet" href="{{asset('website/assets/css/owl.css')}}">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<style>
+    .cont {
+        color: black;
+        font-size: 24px;
+        font-weight: 300;
+        padding: 8px;
+    }
+    .main-con {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+    .cont img {
+        height: 27px;
+        width: 27px;
+    }
+
+    .grat-color {
+        color: gray;
+    }
+</style>
 @stack('css')

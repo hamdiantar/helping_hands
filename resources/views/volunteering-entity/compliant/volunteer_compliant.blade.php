@@ -25,18 +25,20 @@
                                 <thead>
                                 <tr>
                                     <th>#ID</th>
+                                    <th>From</th>
                                     <th>Title</th>
-                                    <th>Against</th>
+                                    <th>Description</th>
                                     <th>Date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if(count($volunteer->compliants))
-                                    @foreach($volunteer->compliants as $request)
+                                @if(count($compliants))
+                                    @foreach($compliants as $request)
                                         <tr>
                                             <td>{{$request->COMP_ID}}</td>
+                                            <td>{{optional($request->against)->VOL_ENTITY_NAME}}</td>
                                             <td>{{$request->COMP_TITLE}}</td>
-                                            <td>{{$request->COMP_AGAINST}}</td>
+                                            <td>{{$request->COMP_DESCRIPTION}}</td>
                                             <td>{{$request->COMP_DATE}}</td>
                                         </tr>
                                         <tr>

@@ -28,7 +28,6 @@
                                     <th>ID</th>
                                     <th>Against Name</th>
                                     <th>Title</th>
-                                    <th>Title</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -38,7 +37,6 @@
                                     <tr>
                                         <td>{{$item->COMP_ID}}</td>
                                         <td>{{optional($item->volunteer)->full_name}}</td>
-                                        <td><p class="text-xs font-weight-bold mb-0">{{$item->COMP_TITLE}}</p></td>
                                         <td>{{$item->COMP_TITLE}}</td>
                                         <td>{{$item->COMP_STATUS}}</td>
                                         <td class="align-middle"><a

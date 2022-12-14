@@ -72,6 +72,11 @@ class User extends Authenticatable
         return $this->hasMany(Compliant::class, 'VOL_ID')->where('type', 'from_volunteer');
     }
 
+    public function compliantsFromEntity(): HasMany
+    {
+        return $this->hasMany(Compliant::class, 'VOL_ID')->where('type', 'from_entity');
+    }
+
     public function completedHours()
     {
         $total = 0;

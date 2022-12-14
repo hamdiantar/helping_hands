@@ -23,11 +23,48 @@
                             <a class="btn btn-primary" href="{{route('vol_entity.opportunity', $item->VOL_ENTITY_ID)}}">Apply Now <i class="fa fa-arrow-right"></i></a>
                         </div>
                         <div class="rating">
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
+                            @if($item->totalRate() >= 5)
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                            @endif
+                            @if($item->totalRate() == 0)
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                            @endif
+                            @if($item->totalRate() == 1)
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                            @endif
+                            @if($item->totalRate() == 2)
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                            @endif
+                            @if($item->totalRate() == 3)
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star grat-color"></i>
+                                <i class="fa fa-star grat-color"></i>
+                            @endif
+                            @if($item->totalRate() == 4)
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star text-warning"></i>
+                                <i class="fa fa-star grat-color"></i>
+                            @endif
                             <a href="{{route('vol_entity.show', $item->VOL_ENTITY_ID)}}">({{count($item->reviews)}} Review)</a>
                         </div>
                     </div>
