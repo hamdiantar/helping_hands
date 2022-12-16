@@ -1,6 +1,6 @@
 @extends('volunteering-entity.layouts.app')
 
-@section('title', 'opportunity title')
+@section('title', $opportunity->OPP_NAME)
 
 @section('breadcrumb')
     <li><a href="#">{{$opportunity->OPP_NAME}}</a></li>
