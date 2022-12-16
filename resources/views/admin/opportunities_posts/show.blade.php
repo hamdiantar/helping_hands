@@ -19,9 +19,9 @@
 
                     <div class="card-body ml-3 mr-3">
                         <div class="pb-3"></div>
-                        <h3 class="text-center mt-3 mb-2">Volunteering Entity Details</h3>
+                        <h3 class="text-center mt-4 mb-4">Volunteering Entity Details</h3>
                         <div class="table-responsive p-0">
-                            <table class="table  table-bordered mb-0">
+                            <table class="table text-center  table-bordered mb-0">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -34,33 +34,16 @@
                                 <tbody>
                                 <tr>
                                     <td>{{$item->VOL_ENTITY_ID}}</td>
-                                    <td>
-                                        <div class="d-flex px-2 py-1">
-                                            <div>
-                                                <img src="{{$item->logo_path}}"
-                                                     class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
-                                            </div>
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">{{$item->VOL_ENTITY_NAME}}</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{$item->VOL_ENTITY_SECTOR}}</p>
-                                    </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">{{$item->VOL_ENTITY_CR_NO}}</p>
-                                    </td>
-
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">{{$item->VOL_ENTITY_USERNAME}}</span>
-                                    </td>
+                                    <td><h6 class="mb-0 text-sm"><img src="{{$item->logo_path}}" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">{{$item->VOL_ENTITY_NAME}}</h6></td>
+                                    <td>{{$item->VOL_ENTITY_SECTOR}}</td>
+                                    <td>{{$item->VOL_ENTITY_CR_NO}}</td>
+                                    <td>{{$item->VOL_ENTITY_USERNAME}}</td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
 
-                        <h3 class="text-center mt-3 mb-2">Opportunity Details To confirm Posting :</h3>
+                        <h3 class="text-center mt-4 mb-4">Opportunity Details To confirm Posting :</h3>
                         <div class="row justify-content-center">
 
                             <article class="col-md-12 mb-5 post vt-post"

@@ -60,7 +60,14 @@ class VolunteerController extends Controller
     {
         try {
             $user = getAuthVolunteer();
-            $user->update($request->all());
+            $data = $request->all();
+            if ($user && $user->VOL_COMPLETED_HOUR != 0) {
+                unset($data['VOL_TARGET_HOUR']);
+            }
+            if ($request->VOL_TARGET_HOUR > $user->VOL_TARGET_HOUR) {
+                $data['VOL_TARGET_HOUR'] = $request->VOL_TARGET_HOUR;
+            }
+            $user->update($data);
             return back()->with('success', 'you have update your profile successfully');
 
         } catch (Exception $exception) {

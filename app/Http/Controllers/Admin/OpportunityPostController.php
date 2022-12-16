@@ -16,10 +16,10 @@ class OpportunityPostController extends Controller
         ]);
     }
 
-    public function getOpportunitiesDetails(int $intOppoID, int $volEntityID)
+    public function getOpportunitiesDetails(int $entityId, int $oppId)
     {
-        $item = VolEntity::find($volEntityID);
-        $oppo = Opportunity::find($intOppoID);
+        $item = VolEntity::find($entityId);
+        $oppo = Opportunity::find($oppId);
         return view('admin.opportunities_posts.show', [
             'item' => $item,
             'opp' => $oppo,
